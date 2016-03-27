@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent">
+
+    <com.droid.views.TitleView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="蓝牙设置"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:layout_alignStart="@+id/bluetooth_rl_setting"
+        android:layout_marginTop="80dp" />
+
+    <RelativeLayout
+        android:id="@+id/bluetooth_rl_setting"
+        android:layout_width="800dp"
+        android:layout_height="230dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+        android:background="@drawable/about_bg">
+
+        <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/bluetooth_rl_open"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:focusable="true"
+                android:background="@drawable/sel_focus">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="开启蓝牙"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/bluetooth_iv_open"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/switch_on" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bluetooth_rl_detection"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:focusable="true"
+                android:background="@drawable/sel_focus">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="开放检测"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/bluetooth_iv_detection"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/switch_on" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bluetooth_rl_search"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:focusable="true"
+                android:background="@drawable/sel_focus">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="搜索设备"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/bluetooth_iv_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rotate" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/bluetooth_tv_pair"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:text="可配对的设备"
+        android:textColor="@color/white"
+        android:layout_below="@id/bluetooth_rl_setting"
+        android:layout_alignStart="@id/bluetooth_rl_setting"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:id="@+id/bluetooth_rl_pair"
+        android:layout_width="800dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/bluetooth_rl_setting"
+        android:background="@drawable/about_bg">
+
+        <RelativeLayout
+            android:id="@+id/bluetooth_rl_pair1"
+            android:gravity="center_vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:background="@drawable/sel_focus">
+
+            <TextView
+                android:id="@+id/bluetooth_tv_pair_name"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:text="未配对"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:text="取消配对"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/bluetooth_tv_search_device"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:text="搜索到的设备"
+        android:textColor="@color/white"
+        android:layout_below="@id/bluetooth_rl_pair"
+        android:layout_alignStart="@id/bluetooth_rl_setting"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:id="@+id/bluetooth_rl_search_device"
+        android:layout_width="800dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/bluetooth_rl_pair"
+        android:background="@drawable/about_bg">
+
+        <ListView
+            android:id="@+id/bluetooth_lv_search_device"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+    </RelativeLayout>
+</RelativeLayout>

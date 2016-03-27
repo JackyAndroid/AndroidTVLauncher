@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/app_view_pager"
+            android:layout_width="1100dp"
+            android:layout_gravity="center"
+            android:layout_height="500dp"
+            android:clipChildren="false"
+            android:layout_marginTop="150dp"
+            />
+    <TextView
+        android:id="@+id/app_pointer"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_circle"
+        android:text="1"
+        android:gravity="center"/>
+
+    </LinearLayout>

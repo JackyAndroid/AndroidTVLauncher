@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="150dp"
+    android:paddingRight="150dp"
+    android:paddingTop="50dp"
+    tools:context="com.kangzizhuang.networkandbluetooth.MainActivity"
+    android:background="@drawable/wifiactivity_bg" >
+
+    <TextView
+        android:id="@+id/nandb_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络和蓝牙"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF" />
+	<Switch 
+	    android:layout_width="wrap_content"
+	    android:layout_height="50dp"
+	    android:textOn="关闭WIFI"
+	    android:textOff="打开WIFI"
+	    android:layout_below="@+id/nandb_tittle"
+	    android:singleLine="true"
+	    android:id="@+id/wifi_switch"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/nandb_tittle"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/wifi_listitem_bg"
+        android:orientation="vertical"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:layout_marginBottom="110dp"
+        android:paddingBottom="25dp" >
+	<TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textSize="20dp"
+	    android:id="@+id/wifi_statedispaly"
+	    android:textColor="#ffffff"
+	    android:layout_gravity="center_horizontal"
+	    android:layout_marginTop="15dp"
+	    />
+	<ImageView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/arrow_top"
+	    android:id="@+id/wifi_arrowtop"
+	    android:visibility="invisible"
+	    android:layout_gravity="center_horizontal"/>
+    <ListView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/wandb_wifi_listview"
+        android:layout_marginBottom="40dp"
+        android:listSelector="#00000000"
+        android:cacheColorHint="#00000000"
+        />
+    </LinearLayout>
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="140dp"
+        android:layout_alignParentBottom="true"
+         android:visibility="invisible"
+        android:id="@+id/wifi_arrowbottom"
+        android:src="@drawable/arrow_bootom" />
+</RelativeLayout>

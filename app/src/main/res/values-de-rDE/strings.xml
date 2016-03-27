@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="home_title">"Startseite"</string>
+    <string name="show_all_apps">"Alle"</string>
+    <string name="menu_wallpaper">"Bildschirmhintergrund"</string>
+    <string name="menu_search">"Suchen"</string>
+    <!-- no translation found for menu_settings (1769059051084007158) -->
+    <skip />
+    <string name="wallpaper_instructions">"Tippen Sie auf Bild, um Porträt-Bildschirmhintergrund einzustellen"</string>
+</resources>

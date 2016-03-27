@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="home_title">"Casa"</string>
+    <string name="show_all_apps">"Todo"</string>
+    <string name="menu_wallpaper">"Papel tapiz"</string>
+    <string name="menu_search">"Búsqueda"</string>
+    <!-- no translation found for menu_settings (1769059051084007158) -->
+    <skip />
+    <string name="wallpaper_instructions">"Puntee en la imagen para establecer papel tapiz vertical"</string>
+</resources>

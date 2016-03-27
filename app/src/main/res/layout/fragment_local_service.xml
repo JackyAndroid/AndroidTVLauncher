@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/local_focus_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/local_tv"
+            android:layout_width="366dp"
+            android:layout_height="220dp"
+            android:focusable="true"
+            android:src="@drawable/local_tv"
+            android:layout_margin="2dp"
+            android:background="@drawable/sel_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/local_tour"
+            android:layout_width="366dp"
+            android:layout_height="220dp"
+            android:layout_below="@id/local_tv"
+            android:src="@drawable/local_tour"
+            android:focusable="true"
+            android:layout_margin="2dp"
+            android:background="@drawable/sel_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/local_ad1"
+            android:layout_width="366dp"
+            android:layout_height="450dp"
+            android:focusable="true"
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@id/local_tv"
+            android:src="@drawable/local_ad1"
+            android:background="@drawable/sel_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/local_cate"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:focusable="true"
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@id/local_ad1"
+            android:src="@drawable/local_cate"
+            android:background="@drawable/sel_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/local_weather"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_toRightOf="@id/local_cate"
+            android:focusable="true"
+            android:layout_margin="2dp"
+            android:src="@drawable/local_weather"
+            android:background="@drawable/sel_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/local_ad2"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_toRightOf="@id/local_ad1"
+            android:layout_below="@id/local_cate"
+            android:layout_margin="2dp"
+            android:src="@drawable/local_ad2"
+            android:background="@drawable/sel_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/local_news"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_toRightOf="@id/local_ad2"
+            android:layout_margin="2dp"
+            android:layout_below="@id/local_cate"
+            android:src="@drawable/local_news"
+            android:background="@drawable/sel_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/local_app_store"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_toRightOf="@id/local_ad1"
+            android:layout_below="@id/local_ad2"
+            android:layout_margin="2dp"
+            android:src="@drawable/local_app_store"
+            android:background="@drawable/sel_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/local_video"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_toRightOf="@id/local_app_store"
+            android:layout_below="@id/local_ad2"
+            android:layout_margin="2dp"
+            android:src="@drawable/local_video"
+            android:background="@drawable/sel_focus"
+            android:scaleType="fitXY" />
+
+    </RelativeLayout>
+</LinearLayout>

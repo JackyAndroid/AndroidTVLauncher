@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent">
+
+
+    <com.droid.views.TitleView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络和蓝牙"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:layout_alignLeft="@+id/setting_custom_rl"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/setting_custom_rl" />
+
+    <RelativeLayout
+        android:id="@+id/setting_custom_rl"
+        android:layout_width="800dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:background="@drawable/about_bg">
+
+        <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/setting_custom_wifi"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="无线网络"
+                android:layout_margin="5dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/sel_focus"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/setting_custom_ethernet"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:text="有线网络"
+                android:background="@drawable/sel_focus"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/setting_custom_bluetooth"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:text="蓝牙"
+                android:background="@drawable/sel_focus"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/setting_custom_net_detection"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:focusable="true"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="网络测速"
+                android:background="@drawable/sel_focus"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

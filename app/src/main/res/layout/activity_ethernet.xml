@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent">
+
+    <com.droid.views.TitleView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="有线网络设置"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:layout_alignStart="@+id/ethernet_rl"
+        android:layout_above="@+id/ethernet_rl"
+        android:layout_marginBottom="30dp" />
+
+    <RelativeLayout
+        android:id="@+id/ethernet_rl"
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/about_bg">
+
+        <TextView
+            android:id="@+id/ethernet_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="网络不可用，请检查网线是否插好"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="50dp"
+            android:textColor="@color/gray"
+            android:textSize="35sp" />
+
+        <ImageButton
+            android:id="@+id/ethernet_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:layout_centerHorizontal="true"
+            android:focusable="true"
+            android:background="@drawable/sel_net_more" />
+    </RelativeLayout>
+</RelativeLayout>

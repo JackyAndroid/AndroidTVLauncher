@@ -1,3 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
 <resources>
-    <string name="app_name">AndroidTVLauncher</string>
+    <!-- Home -->
+    <string name="home_title">Home Sample</string>
+    <string name="show_all_apps">All</string>
+
+    <!-- Home Menus -->
+    <string name="menu_wallpaper">Wallpaper</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- Wallpaper -->
+    <string name="wallpaper_instructions">Tap picture to set portrait wallpaper</string>
+    
+    <string name="app_name">Smiletv</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="edit_app">编辑应用</string>
+    <string name="qidong_app">打开</string>
+    <string name="launch_app">打开</string>
+    <string name="update_app">更新</string>
+    <string name="favorite_app">收藏</string>
+    <string name="remove_app">卸载</string>
+    <string name="app_store">应用商城</string>
+    <string name="check_your_network">请检查您的网络连接！</string>
+    <string name="start_clear">开始扫描</string>
+    <string name="in_clear">正在清理中</string>
+    <string name="clean_up_the_garbage">清理垃圾</string>
+    <string name="unit">MB</string>
+    <string name="eliminate_num">进程数目:</string>
+    <string name="surolus_memory">剩余内存:</string>
+    <string name="start_eliminate_process">开始清理</string>
+    <string name="timing_clear">定时清理</string>
+    <string name="stop_timing_clear">停止定时清理</string>
 </resources>
+

@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="250dp"
+    android:padding="5dip"
+    tools:context="com.droid.garbageclear.GarbageClear" >
+
+    <RelativeLayout
+        android:id="@+id/found_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/start_found"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:background="#00bbff"
+            android:text="@string/start_clear" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clean_up_the_garbage"
+            android:textColor="#FFFFFF"
+            android:textSize="20dip" />
+
+        <RelativeLayout
+            android:id="@+id/re_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/center_line"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-20dp" >
+
+            <TextView
+                android:id="@+id/garbage_size"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textSize="80dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/garbage_size"
+                android:layout_marginBottom="10dip"
+                android:layout_toRightOf="@+id/garbage_size"
+                android:text="@string/unit"
+                android:textColor="#FFFFFF"
+                android:textSize="40dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/center_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/center_line"
+            android:id="@+id/file_path"
+            android:textColor="#FFFFFF"
+            android:textSize="10dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/center_line"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" 
+            android:max="100"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/clear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/dialog_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/garbage_center_img" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/round_img"
+            android:src="@drawable/eliminatedialog_img" />
+        <Button 
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:text="清理中"
+            android:id="@+id/start_clear"/>
+    </FrameLayout>
+
+</RelativeLayout>

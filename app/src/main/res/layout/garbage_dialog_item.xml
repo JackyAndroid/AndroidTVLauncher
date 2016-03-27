@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/dialog_layout" >
+    
+<ImageView 
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:id="@+id/dialog_img"
+    android:src="@drawable/garbage_center_img"
+    android:layout_gravity="center_horizontal"/>
+<ImageView 
+    android:layout_width="105dp"
+    android:layout_height="105dp"
+    android:layout_gravity="center_horizontal"
+    android:src="@drawable/eliminatedialog_img"/>
+</FrameLayout>

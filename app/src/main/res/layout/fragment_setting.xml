@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/setting_focus_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginTop="100dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/setting_uninstall"
+            android:layout_width="366dp"
+            android:layout_height="220dp"
+            android:layout_margin="6dp"
+            android:src="@drawable/setting_uninstall"
+            android:focusable="true"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/setting_accelerate"
+            android:layout_width="366dp"
+            android:layout_height="220dp"
+            android:layout_margin="6dp"
+            android:focusable="true"
+            android:layout_below="@id/setting_uninstall"
+            android:src="@drawable/setting_accelerate"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/setting_clean"
+            android:layout_width="366dp"
+            android:layout_height="220dp"
+            android:layout_margin="6dp"
+            android:layout_toRightOf="@id/setting_uninstall"
+            android:focusable="true"
+            android:src="@drawable/setting_clean"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/setting_autorun"
+            android:layout_width="366dp"
+            android:layout_height="220dp"
+            android:layout_margin="6dp"
+            android:layout_toRightOf="@id/setting_uninstall"
+            android:focusable="true"
+            android:layout_below="@id/setting_clean"
+            android:src="@drawable/setting_autorun"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/setting_net"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_margin="4dp"
+            android:focusable="true"
+            android:layout_toRightOf="@id/setting_clean"
+            android:src="@drawable/setting_net"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/setting_more"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_margin="4dp"
+            android:focusable="true"
+            android:layout_toRightOf="@id/setting_net"
+            android:src="@drawable/setting_more"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/setting_net_speed"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_margin="4dp"
+            android:layout_toRightOf="@id/setting_clean"
+            android:focusable="true"
+            android:layout_below="@id/setting_net"
+            android:src="@drawable/setting_net_speed"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/setting_update"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_margin="4dp"
+            android:layout_toRightOf="@id/setting_net_speed"
+            android:focusable="true"
+            android:layout_below="@id/setting_more"
+            android:src="@drawable/setting_update"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/setting_file"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_margin="4dp"
+            android:layout_toRightOf="@id/setting_clean"
+            android:focusable="true"
+            android:layout_below="@id/setting_net_speed"
+            android:src="@drawable/setting_file"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/setting_about"
+            android:layout_width="220dp"
+            android:layout_height="146dp"
+            android:layout_margin="4dp"
+            android:layout_toRightOf="@id/setting_file"
+            android:focusable="true"
+            android:layout_below="@id/setting_net_speed"
+            android:src="@drawable/setting_about"
+            android:background="@drawable/sel_main_focus"
+            android:scaleType="fitXY" />
+
+    </RelativeLayout>
+</LinearLayout>

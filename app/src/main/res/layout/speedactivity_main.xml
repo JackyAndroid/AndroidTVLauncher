@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kangzizhuang.networkandbluetooth.MainActivity"
+    android:background="@drawable/wifiactivity_bg">
+
+    <com.droid.views.TitleView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+
+    <FrameLayout
+        android:id="@+id/speed_test_fl"
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/wifi_listitem_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:id="@+id/speedtset_didinotlayout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网络测速 为您测速最佳网速"
+                android:textColor="#AAAAAA"
+                android:layout_gravity="center_horizontal"
+                android:textSize="35sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开始测速"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:id="@+id/speedtest_btn_start"
+                android:textSize="25sp"
+                android:background="@drawable/btn_finishclear" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/speedtest_instartlayout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/speed_test_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="35sp"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center_horizontal" />
+
+            <ProgressBar
+                android:id="@+id/speedtest_progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:progressDrawable="@drawable/progress_bg"
+                android:layout_height="wrap_content"
+                android:max="100" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="正在进行网络测速,请稍后..."
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:textSize="30sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="停止测速"
+                android:background="@drawable/btn_finishclear"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:id="@+id/speedtset_btn_stoptest"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/speedtest_startagainlayout"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="本次测速结果:  网速"
+                    android:textColor="#FFFFFF"
+                    android:textSize="35sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="35sp"
+                    android:id="@+id/speedtest_speed"
+                    android:textColor="#FFCC22" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="你当前网速适合观看"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="高清影片"
+                    android:id="@+id/speed_movietype"
+                    android:textSize="30sp"
+                    android:textColor="#FFCC22" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="再次测速"
+                android:textSize="25sp"
+                android:background="@drawable/btn_finishclear"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/speedtest_btn_startagain"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/nandb_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络测速"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:layout_alignStart="@id/speed_test_fl"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/speed_test_fl" />
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_title"
+    android:layout_width="fill_parent"
+    android:layout_height="60dip"
+    android:layout_alignParentRight="true"
+    android:background="@drawable/title_background"
+    android:alpha="70">
+
+
+    <TextView
+        android:id="@+id/title_time_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="60dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="14:50:10"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <ImageView
+        android:id="@+id/home_networkstate"
+        android:layout_width="40dp"
+        android:layout_height="60dip"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:src="@drawable/networkstate_on"
+        android:layout_margin="10dp"
+        android:textColor="#ffffff"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/home_date"
+        android:layout_width="wrap_content"
+        android:layout_height="60dip"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="2014-02-14"
+        android:textColor="#ffffff"
+        android:textSize="30sp" />
+
+</RelativeLayout>
