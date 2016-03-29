@@ -18,11 +18,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.lidroid.xutils.HttpUtils;
-import com.lidroid.xutils.http.HttpHandler;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -265,30 +260,6 @@ public class Tools {
 			e.printStackTrace();
 		}
 		return packInfo;
-	}
-
-	public static void download(String url, String path,
-			final IOAuthCallBack iOAuthCallBack) {
-		HttpUtils http = new HttpUtils();
-		HttpHandler<File> handler = http.download(url, path, false, // 如果目标文件存在，接着未完成的部分继续下载。服务器不支持RANGE时将从新下载。
-				false, // 如果从请求返回信息中获取到文件名，下载完成后自动重命名。
-				new RequestCallBack<File>() {
-
-					@Override
-					public void onSuccess(ResponseInfo<File> arg0) {
-						if (d)
-							Log.d("-----downfile-----", "success");
-						iOAuthCallBack.getIOAuthCallBack(arg0.result.getName(),
-								0);
-					}
-
-                    @Override
-                    public void onFailure(com.lidroid.xutils.exception.HttpException e, String s) {
-                        if (d)
-                            Log.d("-----downfile-----", "fail");
-                        iOAuthCallBack.getIOAuthCallBack(e.toString(), 1);
-                    }
-                });
 	}
 
 	public static void installApk(Context context, File apk, String md5) {
