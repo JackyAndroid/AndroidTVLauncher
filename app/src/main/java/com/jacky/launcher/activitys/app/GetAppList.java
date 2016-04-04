@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 
-import com.jacky.launcher.application.ClientApplication;
+import com.jacky.launcher.LauncherApp;
 import com.jacky.launcher.bean.AppBean;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class GetAppList {
     }
 
     private static final String TAG = "GetAppList";
-    private static final boolean d = ClientApplication.debug;
+    private static final boolean d = LauncherApp.debug;
 
     public ArrayList<AppBean> getLaunchAppList() {
         PackageManager localPackageManager = mContext.getPackageManager();

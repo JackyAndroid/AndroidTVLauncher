@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.jacky.launcher.R;
-import com.jacky.launcher.application.ClientApplication;
+import com.jacky.launcher.LauncherApp;
 
 
 public class WoDouGameBaseFragment extends Fragment {
@@ -20,7 +20,7 @@ public class WoDouGameBaseFragment extends Fragment {
      * 添加边框时
      */
     ImageView currentImage;
-    private Context context = ClientApplication.getContext();
+    private Context context = LauncherApp.getContext();
 
     /**
      * 提供选中放大的效果

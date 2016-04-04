@@ -6,11 +6,10 @@
     android:background="@drawable/bg"
     android:orientation="vertical">
 
-    <com.droid.views.GameTitleView
+    <com.jacky.launcher.views.GameTitleView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-        </com.droid.views.GameTitleView>
+        android:layout_marginTop="20dp"/>
 
 
     <RadioGroup
@@ -58,12 +57,10 @@
             android:background="@drawable/sel_app"
             android:button="@null"
             android:textSize="20sp" />
-
     </RadioGroup>
 
-    <com.droid.views.MyViewPager
+    <com.jacky.launcher.views.MyViewPager
         android:id="@+id/main_viewpager"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        />
+        android:layout_height="fill_parent" />
 </RelativeLayout>

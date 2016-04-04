@@ -5,7 +5,7 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.util.Log;
 
-import com.jacky.launcher.application.ClientApplication;
+import com.jacky.launcher.LauncherApp;
 
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -29,7 +29,7 @@ import java.util.List;
 public class FileUtils {
 	private final static String TAG = "FileUitl------读取文件工具类";
 
-    private static final boolean d = ClientApplication.debug;
+    private static final boolean d = LauncherApp.debug;
 
 	private static String path = "/sdcard/GMYZ/log/";
 

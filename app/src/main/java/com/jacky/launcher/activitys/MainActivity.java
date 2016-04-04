@@ -28,7 +28,7 @@ import com.jacky.launcher.R;
 import com.jacky.launcher.activitys.app.AppFragment;
 import com.jacky.launcher.activitys.setting.SettingFragment;
 import com.jacky.launcher.adapter.MainActivityAdapter;
-import com.jacky.launcher.application.ClientApplication;
+import com.jacky.launcher.LauncherApp;
 import com.jacky.launcher.db.SharedPreferencesUtil;
 import com.jacky.launcher.service.MainService;
 import com.jacky.launcher.utils.FileCache;
@@ -49,7 +49,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RadioButton setting;
     private RadioButton app;
     private SQLiteDatabase mSQLiteDataBase;
-    private ClientApplication mClientApp;
+    private LauncherApp mClientApp;
     private List<ContentValues> datas;//图片数据
     private int currentIndex;
     private static final int PAGE_NUMBER = 3;
@@ -89,7 +89,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
-        mClientApp = (ClientApplication) this.getApplication();
+        mClientApp = (LauncherApp) this.getApplication();
         context = this;
         fileCache = new FileCache(context);
         cacheDir = fileCache.getCacheDir();
@@ -407,7 +407,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 installApk();
             } else {
                 showShortToast("网络未连接");
-                ClientApplication.netFlag = false;
+                LauncherApp.netFlag = false;
             }
         }
     };

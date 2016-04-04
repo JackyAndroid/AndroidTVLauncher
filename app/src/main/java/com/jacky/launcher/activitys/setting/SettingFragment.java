@@ -17,7 +17,7 @@ import com.jacky.launcher.activitys.app.AppUninstall;
 import com.jacky.launcher.activitys.eliminateprocess.EliminateMainActivity;
 import com.jacky.launcher.activitys.garbageclear.GarbageClear;
 import com.jacky.launcher.activitys.speedtest.SpeedTestActivity;
-import com.jacky.launcher.application.ClientApplication;
+import com.jacky.launcher.LauncherApp;
 import com.jacky.launcher.cache.ImageCache;
 import com.jacky.launcher.cache.loader.ImageFetcher;
 import com.jacky.launcher.cache.loader.ImageWorker;
@@ -42,7 +42,7 @@ public class SettingFragment extends WoDouGameBaseFragment implements
     private ImageButton autoRun;
     private View view;// 视图
     private Intent JumpIntent;
-    private static final boolean d = ClientApplication.debug;
+    private static final boolean d = LauncherApp.debug;
     private Context context;
 
     /**
