@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
 
-    <com.droid.views.TitleView
+    <com.jacky.launcher.views.TitleView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 

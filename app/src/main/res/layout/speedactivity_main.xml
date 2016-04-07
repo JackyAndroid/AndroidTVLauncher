@@ -5,7 +5,7 @@
     tools:context="com.kangzizhuang.networkandbluetooth.MainActivity"
     android:background="@drawable/wifiactivity_bg">
 
-    <com.droid.views.TitleView
+    <com.jacky.launcher.views.TitleView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 

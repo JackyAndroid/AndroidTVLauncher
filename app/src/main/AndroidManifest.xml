@@ -38,5 +38,20 @@
         <activity android:name=".activitys.Bluetooth" />
 
         <service android:name=".service.MainService" />
+
+        <activity android:name=".activitys.setting.SettingCustom" />
+        <activity android:name=".activitys.app.AppUninstall" />
+        <activity android:name=".activitys.app.AppAutoRun" />
+        <activity android:name=".activitys.speedtest.SpeedTestActivity" />
+
+        <service android:name=".service.MainService" />
+
+        <activity
+            android:name=".activitys.eliminateprocess.EliminateMainActivity"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".activitys.garbageclear.GarbageClear"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".activitys.wifi.WifiActivity" />
     </application>
 </manifest>

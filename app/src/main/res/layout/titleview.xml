@@ -7,7 +7,6 @@
     android:background="@drawable/title_background"
     android:alpha="70">
 
-
     <TextView
         android:id="@+id/title_time_hour"
         android:layout_width="wrap_content"
