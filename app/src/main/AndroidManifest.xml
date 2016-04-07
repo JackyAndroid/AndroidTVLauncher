@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jacky.launcher"
-    android:versionCode="17"
-    android:versionName="1.8.17">
+    package="com.jacky.launcher">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
@@ -20,13 +18,10 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="21" />
     <application
+        android:name=".LauncherApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:name=".LauncherApp"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
@@ -41,6 +36,7 @@
         </activity>
         <activity android:name=".activitys.Ethernet" />
         <activity android:name=".activitys.Bluetooth" />
+
         <service android:name=".service.MainService" />
     </application>
 </manifest>
