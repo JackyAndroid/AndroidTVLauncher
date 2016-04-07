@@ -109,7 +109,7 @@ public class SettingFragment extends WoDouGameBaseFragment implements
         Setting_Accelerate.setOnFocusChangeListener(mFocusChangeListener);
         autoRun.setOnFocusChangeListener(mFocusChangeListener);
 
-        }
+    }
 
     private void setListener() {
         Setting_Clean.setOnClickListener(this);
@@ -154,8 +154,12 @@ public class SettingFragment extends WoDouGameBaseFragment implements
             case R.id.setting_about:
                 break;
             case R.id.setting_more:
-                JumpIntent = new Intent(Settings.ACTION_SETTINGS);
-                startActivity(JumpIntent);
+                try {
+                    JumpIntent = new Intent(Settings.ACTION_SETTINGS);
+                    startActivity(JumpIntent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
             case R.id.setting_file:
                 break;

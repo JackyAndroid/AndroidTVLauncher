@@ -30,7 +30,7 @@ import java.util.Set;
 
 /**
  * @author Droid
- * 蓝牙管理
+ *         蓝牙管理
  */
 
 public class Bluetooth extends BaseActivity implements View.OnClickListener {
@@ -199,8 +199,13 @@ public class Bluetooth extends BaseActivity implements View.OnClickListener {
                 } else {
                     if (bluetoothAdapter != null) {
                         if (!bluetoothAdapter.isEnabled()) {
-                            Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                            startActivity(intent);
+                            Intent intent;
+                            try {
+                                intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                                startActivity(intent);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
                     } else {
                         showShortToast("蓝牙不可用！");
@@ -219,8 +224,12 @@ public class Bluetooth extends BaseActivity implements View.OnClickListener {
                     detectionIV.setBackgroundResource(R.drawable.switch_off);
                     detectionFlag = !detectionFlag;
                 } else {
-                    Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-                    startActivity(discoverableIntent);
+                    try {
+                        Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+                        startActivity(discoverableIntent);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     detectionIV.setBackgroundResource(R.drawable.switch_on);
                     detectionFlag = !detectionFlag;
                 }
@@ -277,7 +286,7 @@ public class Bluetooth extends BaseActivity implements View.OnClickListener {
             String action = intent.getAction();
             BluetoothDevice device = null;
             device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-            if(device!=null){
+            if (device != null) {
             }
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 if (device.getBondState() == BluetoothDevice.BOND_NONE) {
