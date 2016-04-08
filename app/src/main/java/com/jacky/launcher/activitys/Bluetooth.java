@@ -29,8 +29,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author Droid
- *         蓝牙管理
+ * @author jacky
+ * 蓝牙管理
  */
 
 public class Bluetooth extends BaseActivity implements View.OnClickListener {
