@@ -31,7 +31,7 @@ so on...
 > * Architecture(MVC to MVP or MVVM)
 > * Main UI
 
-###Apache License 2.0
+###License
 
     Copyright 2016 Jacky Wang<jacky.android@foxmail.com>
     
