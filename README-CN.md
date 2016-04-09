@@ -1,35 +1,33 @@
-###Welcome to follow me on GitHub or CSDN
+###欢迎关注我在 GitHub or CSDN
 
 GitHub: https://github.com/JackyAndroid
 
 CSDN: http://blog.csdn.net/rain_butterfly
 
-[中文版文档](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/README-CN.md)
-
 ---
 # AndroidTVLauncher
 <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/app/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
 
-This is a better android-tv-launcher,it can running on the TV or TV box.Build with gradle 2.0.0.
-###Features
-> * App Uninstall
-> * Garbage Clear
-> * Kill Other App
-> * App Auto-launch Manage
-> * NetWork Setting
-so on...
+这个项目是对android-tv-launcher开源项目用gradle编译的升级改造（以前那个也是本人的项目）
 
-###Effect Picture
+###特性
+> * 应用卸载
+> * 垃圾清理
+> * 一键加速
+> * 自启动管理
+> * 网络设置等等
+
+###效果图
 <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/setting.png" width = "400" height = "225" alt="logo" align=center />  <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/%E5%BA%94%E7%94%A8%E5%8D%B8%E8%BD%BD.jpg" width = "400" height = "225" alt="logo" align=center />
 
 <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/clear.jpg" width = "400" height = "225" alt="logo" align=center />  <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/%E8%87%AA%E5%90%AF%E5%8A%A8.jpg" width = "400" height = "225" alt="logo" align=center />
 
 <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/bluetooth.jpg" width = "400" height = "225"" alt="logo" align=center />  <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/speed_test.jpg" width = "400" height = "225" alt="logo" align=center />
 
-###The next step to improve
-> * Focus Compatibility(This version running on some box focus problems may occur)
-> * Architecture(MVC to MVP or MVVM)
-> * Main UI
+###下一步的改进
+> * 焦点问题（焦点问题在一些机顶盒上面可能会出现偏移）
+> * 架构（目前架构比较老，下一步会转为MVP或者MVVM）
+> * 主界面会向官方TV桌面进行靠拢
 
 ###License
 
