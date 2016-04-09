@@ -1,3 +1,9 @@
+###Welcome to follow me on GitHub or CSDN
+
+GitHub: https://github.com/JackyAndroid
+
+CSDN: http://blog.csdn.net/rain_butterfly
+
 # AndroidTVLauncher
 ###This is a better android-tv-launcher,it can running on the tv box.Build with gradle.
 
