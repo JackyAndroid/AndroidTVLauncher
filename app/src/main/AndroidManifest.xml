@@ -37,8 +37,6 @@
         <activity android:name=".activitys.Ethernet" />
         <activity android:name=".activitys.Bluetooth" />
 
-        <service android:name=".service.MainService" />
-
         <activity android:name=".activitys.setting.SettingCustom" />
         <activity android:name=".activitys.app.AppUninstall" />
         <activity android:name=".activitys.app.AppAutoRun" />
