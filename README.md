@@ -8,7 +8,7 @@ CSDN: http://blog.csdn.net/rain_butterfly
 
 ---
 # AndroidTVLauncher
-[![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)](http://blog.csdn.net/rain_butterfly/article/details/44942747)
+[![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)]()
 
 <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/app/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
 
