@@ -177,4 +177,11 @@ public class GameTitleView extends RelativeLayout {
                         Toast.LENGTH_LONG).show();
         }
     };
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        context.unregisterReceiver(mConnReceiver);
+        context.unregisterReceiver(wifiChange);
+    }
 }

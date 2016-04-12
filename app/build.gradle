@@ -30,4 +30,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.android.support:percent:23.0.1'
 }
