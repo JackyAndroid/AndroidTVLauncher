@@ -1,3 +1,4 @@
+
 package com.jacky.launcher;
 
 import android.app.Application;
@@ -8,15 +9,8 @@ public class LauncherApp extends Application {
     /**
      * 请求协议
      */
-    public static final String HTTP = "http";
-    public static final boolean d = true;
-    public static  boolean netFlag = false;
+    public static boolean netFlag = false;
     private static Context context;
-
-    /**
-     * 调试模式
-     */
-    public static boolean debug =false;
 
     @Override
     public void onCreate() {
@@ -24,7 +18,7 @@ public class LauncherApp extends Application {
         this.context = getApplicationContext();
     }
 
-   public static Context getContext() {
+    public static Context getContext() {
         return context;
     }
 }

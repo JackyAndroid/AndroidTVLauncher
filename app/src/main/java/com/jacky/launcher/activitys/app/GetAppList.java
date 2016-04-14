@@ -1,3 +1,4 @@
+
 package com.jacky.launcher.activitys.app;
 
 import android.content.Context;
@@ -7,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 
-import com.jacky.launcher.LauncherApp;
 import com.jacky.launcher.bean.AppBean;
 
 import java.util.ArrayList;
@@ -23,7 +23,6 @@ public class GetAppList {
     }
 
     private static final String TAG = "GetAppList";
-    private static final boolean d = LauncherApp.debug;
 
     public ArrayList<AppBean> getLaunchAppList() {
         PackageManager localPackageManager = mContext.getPackageManager();
@@ -50,7 +49,7 @@ public class GetAppList {
             PackageInfo mPackageInfo;
             try {
                 mPackageInfo = mContext.getPackageManager().getPackageInfo(pkgName, 0);
-                if ((mPackageInfo.applicationInfo.flags & mPackageInfo.applicationInfo.FLAG_SYSTEM) > 0) {//系统预装
+                if ((mPackageInfo.applicationInfo.flags & mPackageInfo.applicationInfo.FLAG_SYSTEM) > 0) {// 系统预装
                     localAppBean.setSysApp(true);
                 }
             } catch (NameNotFoundException e) {
@@ -91,7 +90,7 @@ public class GetAppList {
             PackageInfo mPackageInfo;
             try {
                 mPackageInfo = mContext.getPackageManager().getPackageInfo(pkgName, 0);
-                if ((mPackageInfo.applicationInfo.flags & mPackageInfo.applicationInfo.FLAG_SYSTEM) > 0) {//系统预装
+                if ((mPackageInfo.applicationInfo.flags & mPackageInfo.applicationInfo.FLAG_SYSTEM) > 0) {// 系统预装
                     localAppBean.setSysApp(true);
                 } else {
                     localArrayList.add(localAppBean);
@@ -128,7 +127,8 @@ public class GetAppList {
             String permission = "android.permission.RECEIVE_BOOT_COMPLETED";
             try {
                 PackageInfo mPackageInfo = mContext.getPackageManager().getPackageInfo(pkgName, 0);
-                if ((PackageManager.PERMISSION_GRANTED == localPackageManager.checkPermission(permission, pkgName)) && !((mPackageInfo.applicationInfo.flags & mPackageInfo.applicationInfo.FLAG_SYSTEM) > 0)) {
+                if ((PackageManager.PERMISSION_GRANTED == localPackageManager.checkPermission(permission, pkgName))
+                        && !((mPackageInfo.applicationInfo.flags & mPackageInfo.applicationInfo.FLAG_SYSTEM) > 0)) {
                     localArrayList.add(localAppBean);
                 }
             } catch (NameNotFoundException e) {

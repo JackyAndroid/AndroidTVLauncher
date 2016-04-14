@@ -1,3 +1,4 @@
+
 package com.jacky.launcher.activitys.setting;
 
 import android.content.ContentValues;
@@ -17,7 +18,6 @@ import com.jacky.launcher.activitys.app.AppUninstall;
 import com.jacky.launcher.activitys.eliminateprocess.EliminateMainActivity;
 import com.jacky.launcher.activitys.garbageclear.GarbageClear;
 import com.jacky.launcher.activitys.speedtest.SpeedTestActivity;
-import com.jacky.launcher.LauncherApp;
 import com.jacky.launcher.cache.ImageCache;
 import com.jacky.launcher.cache.loader.ImageFetcher;
 import com.jacky.launcher.cache.loader.ImageWorker;
@@ -42,7 +42,6 @@ public class SettingFragment extends WoDouGameBaseFragment implements
     private ImageButton autoRun;
     private View view;// 视图
     private Intent JumpIntent;
-    private static final boolean d = LauncherApp.debug;
     private Context context;
 
     /**
@@ -58,7 +57,7 @@ public class SettingFragment extends WoDouGameBaseFragment implements
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+            Bundle savedInstanceState) {
         view = LayoutInflater.from(getActivity()).inflate(
                 R.layout.fragment_setting, null);
         initView(view);
@@ -78,14 +77,14 @@ public class SettingFragment extends WoDouGameBaseFragment implements
 
     private void initView(View view) {
 
-//        FocusedRelativeLayout focus = (FocusedRelativeLayout) view
-//                .findViewById(R.id.setting_focus_rl);
-//        focus.setFocusResId(R.drawable.focus_bg);
-//        focus.setFocusShadowResId(R.drawable.focus_shadow);
-//        focus.setFocusable(true);
-//        focus.setFocusableInTouchMode(true);
-//        focus.requestFocus();
-//        focus.requestFocusFromTouch();
+        // FocusedRelativeLayout focus = (FocusedRelativeLayout) view
+        // .findViewById(R.id.setting_focus_rl);
+        // focus.setFocusResId(R.drawable.focus_bg);
+        // focus.setFocusShadowResId(R.drawable.focus_shadow);
+        // focus.setFocusable(true);
+        // focus.setFocusableInTouchMode(true);
+        // focus.requestFocus();
+        // focus.requestFocusFromTouch();
 
         appUninstall = (ImageButton) view.findViewById(R.id.setting_uninstall);
         setNet = (ImageButton) view.findViewById(R.id.setting_net);

@@ -1,3 +1,4 @@
+
 package com.jacky.launcher.activitys;
 
 import android.content.BroadcastReceiver;
@@ -50,7 +51,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RadioButton app;
     private SQLiteDatabase mSQLiteDataBase;
     private LauncherApp mClientApp;
-    private List<ContentValues> datas;//图片数据
+    private List<ContentValues> datas;// 图片数据
     private int currentIndex;
     private static final int PAGE_NUMBER = 3;
     private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
@@ -66,11 +67,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             switch (msg.what) {
                 case 0:
                     break;
-                case 1://异常处理
+                case 1:// 异常处理
                     initFragment("");
                     showShortToast("图片加载失败！");
                     break;
-                case 2://图片数据解析
+                case 2:// 图片数据解析
                     Bundle b = msg.getData();
                     String json = b.getString("mResponseJson");
                     try {
@@ -149,7 +150,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         openDataBase();
         if (isThereHaveUrlDataInDB()) {
             String data = getUrlDataFromDB();
-            //将数据发送到Fragment
+            // 将数据发送到Fragment
             initFragment(data);
             getUrlDataFromNetFlow();
         } else {
@@ -175,7 +176,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setting = (RadioButton) findViewById(R.id.main_title_setting);
         app = (RadioButton) findViewById(R.id.main_title_app);
         localService.setSelected(true);
-        mViews = new View[]{localService, setting, app};
+        mViews = new View[] {
+                localService, setting, app
+        };
         setListener();
     }
 
@@ -187,7 +190,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         localService.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
+                if (hasFocus) {
                     mViewPager.setCurrentItem(0);
                 }
             }
@@ -195,7 +198,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setting.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
+                if (hasFocus) {
                     mViewPager.setCurrentItem(1);
                 }
             }
@@ -203,13 +206,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         app.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
+                if (hasFocus) {
                     mViewPager.setCurrentItem(2);
                 }
             }
         });
     }
-
 
     @Override
     public void onClick(View v) {
@@ -233,13 +235,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
      * 初始化Fragment
      */
     private void initFragment(String url_data) {
-        fragments.clear();//清空
+        fragments.clear();// 清空
         int count = PAGE_NUMBER;
 
         FragmentManager manager;
         FragmentTransaction transaction;
 
-		/* 获取manager */
+        /* 获取manager */
         manager = this.getSupportFragmentManager();
         /* 创建事物 */
         transaction = manager.beginTransaction();
@@ -248,11 +250,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         SettingFragment setting = new SettingFragment();
         AppFragment app = new AppFragment();
 
-         /*创建一个Bundle用来存储数据，传递到Fragment中*/
+        /* 创建一个Bundle用来存储数据，传递到Fragment中 */
         Bundle bundle = new Bundle();
-        /*往bundle中添加数据*/
+        /* 往bundle中添加数据 */
         bundle.putString("url_data", url_data);
-        /*把数据设置到Fragment中*/
+        /* 把数据设置到Fragment中 */
 
         interactTV.setArguments(bundle);
 
@@ -312,7 +314,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
      */
     private void getUrlDataFromNetFlow() {
         if (NetWorkUtil.isNetWorkConnected(context)) {
-            //获取数据
+            // 获取数据
             initFragment("");
         } else {
             initFragment("");
@@ -323,7 +325,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Cursor cursor = mSQLiteDataBase.rawQuery("SELECT url_data FROM my_url_data", null);
         cursor.moveToLast();
         String a = cursor.getString(cursor.getColumnIndex("url_data"));
-//        String s = cursor.getString(2);
+        // String s = cursor.getString(2);
         return a;
     }
 
@@ -403,7 +405,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     .getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
 
             if (currentNetworkInfo.isConnected()) {
-                //连接网络更新数据
+                // 连接网络更新数据
                 installApk();
             } else {
                 showShortToast("网络未连接");

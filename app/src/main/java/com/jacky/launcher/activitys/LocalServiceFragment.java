@@ -1,3 +1,4 @@
+
 package com.jacky.launcher.activitys;
 
 import android.content.ContentValues;
@@ -9,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.jacky.launcher.R;
-import com.jacky.launcher.LauncherApp;
 import com.jacky.launcher.cache.loader.ImageWorker;
 
 import java.util.List;
@@ -17,7 +17,6 @@ import java.util.List;
 public class LocalServiceFragment extends WoDouGameBaseFragment implements View.OnClickListener {
 
     private ImageWorker mImageLoader;
-    private static final boolean d = LauncherApp.debug;
     private Context context;
     private List<ContentValues> datas;
 
@@ -75,7 +74,8 @@ public class LocalServiceFragment extends WoDouGameBaseFragment implements View.
         tv.requestFocusFromTouch();
     }
 
-    private void showImages() {}
+    private void showImages() {
+    }
 
     @Override
     public void onClick(View v) {
