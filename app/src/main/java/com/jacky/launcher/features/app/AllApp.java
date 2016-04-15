@@ -4,13 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -90,28 +87,6 @@ public class AllApp extends LinearLayout implements View.OnClickListener {
         }
         addView(v);
     }
-
-    public View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
-
-        @Override
-        public void onFocusChange(View v, boolean hasFocus) {
-
-            int focus = 0;
-            if (hasFocus) {
-                focus = R.anim.enlarge;
-            } else {
-                focus = R.anim.decrease;
-            }
-//            如果有焦点就放大，没有焦点就缩小
-            Animation mAnimation = AnimationUtils.loadAnimation(
-                    mContext, focus);
-            mAnimation.setBackgroundColor(Color.TRANSPARENT);
-            mAnimation.setFillAfter(hasFocus);
-            v.startAnimation(mAnimation);
-            mAnimation.start();
-            v.bringToFront();
-        }
-    };
 
     @SuppressLint("NewApi")
     @Override

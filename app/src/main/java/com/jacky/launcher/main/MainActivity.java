@@ -6,23 +6,19 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioButton;
 
-import com.jacky.launcher.BaseActivity;
 import com.jacky.launcher.LauncherApp;
 import com.jacky.launcher.R;
 import com.jacky.launcher.adapter.MainActivityAdapter;
@@ -32,16 +28,14 @@ import com.jacky.launcher.features.setting.SettingFragment;
 import com.jacky.launcher.utils.FileCache;
 import com.jacky.launcher.utils.NetWorkUtil;
 import com.jacky.launcher.utils.SharedPreferencesUtil;
-import com.jacky.launcher.utils.Tools;
-import com.jacky.launcher.utils.UpdateManager;
+import com.jacky.uikit.activity.BaseTitleActivity;
+import com.jacky.uikit.alarm.ToastAlarm;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseTitleActivity implements View.OnClickListener {
 
-    private static final String TAG = "MainActivityGameLTV2";
     private ViewPager mViewPager;
     private RadioButton localService;
     private RadioButton setting;
@@ -59,29 +53,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private String cacheDir;
     private View mViews[];
     private int mCurrentIndex = 0;
-    private Handler handler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
-            switch (msg.what) {
-                case 0:
-                    break;
-                case 1:// 异常处理
-                    initFragment("");
-                    showShortToast("图片加载失败！");
-                    break;
-                case 2:// 图片数据解析
-                    Bundle b = msg.getData();
-                    String json = b.getString("mResponseJson");
-                    try {
-                        initFragment(json);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    break;
-            }
-        }
-
-        ;
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,35 +67,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         initData();
         context.registerReceiver(this.mConnReceiver,
                 new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-    }
-
-    /**
-     * 程序安装更新
-     */
-    private void installApk() {
-        boolean installFlag = false;
-        Log.d(TAG, "--installFlag1--" + installFlag);
-        ArrayList<File> fileList = fileCache.getFile();
-        for (File apk : fileList) {
-            String name = apk.getName();
-            if (name.substring(name.length() - 3, name.length()).equals("zip")) {
-                continue;
-            }
-            name = name.substring(0, name.length() - 4);
-            if (sp.getString(name + "packageName", "") != "") {
-                PackageInfo info = Tools.getAPKVersionInfo(context,
-                        sp.getString(name + "packageName", ""));
-                if (info.versionCode < sp.getInt(name + "Version", 0)) {
-                    installFlag = true;
-                    Tools.installApk(context, apk,
-                            sp.getString(name + "MD5", ""));
-                }
-            }
-        }
-        if (!installFlag) {
-            UpdateManager updateManager = new UpdateManager(this);
-            updateManager.checkUpdateInfo();
-        }
     }
 
     private void initData() {
@@ -158,7 +100,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setting = (RadioButton) findViewById(R.id.main_title_setting);
         app = (RadioButton) findViewById(R.id.main_title_app);
         localService.setSelected(true);
-        mViews = new View[] {
+        mViews = new View[]{
                 localService, setting, app
         };
         setListener();
@@ -342,7 +284,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 focusFlag = true;
             }
         }
-        Log.d(TAG, "code:" + keyCode + " flag:" + focusFlag);
         if (focusFlag) {
             if (KeyEvent.KEYCODE_DPAD_LEFT == keyCode) {
                 if (mCurrentIndex > 0) {
@@ -366,10 +307,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     .getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
 
             if (currentNetworkInfo.isConnected()) {
-                // 连接网络更新数据
-                installApk();
+
             } else {
-                showShortToast("网络未连接");
+                ToastAlarm.show("网络未连接");
                 LauncherApp.netFlag = false;
             }
         }

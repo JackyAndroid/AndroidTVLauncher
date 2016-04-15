@@ -8,17 +8,18 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 
 /**
- * @author Droid
- *继承 FragmentStatePagerAdapter，fragment才会及时更新
+ * @author jacky
+ * @version v1.0
+ * @since 2016.4.1
  */
 public class MainActivityAdapter extends FragmentStatePagerAdapter {
     private ArrayList<Fragment> mFragments;
     private FragmentManager fm;
-    
+
     public MainActivityAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {
         super(fm);
         mFragments = fragments;
-        this.fm=fm;
+        this.fm = fm;
     }
 
     @Override

@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jacky.launcher.R;
-import com.jacky.launcher.features.garbageclear.util.ClearUtil;
+import com.jacky.launcher.utils.ClearUtil;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -16,8 +15,10 @@ import com.jacky.launcher.R;
 
 
 /**
- * @author Droid
  * 有线网络连接
+ * @author jacky
+ * @version 1.0
+ * @since 2016.4.4
  */
 
 public class Ethernet extends Activity {
@@ -40,25 +41,6 @@ public class Ethernet extends Activity {
         tip = (TextView) findViewById(R.id.ethernet_tv);
         registerReceiver(mConnReceiver,
                 new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-    }
-
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG, "============onRestart========");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "=====onPause===========");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(TAG, "=========onResume=======");
     }
 
     @Override

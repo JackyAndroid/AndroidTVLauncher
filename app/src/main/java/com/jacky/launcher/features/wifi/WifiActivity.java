@@ -32,7 +32,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jacky.launcher.R;
-import com.jacky.launcher.features.wifi.util.WiFiAdmin;
+import com.jacky.launcher.adapter.WAndB_WifilistAdapter;
+import com.jacky.launcher.utils.WiFiAdmin;
 
 import java.util.List;
 

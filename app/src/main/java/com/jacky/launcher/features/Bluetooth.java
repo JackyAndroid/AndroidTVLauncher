@@ -1,5 +1,6 @@
 package com.jacky.launcher.features;
 
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -18,9 +19,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jacky.launcher.R;
-import com.jacky.launcher.BaseActivity;
 import com.jacky.launcher.adapter.MyBluetoothAdapter;
 import com.jacky.launcher.utils.Tools;
+import com.jacky.uikit.alarm.ToastAlarm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,11 +31,13 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author jacky
  * 蓝牙管理
+ * @author jacky
+ * @version 1.0
+ * @since 2016.4.3
  */
 
-public class Bluetooth extends BaseActivity implements View.OnClickListener {
+public class Bluetooth extends Activity implements View.OnClickListener {
 
     private static final String TAG = "UPDATE";
     private static final boolean d = false;
@@ -152,7 +155,7 @@ public class Bluetooth extends BaseActivity implements View.OnClickListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 BluetoothDevice device = (BluetoothDevice) list.get(position).get("device");
                 device.createBond();
-                showShortToast("正在配对..");
+                ToastAlarm.show("正在配对..");
             }
         });
 
@@ -209,7 +212,7 @@ public class Bluetooth extends BaseActivity implements View.OnClickListener {
                             }
                         }
                     } else {
-                        showShortToast("蓝牙不可用！");
+                        ToastAlarm.show("蓝牙不可用！");
                     }
                     openIV.setBackgroundResource(R.drawable.switch_on);
                     searchIV.setVisibility(View.VISIBLE);
@@ -258,7 +261,7 @@ public class Bluetooth extends BaseActivity implements View.OnClickListener {
                     }
                 } else if (pairPosition == -2) {
                     try {
-                        showShortToast("正在取消配对..");
+                        ToastAlarm.show("正在取消配对..");
                         boolean b = Tools.removeBond(pairDevice.getClass(), pairDevice);
                         if (b) {
                             Map<String, Object> map = new HashMap<String, Object>();
@@ -269,7 +272,7 @@ public class Bluetooth extends BaseActivity implements View.OnClickListener {
                             list.add(map);
                             itemAdapter.notifyDataSetChanged();
                         } else {
-                            showShortToast("取消配对失败");
+                            ToastAlarm.show("取消配对失败");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -302,7 +305,7 @@ public class Bluetooth extends BaseActivity implements View.OnClickListener {
                     }
                 }
             } else if (device != null && device.getBondState() == BluetoothDevice.BOND_BONDING) {
-                showShortToast("正在配对");
+                ToastAlarm.show("正在配对");
             } else if (device != null && device.getBondState() == BluetoothDevice.BOND_BONDED) {
                 pairTVName.setText(device.getName());
                 for (int i = 0; i < list.size(); i++) {
@@ -312,7 +315,7 @@ public class Bluetooth extends BaseActivity implements View.OnClickListener {
                         itemAdapter.notifyDataSetChanged();
                     }
                 }
-                showShortToast("配对完成");
+                ToastAlarm.show("配对完成");
             }
         }
     };

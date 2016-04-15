@@ -40,14 +40,14 @@ public class GameTitleView extends RelativeLayout {
     public GameTitleView(Context context) {
         super(context);
         this.context = context;
-        if(!isInEditMode())
+        if (!isInEditMode())
             initTitleView();
     }
 
     public GameTitleView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-        if(!isInEditMode())
+        if (!isInEditMode())
             initTitleView();
     }
 
@@ -86,6 +86,7 @@ public class GameTitleView extends RelativeLayout {
     public void setTvTimeText(String text) {
         tvTime.setText(text);
     }
+
     public void setTvDateDate(String text) {
         tvDate.setText(text);
     }

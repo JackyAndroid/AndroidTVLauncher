@@ -1,21 +1,19 @@
 
 package com.jacky.launcher;
 
-import android.app.Application;
 import android.content.Context;
 
-public class LauncherApp extends Application {
+import com.jacky.common.app.BaseApp;
 
-    /**
-     * 请求协议
-     */
+public class LauncherApp extends BaseApp {
+
     public static boolean netFlag = false;
     private static Context context;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        this.context = getApplicationContext();
+        context = getApplicationContext();
     }
 
     public static Context getContext() {

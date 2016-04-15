@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    *****NAME_RULES*****   
+==============================================
+drawable:
+    {group _ type _ name _ [state] _ [suffix]}
+==============================================
+id:
+    {group _ ui _ type _ [local] _ name}
+==============================================
+layout:
+    {[group] _ ui _ name}
+==============================================
+menu:
+    {[group] _ ui _ name}
+==============================================
+anim:
+    {group _ name _ [local]}
+==============================================
+string:
+    {group _ [ui] _ name}
+==============================================
+dimen:
+    {group _ name _ property _ [size]}
+==============================================
+**********************************************
+group:
+    [common|uikit|sdk|app]
+
+ui:
+    [main|kitchen|home|activity|fragment|view|actionbar|...]
+
+type:
+    [bg(background)|ic(icon)|bt(button(必须有状态))|txt(textfield)
+    |list(listview)|menu(menuitem)|radio(radiobutton)|checkbox|...]
+
+local:
+    [top|head|bottom|left|right|in|out|rotate|...]
+
+property:
+    [font|padding|margin|height|width|...]
+
+size:
+    [large|big|normal|small|double|treble|...]
+
+state:
+    [normal|pressed|disabled|on|off|...]
+
+suffix:
+    [light|dark|...]
+==============================================
+**********************************************
+-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle">
+    <solid android:color="@color/uikit_dark_transparent_80"/>
+    <corners android:radius="10dp"/>
+</shape>

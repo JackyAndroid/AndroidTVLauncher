@@ -14,7 +14,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.TextView;
 
 import com.jacky.launcher.R;
-import com.jacky.launcher.BaseFragment;
+import com.jacky.uikit.fragment.BaseFragment;
 import com.jacky.launcher.adapter.DataPagerAdapter;
 import com.jacky.launcher.model.AppBean;
 import com.jacky.launcher.views.Rotate3dAnimation;
@@ -190,7 +190,7 @@ public class AppFragment extends BaseFragment {
             if (intent.getAction().equals("android.intent.action.PACKAGE_ADDED")) {
                 initAllApp();
             }
-           //卸载广播
+            //卸载广播
             if (intent.getAction().equals("android.intent.action.PACKAGE_REMOVED")) {
                 initAllApp();
             }

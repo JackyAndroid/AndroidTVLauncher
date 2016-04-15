@@ -9,7 +9,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -22,8 +21,10 @@ import com.jacky.launcher.utils.Tools;
 import java.util.List;
 
 /**
- * @author Droid
  * 应用卸载类
+ * @author jacky
+ * @version 1.0
+ * @since 2016.4.1
  */
 public class AppUninstall extends Activity implements View.OnClickListener {
 
@@ -47,7 +48,7 @@ public class AppUninstall extends Activity implements View.OnClickListener {
         listView = (ListView) findViewById(R.id.app_uninstall_lv);
         GetAppList getAppInstance = new GetAppList(context);
         mAppList = getAppInstance.getUninstallAppList();
-        adapter = new AppUninstallAdapter(context,mAppList);
+        adapter = new AppUninstallAdapter(context, mAppList);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -63,13 +64,11 @@ public class AppUninstall extends Activity implements View.OnClickListener {
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.i(TAG, "============onRestart========");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i(TAG, "============onStart========");
         receiver = new Receiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction("android.intent.action.PACKAGE_ADDED");
@@ -81,8 +80,7 @@ public class AppUninstall extends Activity implements View.OnClickListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i(TAG, "============onDestroy========");
-        if(receiver != null) {
+        if (receiver != null) {
             this.unregisterReceiver(receiver);
         }
     }
@@ -90,13 +88,11 @@ public class AppUninstall extends Activity implements View.OnClickListener {
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i(TAG, "=====onPause===========");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i(TAG, "=========onResume=======");
     }
 
     @Override
@@ -107,7 +103,7 @@ public class AppUninstall extends Activity implements View.OnClickListener {
     private class Receiver extends BroadcastReceiver {
 
         @Override
-        public void onReceive(Context context, Intent intent){
+        public void onReceive(Context context, Intent intent) {
             //接收安装广播
             if (intent.getAction().equals("android.intent.action.PACKAGE_ADDED")) {
 
@@ -128,10 +124,10 @@ public class AppUninstall extends Activity implements View.OnClickListener {
                 String receiverName = intent.getDataString();
                 receiverName = receiverName.substring(8);
                 AppBean appBean;
-                for(int i=0;i<mAppList.size();i++){
+                for (int i = 0; i < mAppList.size(); i++) {
                     appBean = mAppList.get(i);
-                   String packageName = appBean.getPackageName();
-                    if(packageName.equals(receiverName)){
+                    String packageName = appBean.getPackageName();
+                    if (packageName.equals(receiverName)) {
                         mAppList.remove(i);
                         adapter.notifyDataSetChanged();
                     }

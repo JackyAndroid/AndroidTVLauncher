@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.jacky.launcher.BaseFragment;
+import com.jacky.uikit.fragment.BaseFragment;
 import com.jacky.launcher.R;
 import com.jacky.launcher.features.app.AppAutoRun;
 import com.jacky.launcher.features.app.AppUninstall;

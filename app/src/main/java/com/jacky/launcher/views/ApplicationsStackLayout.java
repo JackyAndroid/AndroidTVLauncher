@@ -37,24 +37,24 @@ import java.util.List;
  * The ApplicationsStackLayout is a specialized layout used for the purpose of the home screen
  * only. This layout stacks various icons in three distinct areas: the recents, the favorites
  * (or faves) and the button.
- *
+ * <p/>
  * This layout supports two different orientations: vertical and horizontal. When horizontal,
  * the areas are laid out this way:
- *
+ * <p/>
  * [RECENTS][FAVES][BUTTON]
- *
+ * <p/>
  * When vertical, the layout is the following:
- *
+ * <p/>
  * [RECENTS]
  * [FAVES]
  * [BUTTON]
- *
+ * <p/>
  * The layout operates from the "bottom up" (or from right to left.) This means that the button
  * area will first be laid out, then the faves area, then the recents. When there are too many
  * favorites, the recents area is not displayed.
- *
+ * <p/>
  * The following attributes can be set in XML:
- * 
+ * <p/>
  * orientation: horizontal or vertical
  * marginLeft: the left margin of each element in the stack
  * marginTop: the top margin of each element in the stack
@@ -123,7 +123,7 @@ public class ApplicationsStackLayout extends ViewGroup implements View.OnClickLi
 
     /**
      * Return the current orientation, either VERTICAL (default) or HORIZONTAL.
-     * 
+     *
      * @return the stack orientation
      */
     public int getOrientation() {
@@ -303,7 +303,7 @@ public class ApplicationsStackLayout extends ViewGroup implements View.OnClickLi
     }
 
     private View createApplicationIcon(LayoutInflater inflater,
-            ViewGroup group, ApplicationInfo info) {
+                                       ViewGroup group, ApplicationInfo info) {
 
         TextView textView = (TextView) inflater.inflate(R.layout.favorite, group, false);
 

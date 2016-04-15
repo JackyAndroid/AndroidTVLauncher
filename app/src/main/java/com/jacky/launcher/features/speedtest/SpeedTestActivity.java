@@ -13,6 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.jacky.launcher.R;
+import com.jacky.launcher.model.NetworkSpeedInfo;
+import com.jacky.launcher.utils.ReadFileUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -135,8 +137,8 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
 
                     @Override
                     public void run() {
-                            FileData = ReadFileUtil.ReadFileFromURL(URL,
-                                    networkSpeedInfo);
+                        FileData = ReadFileUtil.ReadFileFromURL(URL,
+                                networkSpeedInfo);
                     }
                 }.start();
                 thread = new Thread() {

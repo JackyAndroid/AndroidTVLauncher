@@ -17,11 +17,12 @@ import java.util.Map;
 /**
  * 蓝牙管理adapter
  */
+
 public class MyBluetoothAdapter extends BaseAdapter {
 
-    private List<Map<String,Object>> list;
+    private List<Map<String, Object>> list;
     private Context context;
-    private  Holder holder;
+    private Holder holder;
 
     public MyBluetoothAdapter(Context context, List<Map<String, Object>> list) {
         this.context = context;
@@ -58,18 +59,18 @@ public class MyBluetoothAdapter extends BaseAdapter {
         } else {
             holder = (Holder) convertView.getTag();
         }
-        Map<String,Object> map = list.get(position);
+        Map<String, Object> map = list.get(position);
         String name = (String) map.get("name");
-        if(name != null){
+        if (name != null) {
             holder.name.setText((String) map.get("name"));
         }
-        int type = (Integer)map.get("type");
+        int type = (Integer) map.get("type");
         //根据设备类型 设置相应图片
-        if(type> BluetoothClass.Device.PHONE_UNCATEGORIZED&&type< BluetoothClass.Device.PHONE_ISDN){
+        if (type > BluetoothClass.Device.PHONE_UNCATEGORIZED && type < BluetoothClass.Device.PHONE_ISDN) {
             holder.icon.setBackgroundResource(R.drawable.phone);
-        }else if(type> BluetoothClass.Device.COMPUTER_UNCATEGORIZED&&type< BluetoothClass.Device.COMPUTER_WEARABLE){
+        } else if (type > BluetoothClass.Device.COMPUTER_UNCATEGORIZED && type < BluetoothClass.Device.COMPUTER_WEARABLE) {
             holder.icon.setBackgroundResource(R.drawable.pc);
-        }else if(type> BluetoothClass.Device.TOY_UNCATEGORIZED&&type< BluetoothClass.Device.TOY_GAME){
+        } else if (type > BluetoothClass.Device.TOY_UNCATEGORIZED && type < BluetoothClass.Device.TOY_GAME) {
             holder.icon.setBackgroundResource(R.drawable.handle);
         }
         return convertView;

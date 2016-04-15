@@ -1,3 +1,4 @@
+
 package com.jacky.launcher.adapter;
 
 import android.content.Context;
@@ -17,7 +18,7 @@ public class AppAutoRunAdapter extends BaseAdapter {
 
     private List<AppBean> appBeanList = null;
     private Context context;
-    public  static AppAutoRunHolder holder;
+    public static AppAutoRunHolder holder;
 
     public AppAutoRunAdapter(Context context, List<AppBean> appBeanList) {
         this.context = context;

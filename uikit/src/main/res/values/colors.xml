@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="uikit_search_url_text_normal">#7fa87f</color>
+    <color name="uikit_search_url_text_selected">@android:color/black</color>
+    <color name="uikit_search_url_text_pressed">@android:color/black</color>
+
+    <color name="uikit_black">#ff000000</color>
+    <color name="uikit_black_light">#ff202020</color>
+    <color name="uikit_dark">#ff030303</color>
+    <color name="uikit_yellow">#ffEFC24B</color>
+    <color name="uikit_blue">#ff7ac2fd</color>
+    <color name="uikit_dark_light">#ff868686</color>
+    <color name="uikit_white">#ffffffff</color>
+    <color name="uikit_orange">#ffff7769</color>
+    <color name="uikit_orange_transparent_70">#b2ff7769</color>
+    <color name="uikit_red">#ffF4281B</color>
+    <color name="uikit_grey_dark">#ffdbdcdb</color>
+    <color name="uikit_grey">#ffececec</color>
+    <color name="uikit_green">#ff21c064</color>
+    <color name="uikit_green_dark">#ff0fa64e</color>
+    <color name="uikit_green_dark_more">#ff5FA656</color>
+    <color name="uikit_green_light">#ff2fe27c</color>
+    <color name="uikit_grey_light">#fff7f7f7</color>
+    <color name="uikit_grey_transparent">#44f7f7f7</color>
+    <color name="uikit_transparent">#00ffffff</color>
+
+    <color name="uikit_font_dark">#ff4a4a4a</color>
+    <color name="uikit_font_green">#ff6FBE6A</color>
+    <color name="uikit_font_dark_light">#ff868686</color>
+    <color name="uikit_font_white">@color/uikit_white</color>
+    <color name="uikit_font_orange">#ffff644e</color>
+    <color name="uikit_font_brown">#ffb48c86</color>
+    <color name="uikit_font_blue">#ff3a95ff</color>
+    <color name="uikit_font_blue_light">#ffbcdafc</color>
+
+    <color name="uikit_font_grep">#ff9b9b9b</color>
+    <color name="uikit_font_grep_dark">#ff4a4a4a</color>
+    <color name="uikit_font_grep_light">#ffe6e6e6</color>
+
+
+    <color name="uikit_light_transparent_10">#19ffffff</color>
+    <color name="uikit_light_transparent_20">#33ffffff</color>
+    <color name="uikit_light_transparent_30">#4cffffff</color>
+    <color name="uikit_light_transparent_40">#66ffffff</color>
+    <color name="uikit_light_transparent_50">#7fffffff</color>
+    <color name="uikit_light_transparent_60">#99ffffff</color>
+    <color name="uikit_light_transparent_70">#b2ffffff</color>
+    <color name="uikit_light_transparent_80">#ccffffff</color>
+    <color name="uikit_light_transparent_90">#e5ffffff</color>
+    <color name="uikit_light_transparent_95">#f2ffffff</color>
+
+    <color name="uikit_dark_transparent_10">#19000000</color>
+    <color name="uikit_dark_transparent_20">#33000000</color>
+    <color name="uikit_dark_transparent_30">#4c000000</color>
+    <color name="uikit_dark_transparent_40">#66000000</color>
+    <color name="uikit_dark_transparent_45">#72000000</color>
+    <color name="uikit_dark_transparent_50">#7f000000</color>
+    <color name="uikit_dark_transparent_60">#99000000</color>
+    <color name="uikit_dark_transparent_70">#b2000000</color>
+    <color name="uikit_dark_transparent_80">#cc000000</color>
+    <color name="uikit_dark_transparent_90">#e5000000</color>
+    <color name="uikit_dark_transparent_95">#f2000000</color>
+</resources>

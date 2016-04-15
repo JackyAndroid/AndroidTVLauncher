@@ -48,7 +48,7 @@ public class ApplicationInfo {
     /**
      * Creates the application intent based on a component name and various launch flags.
      *
-     * @param className the class name of the component representing the intent
+     * @param className   the class name of the component representing the intent
      * @param launchFlags the launch flags
      */
     final void setActivity(ComponentName className, int launchFlags) {

@@ -3,8 +3,6 @@ package com.jacky.launcher.features.app;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -19,8 +17,10 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author Droid
  * 应用开机自启动管理
+ * @author jacky
+ * @version 1.0
+ * @since 2016.4.5
  */
 
 public class AppAutoRun extends Activity implements View.OnClickListener {
@@ -58,24 +58,24 @@ public class AppAutoRun extends Activity implements View.OnClickListener {
                 if (first) {
                     first = false;
                     clickPosition = position;
-                    boolean b = manageBoot(mAppList.get(position).getPackageName(),false);
+                    boolean b = manageBoot(mAppList.get(position).getPackageName(), false);
                     flag.setBackgroundResource(R.drawable.switch_off);
                     clickFlag = true;
                 } else {
                     if (clickPosition == position) {
                         if (clickFlag) {
-                           boolean b = manageBoot(mAppList.get(position).getPackageName(),true);
+                            boolean b = manageBoot(mAppList.get(position).getPackageName(), true);
                             flag.setBackgroundResource(R.drawable.switch_on);
                         } else {
                             flag.setBackgroundResource(R.drawable.switch_off);
-                            boolean b = manageBoot(mAppList.get(position).getPackageName(),false);
+                            boolean b = manageBoot(mAppList.get(position).getPackageName(), false);
                         }
                         clickFlag = !clickFlag;
                     } else {
                         clickFlag = true;
                         clickPosition = position;
                         flag.setBackgroundResource(R.drawable.switch_off);
-                        boolean b = manageBoot(mAppList.get(position).getPackageName(),false);
+                        boolean b = manageBoot(mAppList.get(position).getPackageName(), false);
                     }
                 }
             }
@@ -83,7 +83,7 @@ public class AppAutoRun extends Activity implements View.OnClickListener {
     }
 
 
-    public boolean manageBoot(String pkg,boolean able) {
+    public boolean manageBoot(String pkg, boolean able) {
         Process process = null;
         DataOutputStream dos = null;
         String command = null;
@@ -97,9 +97,9 @@ public class AppAutoRun extends Activity implements View.OnClickListener {
             //但是获取应用是否允许或者禁止开机启动的时候就不用处理cls，否则得不到状态值
 //            cls = cls.replace("$", "\\$");
 //            command = "pm disable " + pkg + "/" + cls + " \n";
-            if(able){
+            if (able) {
                 command = "pm enable " + pkg;
-            }else{
+            } else {
                 command = "pm disable " + pkg;
             }
             dos.writeBytes(command);
@@ -135,41 +135,6 @@ public class AppAutoRun extends Activity implements View.OnClickListener {
             }
         }
         return false;
-    }
-
-    @Override
-    public boolean dispatchKeyEvent(KeyEvent event) {
-        return super.dispatchKeyEvent(event);
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG, "============onRestart========");
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i(TAG, "============onStart========");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "============onDestroy========");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "=====onPause===========");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(TAG, "=========onResume=======");
     }
 
     @Override

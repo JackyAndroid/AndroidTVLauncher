@@ -6,8 +6,8 @@ import android.widget.TextView;
 
 public class AppItem {
 
-	public RelativeLayout layout;
-	public ImageView imageView1,imageView2,imageView3;
-	public TextView textView;
-	public String packageName = null;
+    public RelativeLayout layout;
+    public ImageView imageView1, imageView2, imageView3;
+    public TextView textView;
+    public String packageName = null;
 }

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,7 +15,9 @@ import com.jacky.launcher.features.wifi.WifiActivity;
 
 
 /**
- *@author Droid
+ * @author jacky
+ * @version 1.0
+ * @since 2016.4.1
  */
 public class SettingCustom extends Activity implements View.OnClickListener {
 
@@ -58,44 +59,26 @@ public class SettingCustom extends Activity implements View.OnClickListener {
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG, "============onRestart========");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "=====onPause===========");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(TAG, "=========onResume=======");
-    }
-
-    @Override
     public void onClick(View v) {
 
         Intent i = new Intent();
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.setting_custom_wifi:
-            	i.setClass(context, WifiActivity.class);
-            	startActivity(i);
+                i.setClass(context, WifiActivity.class);
+                startActivity(i);
                 break;
             case R.id.setting_custom_ethernet:
-                i.setClass(context,Ethernet.class);
+                i.setClass(context, Ethernet.class);
                 startActivity(i);
                 break;
             case R.id.setting_custom_bluetooth:
-                i.setClass(context,Bluetooth.class);
+                i.setClass(context, Bluetooth.class);
                 startActivity(i);
                 break;
             case R.id.setting_custom_net_detection:
-            	i.setClass(context, SpeedTestActivity.class);
-            	startActivity(i);
+                i.setClass(context, SpeedTestActivity.class);
+                startActivity(i);
                 break;
         }
     }

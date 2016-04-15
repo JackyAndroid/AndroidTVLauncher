@@ -56,7 +56,7 @@ public class FileUtils {
 
     /**
      * 读取文本文件
-     * 
+     *
      * @param context
      * @param fileName
      * @return
@@ -105,7 +105,7 @@ public class FileUtils {
      * @return
      */
     public static boolean writeFile(byte[] buffer, String folder,
-            String fileName) {
+                                    String fileName) {
         boolean writeSucc = false;
 
         boolean sdCardExist = Environment.getExternalStorageState().equals(
@@ -145,7 +145,7 @@ public class FileUtils {
 
     /**
      * 根据文件绝对路径获取文件名
-     * 
+     *
      * @param filePath
      * @return
      */
@@ -157,7 +157,7 @@ public class FileUtils {
 
     /**
      * 根据文件的绝对路径获取文件名但不包含扩展名
-     * 
+     *
      * @param filePath
      * @return
      */
@@ -172,7 +172,7 @@ public class FileUtils {
 
     /**
      * 获取文件扩展名
-     * 
+     *
      * @param fileName
      * @return
      */
@@ -186,7 +186,7 @@ public class FileUtils {
 
     /**
      * 获取文件大小
-     * 
+     *
      * @param filePath
      * @return
      */
@@ -202,7 +202,7 @@ public class FileUtils {
 
     /**
      * 获取文件大小
-     * 
+     *
      * @param size 字节
      * @return
      */
@@ -220,7 +220,7 @@ public class FileUtils {
 
     /**
      * 转换文件大小
-     * 
+     *
      * @param fileS
      * @return B/KB/MB/GB
      */
@@ -241,7 +241,7 @@ public class FileUtils {
 
     /**
      * 获取目录文件大小
-     * 
+     *
      * @param dir
      * @return
      */
@@ -267,7 +267,7 @@ public class FileUtils {
 
     /**
      * 获取目录文件个数
-     * 
+     *
      * @param
      * @return
      */
@@ -297,7 +297,7 @@ public class FileUtils {
 
     /**
      * 检查文件是否存在
-     * 
+     *
      * @param name
      * @return
      */
@@ -316,7 +316,7 @@ public class FileUtils {
 
     /**
      * 计算SD卡的剩余空间
-     * 
+     *
      * @return 返回-1，说明没有安装sd卡
      */
     public static long getFreeDiskSpace() {
@@ -340,7 +340,7 @@ public class FileUtils {
 
     /**
      * 新建目录
-     * 
+     *
      * @param directoryName
      * @return
      */
@@ -358,7 +358,7 @@ public class FileUtils {
 
     /**
      * 检查是否安装SD卡
-     * 
+     *
      * @return
      */
     public static boolean checkSaveLocationExists() {
@@ -373,7 +373,7 @@ public class FileUtils {
 
     /**
      * 删除目录(包括：目录里的所有文件)
-     * 
+     *
      * @param fileName
      * @return
      */
@@ -413,7 +413,7 @@ public class FileUtils {
 
     /**
      * 删除文件
-     * 
+     *
      * @param fileName
      * @return
      */
@@ -449,7 +449,7 @@ public class FileUtils {
      * @return
      */
     public static String saveLog(String msgID, String log, boolean isLog,
-            String fileName) {
+                                 String fileName) {
         if (!isLog) {
             return null;
         }
@@ -556,7 +556,7 @@ public class FileUtils {
     }
 
     public static List<File> list(File dir, String nametxt, String ext,
-            String type, List<File> fs) {
+                                  String type, List<File> fs) {
         listFile(dir, nametxt, type, ext, fs);
         File[] all = dir.listFiles();
         // 递归获得当前目录的所有子目录
@@ -571,15 +571,15 @@ public class FileUtils {
     }
 
     /**
-     * @param dir 根目
+     * @param dir     根目
      * @param nametxt 文件名中包含的关键字
-     * @param type 文件夹的类型
-     * @param ext 后缀
-     * @param fs 返回的结
+     * @param type    文件夹的类型
+     * @param ext     后缀
+     * @param fs      返回的结
      * @return
      */
     private static List<File> listFile(File dir, String nametxt, String type,
-            String ext, List<File> fs) {
+                                       String ext, List<File> fs) {
         File[] all = dir.listFiles(new Fileter(ext));
         for (int i = 0; i < all.length; i++) {
             File d = all[i];
@@ -661,7 +661,7 @@ public class FileUtils {
 
     /**
      * 修改文件权限
-     * 
+     *
      * @param file
      */
     public static void modifyFile(File file) {
