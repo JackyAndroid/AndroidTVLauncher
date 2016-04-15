@@ -76,8 +76,8 @@ public class GameTitleView extends RelativeLayout {
     private Runnable timeRun = new Runnable() {
 
         public void run() {
-            setTvTimeText(TitleViewUtil.getTime());
-            setTvDateDate(TitleViewUtil.getDate());
+            setTvTimeText(TimeUtil.getTime());
+            setTvDateDate(TimeUtil.getDate());
             timeHandle.postDelayed(this, 1000);
         }
 

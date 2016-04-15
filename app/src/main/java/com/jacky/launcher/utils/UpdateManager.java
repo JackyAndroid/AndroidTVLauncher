@@ -4,8 +4,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
-import com.jacky.launcher.db.SharedPreferencesUtil;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 

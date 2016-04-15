@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jacky.launcher.R;
-import com.jacky.launcher.bean.AppBean;
+import com.jacky.launcher.model.AppBean;
 
 import java.util.List;
 

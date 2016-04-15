@@ -25,7 +25,7 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
-        <activity android:name=".activitys.MainActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,22 +34,20 @@
                 <!--<category android:name="android.intent.category.HOME" />-->
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.Ethernet" />
-        <activity android:name=".activitys.Bluetooth" />
+        <activity android:name=".features.Ethernet" />
+        <activity android:name=".features.Bluetooth" />
 
-        <activity android:name=".activitys.setting.SettingCustom" />
-        <activity android:name=".activitys.app.AppUninstall" />
-        <activity android:name=".activitys.app.AppAutoRun" />
-        <activity android:name=".activitys.speedtest.SpeedTestActivity" />
-
-        <service android:name=".service.MainService" />
+        <activity android:name=".features.setting.SettingCustom" />
+        <activity android:name=".features.app.AppUninstall" />
+        <activity android:name=".features.app.AppAutoRun" />
+        <activity android:name=".features.speedtest.SpeedTestActivity" />
 
         <activity
-            android:name=".activitys.eliminateprocess.EliminateMainActivity"
+            android:name=".features.eliminateprocess.EliminateMainActivity"
             android:theme="@android:style/Theme.Dialog" />
         <activity
-            android:name=".activitys.garbageclear.GarbageClear"
+            android:name=".features.garbageclear.GarbageClear"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name=".activitys.wifi.WifiActivity" />
+        <activity android:name=".features.wifi.WifiActivity" />
     </application>
 </manifest>

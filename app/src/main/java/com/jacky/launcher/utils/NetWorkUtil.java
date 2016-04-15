@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 import java.security.MessageDigest;
 
 /**
- * @author Droid
+ * @author jacky
  */
 public class NetWorkUtil {
 	private final static String[] hexDigits = { "0", "1", "2", "3", "4", "5",

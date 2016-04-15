@@ -29,6 +29,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jacky.launcher.R;
+import com.jacky.launcher.model.ApplicationInfo;
 
 import java.util.List;
 

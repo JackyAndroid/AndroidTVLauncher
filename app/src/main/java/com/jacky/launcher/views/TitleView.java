@@ -1,3 +1,4 @@
+
 package com.jacky.launcher.views;
 
 import android.content.BroadcastReceiver;
@@ -17,7 +18,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jacky.launcher.R;
 
@@ -30,7 +30,6 @@ public class TitleView extends RelativeLayout {
     private Context context;
     private Typeface typeface;
     private final String TAG = "TitleView";
-    private final boolean d = false;
     private ImageView imgWeather;
     private TextView tvTime, tvDate;
     private Timer timer;
@@ -77,14 +76,13 @@ public class TitleView extends RelativeLayout {
         tvDate.setText(text);
     }
 
-
     private Handler timeHandle = new Handler();
 
     private Runnable timeRun = new Runnable() {
 
         public void run() {
-            setTvTimeText(TitleViewUtil.getTime());
-            setTvDateDate(TitleViewUtil.getDate());
+            setTvTimeText(TimeUtil.getTime());
+            setTvDateDate(TimeUtil.getDate());
             timeHandle.postDelayed(this, 1000);
         }
 
@@ -122,9 +120,6 @@ public class TitleView extends RelativeLayout {
                     imgNetWorkState.setImageDrawable(context.getResources()
                             .getDrawable(R.drawable.networkstate_on));
                 }
-                if (d)
-                    Toast.makeText(context, "wifi level" + signalLevel,
-                            Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -146,9 +141,6 @@ public class TitleView extends RelativeLayout {
 
             if (currentNetworkInfo.isConnected()
                     && currentNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI) {
-                if (d)
-                    Toast.makeText(context, "Connected", Toast.LENGTH_LONG)
-                            .show();
 
                 imgNetWorkState.setImageDrawable(context.getResources()
                         .getDrawable(R.drawable.networkstate_on));
@@ -163,14 +155,6 @@ public class TitleView extends RelativeLayout {
                 imgNetWorkState.setImageDrawable(context.getResources()
                         .getDrawable(R.drawable.networkstate_off));
             }
-
-            if (d)
-                Toast.makeText(
-                        context,
-                        "currentNetworkInfo.getType()=>>"
-                                + currentNetworkInfo.getType()
-                                + currentNetworkInfo.getTypeName(),
-                        Toast.LENGTH_LONG).show();
         }
     };
 
