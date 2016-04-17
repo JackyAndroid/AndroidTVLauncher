@@ -5,6 +5,14 @@ import android.content.Context;
 
 import com.jacky.common.app.BaseApp;
 
+/**
+ * Launcher Application
+ *
+ * @author jacky
+ * @version 1.0
+ * @since 2016.4.14
+ */
+
 public class LauncherApp extends BaseApp {
 
     public static boolean netFlag = false;
