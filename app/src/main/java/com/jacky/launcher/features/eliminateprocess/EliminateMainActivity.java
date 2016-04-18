@@ -183,16 +183,6 @@ public class EliminateMainActivity extends Activity {
         for (TaskInfo info : UserTaskInfo) {
             if (!info.getIsSystemProcess()) {
                 activityManager.killBackgroundProcesses(info.getPackageName());
-                // 高级清理
-                // try {
-                // Method method =
-                // Class.forName("android.app.ActivityManager").getMethod("forceStopPackage",
-                // String.class);
-                // method.invoke(activityManager, info.getPackageName());
-                // } catch (Exception e) {
-                // // TODO Auto-generated catch block
-                // e.printStackTrace();
-                // }
             }
         }
         MemoryInfo info = new ActivityManager.MemoryInfo();

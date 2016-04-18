@@ -57,11 +57,6 @@ public class GetAppList {
             }
 
             String noSeeApk = localAppBean.getPackageName();
-
-            // 屏蔽自己 、芒果 、tcl新
-            if (!noSeeApk.equals("com.cqsmiletv") && !noSeeApk.endsWith("com.starcor.hunan") && !noSeeApk.endsWith("com.tcl.matrix.tventrance")) {
-                localArrayList.add(localAppBean);
-            }
         }
         return localArrayList;
     }
