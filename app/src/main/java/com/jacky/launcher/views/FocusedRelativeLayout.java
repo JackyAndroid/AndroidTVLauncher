@@ -44,6 +44,30 @@ public class FocusedRelativeLayout extends RelativeLayout implements FocusedBase
     private Map<View, NodeInfo> mNodeMap = new HashMap();
     boolean isKeyDown = false;
 
+    public FocusedRelativeLayout(Context paramContext) {
+        super(paramContext);
+        setChildrenDrawingOrderEnabled(true);
+        this.mScroller = new HotScroller(paramContext, new DecelerateInterpolator());
+        this.mScreenWidth = paramContext.getResources().getDisplayMetrics().widthPixels;
+        this.mPositionManager = new FocusedLayoutPositionManager(paramContext, this);
+    }
+
+    public FocusedRelativeLayout(Context paramContext, AttributeSet paramAttributeSet) {
+        super(paramContext, paramAttributeSet);
+        setChildrenDrawingOrderEnabled(true);
+        this.mScroller = new HotScroller(paramContext, new DecelerateInterpolator());
+        this.mScreenWidth = paramContext.getResources().getDisplayMetrics().widthPixels;
+        this.mPositionManager = new FocusedLayoutPositionManager(paramContext, this);
+    }
+
+    public FocusedRelativeLayout(Context paramContext, AttributeSet paramAttributeSet, int paramInt) {
+        super(paramContext, paramAttributeSet, paramInt);
+        setChildrenDrawingOrderEnabled(true);
+        this.mScroller = new HotScroller(paramContext, new DecelerateInterpolator());
+        this.mScreenWidth = paramContext.getResources().getDisplayMetrics().widthPixels;
+        this.mPositionManager = new FocusedLayoutPositionManager(paramContext, this);
+    }
+
     public void setManualPadding(int paramInt1, int paramInt2, int paramInt3, int paramInt4) {
         this.mPositionManager.setManualPadding(paramInt1, paramInt2, paramInt3, paramInt4);
     }
@@ -134,30 +158,6 @@ public class FocusedRelativeLayout extends RelativeLayout implements FocusedBase
     public void setOutsideSroll(boolean paramBoolean) {
         this.mScrollTime = System.currentTimeMillis();
         this.mOutsieScroll = paramBoolean;
-    }
-
-    public FocusedRelativeLayout(Context paramContext) {
-        super(paramContext);
-        setChildrenDrawingOrderEnabled(true);
-        this.mScroller = new HotScroller(paramContext, new DecelerateInterpolator());
-        this.mScreenWidth = paramContext.getResources().getDisplayMetrics().widthPixels;
-        this.mPositionManager = new FocusedLayoutPositionManager(paramContext, this);
-    }
-
-    public FocusedRelativeLayout(Context paramContext, AttributeSet paramAttributeSet) {
-        super(paramContext, paramAttributeSet);
-        setChildrenDrawingOrderEnabled(true);
-        this.mScroller = new HotScroller(paramContext, new DecelerateInterpolator());
-        this.mScreenWidth = paramContext.getResources().getDisplayMetrics().widthPixels;
-        this.mPositionManager = new FocusedLayoutPositionManager(paramContext, this);
-    }
-
-    public FocusedRelativeLayout(Context paramContext, AttributeSet paramAttributeSet, int paramInt) {
-        super(paramContext, paramAttributeSet, paramInt);
-        setChildrenDrawingOrderEnabled(true);
-        this.mScroller = new HotScroller(paramContext, new DecelerateInterpolator());
-        this.mScreenWidth = paramContext.getResources().getDisplayMetrics().widthPixels;
-        this.mPositionManager = new FocusedLayoutPositionManager(paramContext, this);
     }
 
     protected int getChildDrawingOrder(int paramInt1, int paramInt2) {

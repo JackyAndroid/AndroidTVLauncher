@@ -30,25 +30,6 @@ public class Ethernet extends Activity {
 
     private TextView tip;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.activity_ethernet);
-        initViews();
-    }
-
-    private void initViews() {
-        tip = (TextView) findViewById(R.id.ethernet_tv);
-        registerReceiver(mConnReceiver,
-                new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(mConnReceiver);
-    }
-
     private BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             boolean noConnectivity = intent.getBooleanExtra(
@@ -71,4 +52,24 @@ public class Ethernet extends Activity {
             }
         }
     };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.setContentView(R.layout.activity_ethernet);
+        initViews();
+    }
+
+    private void initViews() {
+        tip = (TextView) findViewById(R.id.ethernet_tv);
+        registerReceiver(mConnReceiver,
+                new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mConnReceiver);
+    }
+
 }

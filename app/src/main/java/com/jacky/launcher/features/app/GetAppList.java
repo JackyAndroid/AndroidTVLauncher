@@ -18,11 +18,11 @@ public class GetAppList {
 
     private Context mContext;
 
+    private static final String TAG = "GetAppList";
+
     public GetAppList(Context context) {
         mContext = context;
     }
-
-    private static final String TAG = "GetAppList";
 
     public ArrayList<AppBean> getLaunchAppList() {
         PackageManager localPackageManager = mContext.getPackageManager();
