@@ -2,7 +2,6 @@
 package com.jacky.launcher.main;
 
 import android.content.BroadcastReceiver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -32,7 +31,6 @@ import com.jacky.uikit.activity.BaseTitleActivity;
 import com.jacky.uikit.alarm.ToastAlarm;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends BaseTitleActivity implements View.OnClickListener {
 
@@ -42,7 +40,6 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     private RadioButton app;
     private SQLiteDatabase mSQLiteDataBase;
     private LauncherApp mClientApp;
-    private List<ContentValues> datas;// 图片数据
     private int currentIndex;
     private static final int PAGE_NUMBER = 3;
     private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
