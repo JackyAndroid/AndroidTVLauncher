@@ -36,6 +36,24 @@ public class AppFragment extends BaseFragment {
     private Receiver receiver;
     private DataPagerAdapter<AllApp> adapter;
 
+    private ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int i, float v, int i2) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            pointer.startAnimation(rotation);
+            pointer.setText((position + 1) + "/" + mPagerCount);
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int i) {
+
+        }
+    };
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,24 +84,6 @@ public class AppFragment extends BaseFragment {
         rotation.setFillAfter(true);
         rotation.setInterpolator(new AccelerateInterpolator(2.0f));
     }
-
-    private ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
-        @Override
-        public void onPageScrolled(int i, float v, int i2) {
-
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            pointer.startAnimation(rotation);
-            pointer.setText((position + 1) + "/" + mPagerCount);
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int i) {
-
-        }
-    };
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {

@@ -37,40 +37,6 @@ public class GameTitleView extends RelativeLayout {
     private Timer _timer;
     private ImageView imgNetWorkState;
 
-    public GameTitleView(Context context) {
-        super(context);
-        this.context = context;
-        if (!isInEditMode())
-            initTitleView();
-    }
-
-    public GameTitleView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        this.context = context;
-        if (!isInEditMode())
-            initTitleView();
-    }
-
-    public void initTitleView() {
-
-        view = LayoutInflater.from(context).inflate(R.layout.game_titleview,
-                this, true);
-        layout = (RelativeLayout) view.findViewById(R.id.home_title);
-        tvTime = (TextView) view.findViewById(R.id.title_time_hour);
-        tvDate = (TextView) view.findViewById(R.id.home_date);
-        imgNetWorkState = (ImageView) view.findViewById(R.id.home_networkstate);
-        typeface = Typeface.createFromAsset(context.getAssets(),
-                "font/helvetica_neueltpro_thex.otf");
-        tvTime.setTypeface(typeface);
-        tvDate.setTypeface(typeface);
-        timeHandle.post(timeRun);
-        imgNetWorkState = (ImageView) this.findViewById(R.id.home_networkstate);
-        context.registerReceiver(this.mConnReceiver, new IntentFilter(
-                ConnectivityManager.CONNECTIVITY_ACTION));
-        context.registerReceiver(wifiChange, new IntentFilter(
-                WifiManager.RSSI_CHANGED_ACTION));
-    }
-
     private Handler timeHandle = new Handler();
 
     private Runnable timeRun = new Runnable() {
@@ -82,19 +48,6 @@ public class GameTitleView extends RelativeLayout {
         }
 
     };
-
-    public void setTvTimeText(String text) {
-        tvTime.setText(text);
-    }
-
-    public void setTvDateDate(String text) {
-        tvDate.setText(text);
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-    }
 
     /**
      * wifi 信号强度
@@ -178,6 +131,53 @@ public class GameTitleView extends RelativeLayout {
                         Toast.LENGTH_LONG).show();
         }
     };
+
+    public GameTitleView(Context context) {
+        super(context);
+        this.context = context;
+        if (!isInEditMode())
+            initTitleView();
+    }
+
+    public GameTitleView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        this.context = context;
+        if (!isInEditMode())
+            initTitleView();
+    }
+
+    public void initTitleView() {
+
+        view = LayoutInflater.from(context).inflate(R.layout.game_titleview,
+                this, true);
+        layout = (RelativeLayout) view.findViewById(R.id.home_title);
+        tvTime = (TextView) view.findViewById(R.id.title_time_hour);
+        tvDate = (TextView) view.findViewById(R.id.home_date);
+        imgNetWorkState = (ImageView) view.findViewById(R.id.home_networkstate);
+        typeface = Typeface.createFromAsset(context.getAssets(),
+                "font/helvetica_neueltpro_thex.otf");
+        tvTime.setTypeface(typeface);
+        tvDate.setTypeface(typeface);
+        timeHandle.post(timeRun);
+        imgNetWorkState = (ImageView) this.findViewById(R.id.home_networkstate);
+        context.registerReceiver(this.mConnReceiver, new IntentFilter(
+                ConnectivityManager.CONNECTIVITY_ACTION));
+        context.registerReceiver(wifiChange, new IntentFilter(
+                WifiManager.RSSI_CHANGED_ACTION));
+    }
+
+    public void setTvTimeText(String text) {
+        tvTime.setText(text);
+    }
+
+    public void setTvDateDate(String text) {
+        tvDate.setText(text);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+    }
 
     @Override
     protected void onDetachedFromWindow() {
