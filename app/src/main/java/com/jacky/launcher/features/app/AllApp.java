@@ -20,14 +20,6 @@ import java.util.List;
 @SuppressLint("NewApi")
 public class AllApp extends LinearLayout implements View.OnClickListener {
 
-    public AllApp(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
-
-    public AllApp(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
-
     private Context mContext;
     private ImageView appIcons[] = new ImageView[15];
     private LinearLayout appItems[] = new LinearLayout[15];
@@ -50,14 +42,22 @@ public class AllApp extends LinearLayout implements View.OnClickListener {
             R.id.app_item12, R.id.app_item13, R.id.app_item14
     };
 
+    private List<AppBean> mAppList = null;
+    private int mPagerIndex = -1;
+    private int mPagerCount = -1;
+
+    public AllApp(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public AllApp(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+    }
+
     public AllApp(Context context) {
         super(context);
         mContext = context;
     }
-
-    private List<AppBean> mAppList = null;
-    private int mPagerIndex = -1;
-    private int mPagerCount = -1;
 
     public void setAppList(List<AppBean> list, int pagerIndex, int pagerCount) {
         mAppList = list;

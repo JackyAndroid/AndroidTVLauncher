@@ -51,6 +51,60 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     private View mViews[];
     private int mCurrentIndex = 0;
 
+    /**
+     * ViewPager切换监听方法
+     */
+    public ViewPager.OnPageChangeListener pageListener = new ViewPager.OnPageChangeListener() {
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            mViewPager.setCurrentItem(position);
+            switch (position) {
+                case 0:
+                    currentIndex = 0;
+                    localService.setSelected(true);
+                    setting.setSelected(false);
+                    app.setSelected(false);
+                    break;
+                case 1:
+                    currentIndex = 1;
+                    localService.setSelected(false);
+                    setting.setSelected(true);
+                    app.setSelected(false);
+                    break;
+                case 2:
+                    currentIndex = 2;
+                    localService.setSelected(false);
+                    setting.setSelected(false);
+                    app.setSelected(true);
+                    break;
+            }
+        }
+    };
+
+    private BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
+        public void onReceive(Context context, Intent intent) {
+
+            NetworkInfo currentNetworkInfo = intent
+                    .getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
+
+            if (currentNetworkInfo.isConnected()) {
+
+            } else {
+                ToastAlarm.show("网络未连接");
+                LauncherApp.netFlag = false;
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -192,45 +246,6 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     }
 
     /**
-     * ViewPager切换监听方法
-     */
-    public ViewPager.OnPageChangeListener pageListener = new ViewPager.OnPageChangeListener() {
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            mViewPager.setCurrentItem(position);
-            switch (position) {
-                case 0:
-                    currentIndex = 0;
-                    localService.setSelected(true);
-                    setting.setSelected(false);
-                    app.setSelected(false);
-                    break;
-                case 1:
-                    currentIndex = 1;
-                    localService.setSelected(false);
-                    setting.setSelected(true);
-                    app.setSelected(false);
-                    break;
-                case 2:
-                    currentIndex = 2;
-                    localService.setSelected(false);
-                    setting.setSelected(false);
-                    app.setSelected(true);
-                    break;
-            }
-        }
-    };
-
-    /**
      * 从网上获取Url数据流
      */
     private void getUrlDataFromNetFlow() {
@@ -296,21 +311,6 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         }
         return super.onKeyDown(keyCode, event);
     }
-
-    private BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
-        public void onReceive(Context context, Intent intent) {
-
-            NetworkInfo currentNetworkInfo = intent
-                    .getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
-
-            if (currentNetworkInfo.isConnected()) {
-
-            } else {
-                ToastAlarm.show("网络未连接");
-                LauncherApp.netFlag = false;
-            }
-        }
-    };
 
     @Override
     protected void onResume() {

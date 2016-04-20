@@ -69,6 +69,44 @@ public class Bluetooth extends Activity implements View.OnClickListener {
 
     private List<Map<String, Object>> list;
 
+    private BroadcastReceiver searchReceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // TODO Auto-generated method stub
+            String action = intent.getAction();
+            BluetoothDevice device = null;
+            device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+            if (device != null) {
+            }
+            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                if (device.getBondState() == BluetoothDevice.BOND_NONE) {
+                    Map<String, Object> map = new HashMap<String, Object>();
+                    map.put("name", device.getName());
+                    map.put("type", device.getBluetoothClass().getDeviceClass());
+                    map.put("device", device);
+                    if (list.indexOf(map) == -1) {// 防止重复添加
+                        list.add(map);
+                        itemAdapter = new MyBluetoothAdapter(context, list);
+                        searchDeviceLV.setAdapter(itemAdapter);
+                    }
+                }
+            } else if (device != null && device.getBondState() == BluetoothDevice.BOND_BONDING) {
+                ToastAlarm.show("正在配对");
+            } else if (device != null && device.getBondState() == BluetoothDevice.BOND_BONDED) {
+                pairTVName.setText(device.getName());
+                for (int i = 0; i < list.size(); i++) {
+                    if (list.get(i).get("device").equals(device)) {
+                        pairPosition = i;
+                        list.remove(i);
+                        itemAdapter.notifyDataSetChanged();
+                    }
+                }
+                ToastAlarm.show("配对完成");
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -282,41 +320,4 @@ public class Bluetooth extends Activity implements View.OnClickListener {
         }
     }
 
-    private BroadcastReceiver searchReceiver = new BroadcastReceiver() {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            // TODO Auto-generated method stub
-            String action = intent.getAction();
-            BluetoothDevice device = null;
-            device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-            if (device != null) {
-            }
-            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                if (device.getBondState() == BluetoothDevice.BOND_NONE) {
-                    Map<String, Object> map = new HashMap<String, Object>();
-                    map.put("name", device.getName());
-                    map.put("type", device.getBluetoothClass().getDeviceClass());
-                    map.put("device", device);
-                    if (list.indexOf(map) == -1) {// 防止重复添加
-                        list.add(map);
-                        itemAdapter = new MyBluetoothAdapter(context, list);
-                        searchDeviceLV.setAdapter(itemAdapter);
-                    }
-                }
-            } else if (device != null && device.getBondState() == BluetoothDevice.BOND_BONDING) {
-                ToastAlarm.show("正在配对");
-            } else if (device != null && device.getBondState() == BluetoothDevice.BOND_BONDED) {
-                pairTVName.setText(device.getName());
-                for (int i = 0; i < list.size(); i++) {
-                    if (list.get(i).get("device").equals(device)) {
-                        pairPosition = i;
-                        list.remove(i);
-                        itemAdapter.notifyDataSetChanged();
-                    }
-                }
-                ToastAlarm.show("配对完成");
-            }
-        }
-    };
 }

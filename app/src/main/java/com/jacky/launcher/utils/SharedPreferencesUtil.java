@@ -17,17 +17,17 @@ public class SharedPreferencesUtil {
     private static SharedPreferences mSharedPreferences;
     private static SharedPreferences.Editor mEditor;
 
+    private SharedPreferencesUtil(Context context) {
+        mSharedPreferences = context.getSharedPreferences(
+                SHAREDPREFERENCE_NAME, Context.MODE_WORLD_READABLE);
+        mEditor = mSharedPreferences.edit();
+    }
+
     public synchronized static SharedPreferencesUtil getInstance(Context context) {
         if (mInstance == null) {
             mInstance = new SharedPreferencesUtil(context);
         }
         return mInstance;
-    }
-
-    private SharedPreferencesUtil(Context context) {
-        mSharedPreferences = context.getSharedPreferences(
-                SHAREDPREFERENCE_NAME, Context.MODE_WORLD_READABLE);
-        mEditor = mSharedPreferences.edit();
     }
 
     public synchronized boolean putString(String key, String value) {
