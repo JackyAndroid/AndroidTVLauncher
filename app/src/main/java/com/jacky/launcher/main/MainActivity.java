@@ -51,9 +51,6 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     private View mViews[];
     private int mCurrentIndex = 0;
 
-    /**
-     * ViewPager切换监听方法
-     */
     public ViewPager.OnPageChangeListener pageListener = new ViewPager.OnPageChangeListener() {
 
         @Override
@@ -99,7 +96,7 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
             if (currentNetworkInfo.isConnected()) {
 
             } else {
-                ToastAlarm.show("网络未连接");
+                ToastAlarm.show("Network is not connected");
                 LauncherApp.netFlag = false;
             }
         }
@@ -121,11 +118,9 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     }
 
     private void initData() {
-        // 打开数据库
         openDataBase();
         if (isThereHaveUrlDataInDB()) {
             String data = getUrlDataFromDB();
-            // 将数据发送到Fragment
             initFragment(data);
             getUrlDataFromNetFlow();
         } else {
@@ -206,30 +201,22 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         }
     }
 
-    /**
-     * 初始化Fragment
-     */
     private void initFragment(String url_data) {
-        fragments.clear();// 清空
+        fragments.clear();
         int count = PAGE_NUMBER;
 
         FragmentManager manager;
         FragmentTransaction transaction;
 
-        /* 获取manager */
         manager = this.getSupportFragmentManager();
-        /* 创建事物 */
         transaction = manager.beginTransaction();
 
         LocalServiceFragment interactTV = new LocalServiceFragment();
         SettingFragment setting = new SettingFragment();
         AppFragment app = new AppFragment();
 
-        /* 创建一个Bundle用来存储数据，传递到Fragment中 */
         Bundle bundle = new Bundle();
-        /* 往bundle中添加数据 */
         bundle.putString("url_data", url_data);
-        /* 把数据设置到Fragment中 */
 
         interactTV.setArguments(bundle);
 
@@ -245,12 +232,8 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         mViewPager.setCurrentItem(0);
     }
 
-    /**
-     * 从网上获取Url数据流
-     */
     private void getUrlDataFromNetFlow() {
         if (NetWorkUtil.isNetWorkConnected(context)) {
-            // 获取数据
             initFragment("");
         } else {
             initFragment("");
@@ -265,14 +248,11 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         return a;
     }
 
-    /* 打开数据库，创建表 */
     private void openDataBase() {
         mSQLiteDataBase = this.openOrCreateDatabase("myapp.db",
                 MODE_PRIVATE, null);
         String CREATE_TABLE = "create table if not exists my_url_data (_id INTEGER PRIMARY KEY,url_data TEXT);";
         mSQLiteDataBase.execSQL(CREATE_TABLE);
-        // 插入一条_id 为 1 的空数据
-        String INSERT_ONE_DATA = "";
     }
 
     @Override
@@ -281,13 +261,6 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         mSQLiteDataBase.close();
     }
 
-    /**
-     * 顶部焦点获取
-     *
-     * @param keyCode
-     * @param event
-     * @return
-     */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         boolean focusFlag = false;
