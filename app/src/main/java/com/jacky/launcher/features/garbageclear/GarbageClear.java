@@ -170,8 +170,8 @@ public class GarbageClear extends Activity {
      *扫描文件异步任务
      */
     class FoundTask extends AsyncTask<Void, String, List<FoundTask>> {
-        String path;
-        String[] Extension;
+        private String path;
+        private String[] Extension;
 
         public FoundTask(String path, String[] Extension) {
             this.path = path;
