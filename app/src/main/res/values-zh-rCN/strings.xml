@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+    <string name="edit_app">编辑应用</string>
+    <string name="qidong_app">打开</string>
+    <string name="launch_app">打开</string>
+    <string name="update_app">更新</string>
+    <string name="favorite_app">收藏</string>
+    <string name="remove_app">卸载</string>
+    <string name="app_store">应用商城</string>
+    <string name="check_your_network">请检查您的网络连接！</string>
+    <string name="start_clear">开始扫描</string>
+    <string name="in_clear">正在清理中</string>
+    <string name="clean_up_the_garbage">清理垃圾</string>
+    <string name="unit">MB</string>
+    <string name="eliminate_num">进程数目:</string>
+    <string name="surolus_memory">剩余内存:</string>
+    <string name="start_eliminate_process">开始清理</string>
+    <string name="timing_clear">定时清理</string>
+    <string name="stop_timing_clear">停止定时清理</string>
+</resources>
