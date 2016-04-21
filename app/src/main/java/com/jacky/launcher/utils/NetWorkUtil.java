@@ -31,8 +31,7 @@ public class NetWorkUtil {
                 .getSystemService(Context.WIFI_SERVICE);
         try {
             Method method = wifiManager.getClass().getMethod("getWifiApState");
-            int i = (Integer) method.invoke(wifiManager);
-            return i;
+            return (Integer) method.invoke(wifiManager);
         } catch (Exception e) {
             return WIFI_AP_STATE_FAILED;
         }
@@ -89,8 +88,7 @@ public class NetWorkUtil {
     public static boolean isWifiConnected(Context context) {
         WifiManager wifiMgr = (WifiManager) context
                 .getSystemService(Context.WIFI_SERVICE);
-        boolean isWifiEnable = wifiMgr.isWifiEnabled();
-        return isWifiEnable;
+        return wifiMgr.isWifiEnabled();
     }
 
     public static boolean isNetworkAvailable(Context context) {

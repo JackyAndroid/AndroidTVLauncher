@@ -99,8 +99,7 @@ public class Tools {
     private static boolean matchingText(String expression, String text) {
         Pattern p = Pattern.compile(expression);
         Matcher m = p.matcher(text);
-        boolean b = m.matches();
-        return b;
+        return m.matches();
     }
 
     /**

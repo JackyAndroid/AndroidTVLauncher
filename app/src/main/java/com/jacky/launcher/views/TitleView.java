@@ -25,11 +25,11 @@ import java.util.Timer;
 
 public class TitleView extends RelativeLayout {
 
+    private static final String TAG = "TitleView";
     private RelativeLayout layout;
     private View view;
     private Context context;
     private Typeface typeface;
-    private final String TAG = "TitleView";
     private ImageView imgWeather;
     private TextView tvTime, tvDate;
     private Timer timer;

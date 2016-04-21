@@ -42,7 +42,7 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     private LauncherApp mClientApp;
     private int currentIndex;
     private static final int PAGE_NUMBER = 3;
-    private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
+    private ArrayList<Fragment> fragments = new ArrayList<>();
     private boolean d = true;// debug
     private SharedPreferencesUtil sp;
     private Context context;
@@ -201,7 +201,7 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         }
     }
 
-    private void initFragment(String url_data) {
+    private void initFragment(String urlData) {
         fragments.clear();
         int count = PAGE_NUMBER;
 
@@ -216,7 +216,7 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         AppFragment app = new AppFragment();
 
         Bundle bundle = new Bundle();
-        bundle.putString("url_data", url_data);
+        bundle.putString("url_data", urlData);
 
         interactTV.setArguments(bundle);
 
@@ -243,16 +243,15 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     private String getUrlDataFromDB() {
         Cursor cursor = mSQLiteDataBase.rawQuery("SELECT url_data FROM my_url_data", null);
         cursor.moveToLast();
-        String a = cursor.getString(cursor.getColumnIndex("url_data"));
         // String s = cursor.getString(2);
-        return a;
+        return cursor.getString(cursor.getColumnIndex("url_data"));
     }
 
     private void openDataBase() {
         mSQLiteDataBase = this.openOrCreateDatabase("myapp.db",
                 MODE_PRIVATE, null);
-        String CREATE_TABLE = "create table if not exists my_url_data (_id INTEGER PRIMARY KEY,url_data TEXT);";
-        mSQLiteDataBase.execSQL(CREATE_TABLE);
+        String createTable = "create table if not exists my_url_data (_id INTEGER PRIMARY KEY,url_data TEXT);";
+        mSQLiteDataBase.execSQL(createTable);
     }
 
     @Override

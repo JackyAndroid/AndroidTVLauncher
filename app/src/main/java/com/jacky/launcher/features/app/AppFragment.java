@@ -27,7 +27,7 @@ public class AppFragment extends BaseFragment {
     private Context mContext;
     private List<AppBean> mAppList = null;
     private int mPagerCount = -1;//一共的页数
-    private List<AllApp> mPagerListAllApp = new ArrayList<AllApp>();
+    private List<AllApp> mPagerListAllApp = new ArrayList<>();
     private ViewPager mViewPager = null;
     private static final String TAG = "AppFragment";
     private static final boolean d = false;
@@ -119,7 +119,7 @@ public class AppFragment extends BaseFragment {
             mPagerListAllApp.add(mAllayout);
         }
 
-        adapter = new DataPagerAdapter<AllApp>(mContext, mPagerListAllApp);
+        adapter = new DataPagerAdapter<>(mContext, mPagerListAllApp);
         mViewPager.setAdapter(adapter);
     }
 
