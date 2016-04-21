@@ -175,30 +175,30 @@ public class WiFiAdmin {
         mWifiManager.disconnect();
     }
 
-    public WifiConfiguration CreatConfiguration(String SSID, String Password,
-                                                int Type) {
+    public WifiConfiguration CreatConfiguration(String ssid, String password,
+                                                int type) {
         WifiConfiguration configuration = new WifiConfiguration();
         configuration.allowedAuthAlgorithms.clear();
         configuration.allowedGroupCiphers.clear();
         configuration.allowedKeyManagement.clear();
         configuration.allowedPairwiseCiphers.clear();
         configuration.allowedProtocols.clear();
-        configuration.SSID = "\"" + SSID + "\"";
-        WifiConfiguration tempConfiguration = IsExits(SSID, mWifiManager);
+        configuration.SSID = "\"" + ssid + "\"";
+        WifiConfiguration tempConfiguration = IsExits(ssid, mWifiManager);
         if (tempConfiguration != null) {
             mWifiManager.removeNetwork(tempConfiguration.networkId);
         }
         // WIFICIPHER_NOPASS
-        if (Type == 1) {
+        if (type == 1) {
             configuration.wepKeys[0] = "";
             configuration.allowedKeyManagement
                     .set(WifiConfiguration.KeyMgmt.NONE);
             configuration.wepTxKeyIndex = 0;
         }
         // WIFICIPHER_WEP
-        if (Type == 2) {
+        if (type == 2) {
             configuration.hiddenSSID = true;
-            configuration.wepKeys[0] = "\"" + Password + "\"";
+            configuration.wepKeys[0] = "\"" + password + "\"";
             configuration.allowedAuthAlgorithms
                     .set(WifiConfiguration.AuthAlgorithm.SHARED);
             configuration.allowedGroupCiphers
@@ -214,8 +214,8 @@ public class WiFiAdmin {
             configuration.wepTxKeyIndex = 0;
         }
         // WIFICIPHER_WPA
-        if (Type == 3) {
-            configuration.preSharedKey = "\"" + Password + "\"";
+        if (type == 3) {
+            configuration.preSharedKey = "\"" + password + "\"";
             configuration.hiddenSSID = true;
             configuration.allowedAuthAlgorithms
                     .set(WifiConfiguration.AuthAlgorithm.OPEN);
@@ -235,11 +235,11 @@ public class WiFiAdmin {
     }
 
     //判断wifi是否存在
-    private static WifiConfiguration IsExits(String SSID, WifiManager manager) {
+    private static WifiConfiguration IsExits(String ssid, WifiManager manager) {
         List<WifiConfiguration> exitsConfigurations = manager
                 .getConfiguredNetworks();
         for (WifiConfiguration configuration : exitsConfigurations) {
-            if (configuration.SSID.equals("\"" + SSID + "\"")) {
+            if (configuration.SSID.equals("\"" + ssid + "\"")) {
                 return configuration;
             }
         }

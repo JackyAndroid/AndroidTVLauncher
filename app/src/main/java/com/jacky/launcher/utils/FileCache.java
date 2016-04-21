@@ -24,7 +24,7 @@ public class FileCache {
 
     public ArrayList<File> getFile() {
         File file[] = cacheDir.listFiles();
-        ArrayList<File> list = new ArrayList<File>();
+        ArrayList<File> list = new ArrayList<>();
         for (int i = 0; i < file.length; i++) {
             list.add(file[i]);
         }
@@ -49,8 +49,7 @@ public class FileCache {
                 size += f.length();
             }
         }
-        String cacheSize = String.valueOf(size / 1024 / 1024) + "M";
-        return cacheSize;
+        return String.valueOf(size / 1024 / 1024) + "M";
     }
 
 }

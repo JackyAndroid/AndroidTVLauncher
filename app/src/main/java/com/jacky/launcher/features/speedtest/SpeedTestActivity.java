@@ -20,6 +20,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpeedTestActivity extends Activity implements OnClickListener {
+    private static final int PROGRESSCHANGE = 0;
+    private static final int SPEEDUPDATE = 1;
+    private static final int SPEED_FINISH = 2;
     private Button DidNotStart;//未开始
     private Button InStart;//已开始
     private Button StartAgain;//再次开始
@@ -32,10 +35,7 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
     private byte[] FileData = null;
     private NetworkSpeedInfo networkSpeedInfo = null;
     private String URL = "http://gdown.baidu.com/data/wisegame/6546ec811c58770b/labixiaoxindamaoxian_8.apk";
-    private List<Long> list = new ArrayList<Long>();
-    private final int PROGRESSCHANGE = 0;
-    private final int SPEEDUPDATE = 1;
-    private final int SPEED_FINISH = 2;
+    private List<Long> list = new ArrayList<>();
     private ProgressBar SpeedProgressBar;
     private TextView Speed;
     private TextView percent;

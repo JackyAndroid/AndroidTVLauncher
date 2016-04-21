@@ -10,15 +10,13 @@ public class TimeUtil {
 
     public static String getTime() {
         String date = getFormattedDate();
-        String sTime = date.substring(11, date.length() - 3);
-        return sTime;
+        return date.substring(11, date.length() - 3);
 
     }
 
     public static String getDate() {
         String date = getFormattedDate();
-        String sDate = date.substring(0, 11);
-        return sDate;
+        return date.substring(0, 11);
     }
 
     private static String getFormattedDate() {
@@ -28,7 +26,6 @@ public class TimeUtil {
         DateFormat.getDateInstance();
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = df.format(c.getTime());
-        return formattedDate;
+        return df.format(c.getTime());
     }
 }

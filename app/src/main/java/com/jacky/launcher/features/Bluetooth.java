@@ -81,7 +81,7 @@ public class Bluetooth extends Activity implements View.OnClickListener {
             }
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 if (device.getBondState() == BluetoothDevice.BOND_NONE) {
-                    Map<String, Object> map = new HashMap<String, Object>();
+                    Map<String, Object> map = new HashMap<>();
                     map.put("name", device.getName());
                     map.put("type", device.getBluetoothClass().getDeviceClass());
                     map.put("device", device);
@@ -120,7 +120,7 @@ public class Bluetooth extends Activity implements View.OnClickListener {
     private void initData() {
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        list = new ArrayList<Map<String, Object>>();
+        list = new ArrayList<>();
         if (bluetoothAdapter.isEnabled()) {
             openIV.setBackgroundResource(R.drawable.switch_on);
             detectionIV.setBackgroundResource(R.drawable.switch_off);
@@ -287,7 +287,7 @@ public class Bluetooth extends Activity implements View.OnClickListener {
                     try {
                         boolean b = Tools.removeBond(device.getClass(), device);
                         if (b) {
-                            Map<String, Object> map = new HashMap<String, Object>();
+                            Map<String, Object> map = new HashMap<>();
                             map.put("name", device.getName());
                             map.put("type", device.getBluetoothClass().getDeviceClass());
                             map.put("device", device);
@@ -302,7 +302,7 @@ public class Bluetooth extends Activity implements View.OnClickListener {
                         ToastAlarm.show("正在取消配对..");
                         boolean b = Tools.removeBond(pairDevice.getClass(), pairDevice);
                         if (b) {
-                            Map<String, Object> map = new HashMap<String, Object>();
+                            Map<String, Object> map = new HashMap<>();
                             map.put("name", pairDevice.getName());
                             map.put("type", pairDevice.getBluetoothClass().getDeviceClass());
                             map.put("device", pairDevice);

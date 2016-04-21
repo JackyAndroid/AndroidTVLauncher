@@ -70,8 +70,8 @@ final class LoggerPrinter implements Printer {
     /**
      * Localize single tag and method count for each thread
      */
-    private static final ThreadLocal<String> LOCAL_TAG = new ThreadLocal<String>();
-    private static final ThreadLocal<Integer> LOCAL_METHOD_COUNT = new ThreadLocal<Integer>();
+    private static final ThreadLocal<String> LOCAL_TAG = new ThreadLocal<>();
+    private static final ThreadLocal<Integer> LOCAL_METHOD_COUNT = new ThreadLocal<>();
 
     /**
      * It is used to change the tag

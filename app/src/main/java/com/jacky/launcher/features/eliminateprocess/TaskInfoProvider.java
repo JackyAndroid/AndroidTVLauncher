@@ -27,7 +27,7 @@ public class TaskInfoProvider {
 
 	// 遍历传入的列表,将所有应用的信息传入taskinfo中
 	public List<TaskInfo> GetAllTask(List<RunningAppProcessInfo> list) {
-		List<TaskInfo> taskInfos = new ArrayList<TaskInfo>();
+		List<TaskInfo> taskInfos = new ArrayList<>();
 		for (RunningAppProcessInfo appProcessInfo : list) {
 			TaskInfo info = new TaskInfo();
 			int id = appProcessInfo.pid;
