@@ -5,3 +5,6 @@ android:
     - android-23
     - extra-android-m2repository
     - extra-android-support
+
+before_script:
+      - android-wait-for-emulator
