@@ -42,7 +42,7 @@ public class FocusedRelativeLayout extends RelativeLayout implements FocusedBase
     private OnScrollListener mScrollerListener = null;
     private int mLastScrollState = 0;
     private Map<View, NodeInfo> mNodeMap = new HashMap();
-    boolean isKeyDown = false;
+    private boolean isKeyDown = false;
 
     public FocusedRelativeLayout(Context paramContext) {
         super(paramContext);

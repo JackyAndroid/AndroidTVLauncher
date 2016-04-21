@@ -26,43 +26,43 @@ abstract class AdapterView<T extends Adapter> extends android.widget.AdapterView
     public static final int ITEM_VIEW_TYPE_HEADER_OR_FOOTER = -2;
 
     @ViewDebug.ExportedProperty(category = "scrolling")
-    int mFirstPosition = 0;
-    int mSpecificTop;
-    int mSyncPosition;
-    long mSyncRowId = -9223372036854775808L;
-    long mSyncHeight;
-    boolean mNeedSync = false;
-    int mSyncMode;
+    private int mFirstPosition = 0;
+    private int mSpecificTop;
+    private int mSyncPosition;
+    private long mSyncRowId = -9223372036854775808L;
+    private long mSyncHeight;
+    private boolean mNeedSync = false;
+    private int mSyncMode;
     private int mLayoutHeight;
-    static final int SYNC_SELECTED_POSITION = 0;
-    static final int SYNC_FIRST_POSITION = 1;
-    static final int SYNC_MAX_DURATION_MILLIS = 100;
-    boolean mInLayout = false;
-    AdapterView.OnItemSelectedListener mOnItemSelectedListener;
-    AdapterView.OnItemClickListener mOnItemClickListener;
-    AdapterView.OnItemLongClickListener mOnItemLongClickListener;
-    boolean mDataChanged;
+    private static final int SYNC_SELECTED_POSITION = 0;
+    private static final int SYNC_FIRST_POSITION = 1;
+    private static final int SYNC_MAX_DURATION_MILLIS = 100;
+    private boolean mInLayout = false;
+    private AdapterView.OnItemSelectedListener mOnItemSelectedListener;
+    private AdapterView.OnItemClickListener mOnItemClickListener;
+    private AdapterView.OnItemLongClickListener mOnItemLongClickListener;
+    private boolean mDataChanged;
 
     @ViewDebug.ExportedProperty(category = "list")
-    int mNextSelectedPosition = -1;
-    long mNextSelectedRowId = -9223372036854775808L;
+    private int mNextSelectedPosition = -1;
+    private long mNextSelectedRowId = -9223372036854775808L;
 
     @ViewDebug.ExportedProperty(category = "list")
-    int mSelectedPosition = -1;
-    long mSelectedRowId = -9223372036854775808L;
+    private int mSelectedPosition = -1;
+    private long mSelectedRowId = -9223372036854775808L;
     private View mEmptyView;
 
     @ViewDebug.ExportedProperty(category = "list")
-    int mItemCount;
-    int mOldItemCount;
+    private int mItemCount;
+    private int mOldItemCount;
     public static final int INVALID_POSITION = -1;
     public static final long INVALID_ROW_ID = -9223372036854775808L;
-    int mOldSelectedPosition = -1;
-    long mOldSelectedRowId = -9223372036854775808L;
+    private int mOldSelectedPosition = -1;
+    private long mOldSelectedRowId = -9223372036854775808L;
     private boolean mDesiredFocusableState;
     private boolean mDesiredFocusableInTouchModeState;
     private AdapterView<T>.SelectionNotifier mSelectionNotifier;
-    boolean mBlockLayoutRequests = false;
+    private boolean mBlockLayoutRequests = false;
 
     public AdapterView(Context paramContext) {
         super(paramContext);

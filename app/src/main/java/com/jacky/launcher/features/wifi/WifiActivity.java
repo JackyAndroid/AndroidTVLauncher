@@ -55,7 +55,7 @@ public class WifiActivity extends Activity implements OnClickListener,OnItemClic
 	private Dialog ConnectDialog;
 	private int NetId;//WIFI连接状态
 	@SuppressLint("HandlerLeak")
-	final Handler handler=new Handler(){
+	private final Handler handler=new Handler(){
 
 		@Override
 		public void handleMessage(Message msg) {
