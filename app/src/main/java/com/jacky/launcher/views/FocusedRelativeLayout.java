@@ -240,8 +240,7 @@ public class FocusedRelativeLayout extends RelativeLayout implements FocusedBase
 
     public View getSelectedView() {
         int i = this.mIndex;
-        View localView = getChildAt(i);
-        return localView;
+        return getChildAt(i);
     }
 
     public boolean onKeyUp(int paramInt, KeyEvent paramKeyEvent) {

@@ -38,6 +38,12 @@ import com.jacky.launcher.utils.WiFiAdmin;
 import java.util.List;
 
 public class WifiActivity extends Activity implements OnClickListener,OnItemClickListener {
+	private static final int WIFI_OPEN_FINISH=1;//开启完成
+	private static final int WIFI_FOUND_FINISH=0;//查找完成
+	private static final int WIFI_SCAN=2;//wifi扫描
+	private static final int WIFI_CLOSE=3;//关闭wifi
+	private static final int WIFI_INFO=4;
+	private static final int WIFI_STATE_INIT=5;//加载页面
 	private ListView WifiListView;
 	private WAndB_WifilistAdapter adapter;
 	private List<ScanResult> scanResults;
@@ -46,12 +52,6 @@ public class WifiActivity extends Activity implements OnClickListener,OnItemClic
 	private String ConnectSSID="";
 	private TextView Wifi_StateDisplay;
 	private ImageView Arrowtop;
-	private final int WIFI_OPEN_FINISH=1;//开启完成
-	private final int WIFI_FOUND_FINISH=0;//查找完成
-	private final int WIFI_SCAN=2;//wifi扫描
-	private final int WIFI_CLOSE=3;//关闭wifi
-	private final int WIFI_INFO=4;
-	private final int WIFI_STATE_INIT=5;//加载页面
 	private Dialog ConnectDialog;
 	private int NetId;//WIFI连接状态
 	@SuppressLint("HandlerLeak")
@@ -207,11 +207,11 @@ public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 	if(GetNowWifiSSID().equals("\""+scanResults.get(arg2).SSID+"\"")){
 		Toast.makeText(WifiActivity.this, "当前已连接此网络", Toast.LENGTH_SHORT).show();
 		}else{
-	final int Num=arg2;
+	final int num=arg2;
 	LayoutInflater layoutInflater= LayoutInflater.from(WifiActivity.this);
 	View view=(RelativeLayout)layoutInflater.inflate(R.layout.connect_wifidialog, null);
-	TextView WifiName=(TextView)view.findViewById(R.id.wifidialog_name);
-	WifiName.setText(scanResults.get(arg2).SSID);
+	TextView wifiName=(TextView)view.findViewById(R.id.wifidialog_name);
+	wifiName.setText(scanResults.get(arg2).SSID);
 	ConnectDialog.show();
 	ConnectDialog.getWindow().setContentView(view);
 	Window dialogwWindow=ConnectDialog.getWindow();
@@ -238,8 +238,8 @@ public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		
 		@Override
 		public void onClick(View arg0) {
-			String WifiPassword=password.getText().toString();
-			NetId=wiFiAdmin.AddNetwork(wiFiAdmin.CreatConfiguration(scanResults.get(Num).SSID, WifiPassword, 3));
+			String wifiPassword = password.getText().toString();
+			NetId=wiFiAdmin.AddNetwork(wiFiAdmin.CreatConfiguration(scanResults.get(num).SSID, wifiPassword, 3));
 			if(NetId==0){
 				Toast.makeText(WifiActivity.this, "无线网卡不可用", Toast.LENGTH_LONG).show();
 			}else if(NetId==1){
@@ -273,7 +273,6 @@ public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 public String GetNowWifiSSID(){
 	WifiManager mWifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 	 WifiInfo wifiInfo = mWifi.getConnectionInfo();
-	 String SSID=wifiInfo.getSSID();
-	 return SSID;
+	 return wifiInfo.getSSID();
 }
 }

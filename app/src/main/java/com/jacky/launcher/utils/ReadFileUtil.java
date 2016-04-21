@@ -10,8 +10,8 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class ReadFileUtil {
-    public static byte[] ReadFileFromURL(String URL, NetworkSpeedInfo info) {
-        int FileLenth = 0;
+    public static byte[] ReadFileFromURL(String url, NetworkSpeedInfo info) {
+        int fileLenth = 0;
         long startTime = 0;
         long intervalTime = 0;
         byte[] b = null;
@@ -19,19 +19,19 @@ public class ReadFileUtil {
         URLConnection mUrlConnection = null;
         InputStream inputStream = null;
         try {
-            mUrl = new URL(URL);
+            mUrl = new URL(url);
             mUrlConnection = mUrl.openConnection();
             mUrlConnection.setConnectTimeout(15000);
             mUrlConnection.setReadTimeout(15000);
-            FileLenth = mUrlConnection.getContentLength();
+            fileLenth = mUrlConnection.getContentLength();
             inputStream = mUrlConnection.getInputStream();
-            NetworkSpeedInfo.totalBytes = FileLenth;
-            b = new byte[FileLenth];
+            NetworkSpeedInfo.totalBytes = fileLenth;
+            b = new byte[fileLenth];
             startTime = System.currentTimeMillis();
             BufferedReader bufferReader = new BufferedReader(new InputStreamReader(mUrlConnection.getInputStream()));
             String line;
             byte buffer[];
-            while (NetworkSpeedInfo.FILECANREAD && ((line = bufferReader.readLine()) != null) && FileLenth > NetworkSpeedInfo.FinishBytes) {
+            while (NetworkSpeedInfo.FILECANREAD && ((line = bufferReader.readLine()) != null) && fileLenth > NetworkSpeedInfo.FinishBytes) {
                 buffer = line.getBytes();
                 intervalTime = System.currentTimeMillis() - startTime;
                 NetworkSpeedInfo.FinishBytes = NetworkSpeedInfo.FinishBytes + buffer.length;

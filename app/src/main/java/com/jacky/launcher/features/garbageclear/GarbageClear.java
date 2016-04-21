@@ -29,9 +29,9 @@ import java.util.List;
 
 @SuppressLint("InflateParams")
 public class GarbageClear extends Activity {
+    protected static final int FOUND_FINISH = 0;
+    protected static final int CLEAR_FINISH = 1;
     private Button StartFound, StartClear;
-    protected final int FOUND_FINISH = 0;
-    protected final int CLEAR_FINISH = 1;
     private List<File> list;
     private ProgressBar progressdisplay;
     private String[] ClearType = {".apk", ".log"};
@@ -94,8 +94,8 @@ public class GarbageClear extends Activity {
     }
 
     public void Init() {
-        list = new ArrayList<File>();
-        tasklist = new ArrayList<FoundTask>();
+        list = new ArrayList<>();
+        tasklist = new ArrayList<>();
         animation = AnimationUtils.loadAnimation(GarbageClear.this, R.anim.dialog_anmiation);
         progressdisplay = (ProgressBar) findViewById(R.id.progressBar1);
         StartFound = (Button) findViewById(R.id.start_found);
@@ -173,15 +173,15 @@ public class GarbageClear extends Activity {
         private String path;
         private String[] Extension;
 
-        public FoundTask(String path, String[] Extension) {
+        public FoundTask(String path, String[] extension) {
             this.path = path;
-            this.Extension = Extension;
+            this.Extension = extension;
         }
 
         @Override
         protected List<FoundTask> doInBackground(Void... arg0) {
             final File[] files = new File(path).listFiles();
-            String File_path = null;
+            String filePath = null;
             for (File file : files) {
                 if (file.isFile()) {
                     publishProgress(file.getPath());
@@ -191,8 +191,8 @@ public class GarbageClear extends Activity {
                                         file.getPath().length()
                                                 - Extension[i].length())
                                 .equals(Extension[i])) {
-                            File_path = file.getAbsolutePath();
-                            IsInstall = ClearUtil.TakeIsInstallApk(File_path,
+                            filePath = file.getAbsolutePath();
+                            IsInstall = ClearUtil.TakeIsInstallApk(filePath,
                                     GarbageClear.this);
                             //判断是否已安装װ
                             if (!IsInstall) {

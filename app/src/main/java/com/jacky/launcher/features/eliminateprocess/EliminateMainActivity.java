@@ -33,9 +33,9 @@ import java.util.List;
 public class EliminateMainActivity extends Activity {
 
     protected static final int LOAD_FINISH = 0;
-    public final int CLEAR_FINISH = 1;
-    public final int NEEDENT_CLEAR = 2;
-    public final int PERCENT_CHANGE = 3;
+    public static final int CLEAR_FINISH = 1;
+    public static final int NEEDENT_CLEAR = 2;
+    public static final int PERCENT_CHANGE = 3;
     private List<RunningAppProcessInfo> appProcessInfo;
     private ActivityManager activityManager;
     private List<TaskInfo> UserTaskInfo;
@@ -156,27 +156,27 @@ public class EliminateMainActivity extends Activity {
     public long GetSurplusMemory() {
         info = new ActivityManager.MemoryInfo();
         activityManager.getMemoryInfo(info);
-        long MemorySize = info.availMem;
-        MemorySurPlus = (float) MemorySize / 1024 / 1024;
-        return MemorySize;
+        long memorySize = info.availMem;
+        MemorySurPlus = (float) memorySize / 1024 / 1024;
+        return memorySize;
     }
 
     public float GetTotalMemory() {
         String str1 = "/proc/meminfo";// 系统内存信息文件
         String str2;
         String[] arrayOfString;
-        long initial_memory = 0;
+        long initialMemory = 0;
         try {
             FileReader fileReader = new FileReader(str1);
             BufferedReader bufferedReader = new BufferedReader(fileReader, 8192);
             str2 = bufferedReader.readLine();
             arrayOfString = str2.split("\\s+");
-            initial_memory = Integer.valueOf(arrayOfString[1]);
+            initialMemory = Integer.valueOf(arrayOfString[1]);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return (float) (initial_memory / 1024);
+        return (float) (initialMemory / 1024);
     }
 
     private void KillTask() {
@@ -187,8 +187,8 @@ public class EliminateMainActivity extends Activity {
         }
         MemoryInfo info = new ActivityManager.MemoryInfo();
         activityManager.getMemoryInfo(info);
-        float MemorySize = (float) info.availMem / 1024 / 1024;
-        float size = MemorySize - MemorySurPlus;
+        float memorySize = (float) info.availMem / 1024 / 1024;
+        float size = memorySize - MemorySurPlus;
         if (size > 0) {
             DecimalFormat decimalFormat = new DecimalFormat("0.00");
             Clearmemory = decimalFormat.format(size);

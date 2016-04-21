@@ -32,7 +32,7 @@ public class GetAppList {
         ArrayList<AppBean> localArrayList = null;
         Iterator<ResolveInfo> localIterator = null;
         if (localList != null) {
-            localArrayList = new ArrayList<AppBean>();
+            localArrayList = new ArrayList<>();
             localIterator = localList.iterator();
         }
         while (true) {
@@ -69,7 +69,7 @@ public class GetAppList {
         ArrayList<AppBean> localArrayList = null;
         Iterator<ResolveInfo> localIterator = null;
         if (localList != null) {
-            localArrayList = new ArrayList<AppBean>();
+            localArrayList = new ArrayList<>();
             localIterator = localList.iterator();
         }
         while (true) {
@@ -105,7 +105,7 @@ public class GetAppList {
         ArrayList<AppBean> localArrayList = null;
         Iterator<ResolveInfo> localIterator = null;
         if (localList != null) {
-            localArrayList = new ArrayList<AppBean>();
+            localArrayList = new ArrayList<>();
             localIterator = localList.iterator();
         }
 
