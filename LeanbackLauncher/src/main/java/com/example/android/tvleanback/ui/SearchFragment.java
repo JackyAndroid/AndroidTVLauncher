@@ -125,7 +125,11 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
                         }
                         break;
                     // the rest includes various recognizer errors, see {@link RecognizerIntent}
+                    default:
+                        break;
                 }
+                break;
+            default:
                 break;
         }
     }

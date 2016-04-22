@@ -79,6 +79,8 @@ public class EliminateMainActivity extends Activity {
                 case PERCENT_CHANGE:
                     Allpercent.setText(allpercent + "%");
                     break;
+                default:
+                    break;
             }
         }
 

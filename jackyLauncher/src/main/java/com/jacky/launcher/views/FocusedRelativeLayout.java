@@ -330,6 +330,8 @@ public class FocusedRelativeLayout extends RelativeLayout implements FocusedBase
                     break;
                 case 19:
                     localNodeInfo2.fromDown = ((View) v);
+                default:
+                    break;
             }
             boolean bool = true;
             if ((localObject2 instanceof ScalePostionInterface)) {

@@ -83,6 +83,8 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
                     setting.setSelected(false);
                     app.setSelected(true);
                     break;
+                default:
+                    break;
             }
         }
     };
@@ -197,6 +199,8 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
             case R.id.main_title_app:
                 currentIndex = 4;
                 mViewPager.setCurrentItem(2);
+                break;
+            default:
                 break;
         }
     }
