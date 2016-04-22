@@ -12,6 +12,10 @@ CSDN: http://blog.csdn.net/rain_butterfly
 
 这个项目是对android-tv-launcher开源项目用gradle编译的升级改造（以前那个也是本人的项目）
 
+###注意
+LeanbackLauncher 是Leanback支持库的demo，稍后会把原Launcher的特性加进去，只支持Android 5.0以上。
+如果你需要兼容Android 5.0以下的设备请用jackyLauncher。
+
 ###特性
 > * 应用卸载
 > * 垃圾清理
