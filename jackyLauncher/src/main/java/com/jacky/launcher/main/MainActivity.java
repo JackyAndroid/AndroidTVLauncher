@@ -48,7 +48,7 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     private Context context;
     private FileCache fileCache;
     private String cacheDir;
-    private View mViews[];
+    private View[] mViews;
     private int mCurrentIndex = 0;
 
     public ViewPager.OnPageChangeListener pageListener = new ViewPager.OnPageChangeListener() {
