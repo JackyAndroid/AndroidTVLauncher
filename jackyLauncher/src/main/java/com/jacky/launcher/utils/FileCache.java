@@ -23,7 +23,7 @@ public class FileCache {
     }
 
     public ArrayList<File> getFile() {
-        File file[] = cacheDir.listFiles();
+        File[] file = cacheDir.listFiles();
         ArrayList<File> list = new ArrayList<>();
         for (int i = 0; i < file.length; i++) {
             list.add(file[i]);

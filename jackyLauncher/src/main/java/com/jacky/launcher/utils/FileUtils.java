@@ -290,7 +290,7 @@ public class FileUtils {
         while ((ch = in.read()) != -1) {
             out.write(ch);
         }
-        byte buffer[] = out.toByteArray();
+        byte[] buffer = out.toByteArray();
         out.close();
         return buffer;
     }
