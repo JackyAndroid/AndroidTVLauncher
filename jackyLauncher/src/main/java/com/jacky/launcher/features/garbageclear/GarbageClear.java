@@ -79,6 +79,8 @@ public class GarbageClear extends Activity {
                     RoundImg.setVisibility(View.GONE);
                     dialog_img.setImageResource(R.drawable.finish_clear);
                     break;
+                default:
+                    break;
             }
         }
 

@@ -91,6 +91,8 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
                     THREADCANRUN = false;
                     NetworkSpeedInfo.FILECANREAD = false;
                     break;
+                default:
+                    break;
             }
         }
 
@@ -193,6 +195,8 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
                 DidNotStartLayout.setVisibility(View.VISIBLE);
                 StartAgainLayout.setVisibility(View.GONE);
                 InStartLayout.setVisibility(View.GONE);
+                break;
+            default:
                 break;
         }
     }

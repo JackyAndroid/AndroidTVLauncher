@@ -80,6 +80,8 @@ public class SettingCustom extends Activity implements View.OnClickListener {
                 i.setClass(context, SpeedTestActivity.class);
                 startActivity(i);
                 break;
+            default:
+                break;
         }
     }
 }

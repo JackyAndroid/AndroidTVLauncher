@@ -160,6 +160,8 @@ public class SettingFragment extends BaseFragment implements
                 JumpIntent = new Intent(context, SpeedTestActivity.class);
                 startActivity(JumpIntent);
                 break;
+            default:
+                break;
         }
     }
 }

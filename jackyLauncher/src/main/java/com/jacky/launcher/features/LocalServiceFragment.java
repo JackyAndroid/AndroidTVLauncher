@@ -97,6 +97,8 @@ public class LocalServiceFragment extends BaseFragment implements View.OnClickLi
                 break;
             case R.id.local_video:
                 break;
+            default:
+                break;
         }
     }
 }

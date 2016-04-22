@@ -130,6 +130,9 @@ public class WifiActivity extends Activity implements OnClickListener,OnItemClic
 		    		Toast.makeText(WifiActivity.this, "连接成功", Toast.LENGTH_SHORT).show();
 		    	}
 				break;
+			default:
+				break;
+			
 			}
 			 super.handleMessage(msg);
 		}
