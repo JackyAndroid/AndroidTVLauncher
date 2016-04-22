@@ -13,6 +13,10 @@ CSDN: http://blog.csdn.net/rain_butterfly
 <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/jackyLauncher/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
 
 This is a better android-tv-launcher,it can running on the TV or TV box.Build with gradle 2.0.0.
+
+###Notice
+LeanbackLauncher is Leanback support library demo, I later add the characteristics of old the Launcher to LeanbackLauncher, currently only support Android version 5.0 and above.If you need compatible device is lower than the Android version 5.0, please use jackyLauncher.
+
 ###Features
 > * App Uninstall
 > * Garbage Clear
