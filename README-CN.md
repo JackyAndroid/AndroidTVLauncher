@@ -8,7 +8,7 @@ CSDN: http://blog.csdn.net/rain_butterfly
 # AndroidTVLauncher
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)](http://blog.csdn.net/rain_butterfly/article/details/44942747)
 
-<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/app/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
+<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/jackyLauncher/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
 
 这个项目是对android-tv-launcher开源项目用gradle编译的升级改造（以前那个也是本人的项目）
 
@@ -20,11 +20,8 @@ CSDN: http://blog.csdn.net/rain_butterfly
 > * 网络设置等等
 
 ###效果图
-<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/setting.png" width = "400" height = "225" alt="logo" align=center />  <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/%E5%BA%94%E7%94%A8%E5%8D%B8%E8%BD%BD.jpg" width = "400" height = "225" alt="logo" align=center />
-
-<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/clear.jpg" width = "400" height = "225" alt="logo" align=center />  <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/%E8%87%AA%E5%90%AF%E5%8A%A8.jpg" width = "400" height = "225" alt="logo" align=center />
-
-<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/bluetooth.jpg" width = "400" height = "225"" alt="logo" align=center />  <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/speed_test.jpg" width = "400" height = "225" alt="logo" align=center />
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/androidtv-leanback-sample.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/atv-leanback-all.png)
 
 ###下一步的改进
 > * 焦点问题（焦点问题在一些机顶盒上面可能会出现偏移）
