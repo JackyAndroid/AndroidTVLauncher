@@ -22,7 +22,8 @@ This is a better android-tv-launcher,it can running on the TV or TV box.Build wi
 so on...
 
 ###Effect Picture
-<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/setting.png" width = "400" height = "225" alt="logo" align=center />  <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/img/%E5%BA%94%E7%94%A8%E5%8D%B8%E8%BD%BD.jpg" width = "400" height = "225" alt="logo" align=center />
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/androidtv-leanback-sample.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/atv-leanback-all.png)
 
 ###The next step to improve
 > * Focus Compatibility(This version running on some box focus problems may occur)
