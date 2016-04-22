@@ -1,1 +1,1 @@
-include ':app', ':uikit', ':common'
+include ':jackyLauncher', ':uikit', ':common', ':LeanbackLauncher'
