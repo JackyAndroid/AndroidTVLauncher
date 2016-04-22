@@ -48,7 +48,7 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     private Context context;
     private FileCache fileCache;
     private String cacheDir;
-    private View mViews[];
+    private View[] mViews;
     private int mCurrentIndex = 0;
 
     public ViewPager.OnPageChangeListener pageListener = new ViewPager.OnPageChangeListener() {
@@ -82,6 +82,8 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
                     localService.setSelected(false);
                     setting.setSelected(false);
                     app.setSelected(true);
+                    break;
+                default:
                     break;
             }
         }
@@ -197,6 +199,8 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
             case R.id.main_title_app:
                 currentIndex = 4;
                 mViewPager.setCurrentItem(2);
+                break;
+            default:
                 break;
         }
     }

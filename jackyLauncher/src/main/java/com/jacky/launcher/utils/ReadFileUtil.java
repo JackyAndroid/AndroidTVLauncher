@@ -30,7 +30,7 @@ public class ReadFileUtil {
             startTime = System.currentTimeMillis();
             BufferedReader bufferReader = new BufferedReader(new InputStreamReader(mUrlConnection.getInputStream()));
             String line;
-            byte buffer[];
+            byte[] buffer;
             while (NetworkSpeedInfo.FILECANREAD && ((line = bufferReader.readLine()) != null) && fileLenth > NetworkSpeedInfo.FinishBytes) {
                 buffer = line.getBytes();
                 intervalTime = System.currentTimeMillis() - startTime;
