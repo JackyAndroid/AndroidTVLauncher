@@ -25,7 +25,6 @@ import com.jacky.launcher.features.LocalServiceFragment;
 import com.jacky.launcher.features.app.AppFragment;
 import com.jacky.launcher.features.setting.SettingFragment;
 import com.jacky.launcher.utils.FileCache;
-import com.jacky.launcher.utils.NetWorkUtil;
 import com.jacky.launcher.utils.SharedPreferencesUtil;
 import com.jacky.uikit.activity.BaseTitleActivity;
 import com.jacky.uikit.alarm.ToastAlarm;
@@ -124,9 +123,6 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         if (isThereHaveUrlDataInDB()) {
             String data = getUrlDataFromDB();
             initFragment(data);
-            getUrlDataFromNetFlow();
-        } else {
-            getUrlDataFromNetFlow();
         }
     }
 
@@ -234,14 +230,6 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         mViewPager.setAdapter(mAdapter);
         mViewPager.setOnPageChangeListener(pageListener);
         mViewPager.setCurrentItem(0);
-    }
-
-    private void getUrlDataFromNetFlow() {
-        if (NetWorkUtil.isNetWorkConnected(context)) {
-            initFragment("");
-        } else {
-            initFragment("");
-        }
     }
 
     private String getUrlDataFromDB() {
