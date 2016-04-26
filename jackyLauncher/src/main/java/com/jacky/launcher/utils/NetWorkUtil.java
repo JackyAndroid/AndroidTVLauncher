@@ -59,16 +59,6 @@ public class NetWorkUtil {
         return false;
     }
 
-    public static String concatUrlParams() {
-
-        return null;
-    }
-
-    public static String encodeUrl() {
-
-        return null;
-    }
-
     public static boolean isNetWorkConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
