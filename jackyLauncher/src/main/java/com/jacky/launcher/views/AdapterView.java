@@ -34,9 +34,6 @@ abstract class AdapterView<T extends Adapter> extends android.widget.AdapterView
     private boolean mNeedSync = false;
     private int mSyncMode;
     private int mLayoutHeight;
-    private static final int SYNC_SELECTED_POSITION = 0;
-    private static final int SYNC_FIRST_POSITION = 1;
-    private static final int SYNC_MAX_DURATION_MILLIS = 100;
     private boolean mInLayout = false;
     private AdapterView.OnItemSelectedListener mOnItemSelectedListener;
     private AdapterView.OnItemClickListener mOnItemClickListener;

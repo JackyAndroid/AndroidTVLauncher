@@ -17,7 +17,6 @@ import java.util.List;
 public class LocalServiceFragment extends BaseFragment implements View.OnClickListener {
 
     private Context context;
-    private List<ContentValues> datas;
 
     private ImageButton tour;
     private ImageButton tv;

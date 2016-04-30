@@ -23,11 +23,6 @@ import com.jacky.launcher.R;
 
 public class Ethernet extends Activity {
 
-    private static final String TAG = "UPDATE";
-    private static final boolean d = false;
-
-    private ImageButton btnUpdate;
-
     private TextView tip;
 
     private BroadcastReceiver mConnReceiver = new BroadcastReceiver() {

@@ -40,7 +40,6 @@ import java.util.Set;
 public class Bluetooth extends Activity implements View.OnClickListener {
 
     private static final String TAG = "UPDATE";
-    private static final boolean d = false;
 
     private RelativeLayout openRL;
     private RelativeLayout detectionRL;

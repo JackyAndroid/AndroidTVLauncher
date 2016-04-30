@@ -14,8 +14,6 @@ import java.lang.reflect.Method;
  * @since 2016.4.3
  */
 public class NetWorkUtil {
-    private final static String[] hexDigits = {"0", "1", "2", "3", "4", "5",
-            "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
     public static final int STATE_DISCONNECT = 0;
     public static final int STATE_WIFI = 1;
     public static final int STATE_MOBILE = 2;

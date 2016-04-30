@@ -24,7 +24,6 @@ public class FocusedRelativeLayout extends RelativeLayout implements FocusedBase
     public static final String TAG = "FocusedRelativeLayout";
     public static final int HORIZONTAL_SINGEL = 1;
     public static final int HORIZONTAL_FULL = 2;
-    private static final int SCROLL_DURATION = 100;
     private long KEY_INTERVEL = 20L;
     private long mKeyTime = 0L;
     public int mIndex = -1;
