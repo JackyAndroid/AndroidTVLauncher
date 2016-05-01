@@ -18,8 +18,6 @@ public class GetAppList {
 
     private Context mContext;
 
-    private static final String TAG = "GetAppList";
-
     public GetAppList(Context context) {
         mContext = context;
     }

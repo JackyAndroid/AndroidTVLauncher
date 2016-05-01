@@ -29,8 +29,6 @@ public class AppFragment extends BaseFragment {
     private int mPagerCount = -1;//一共的页数
     private List<AllApp> mPagerListAllApp = new ArrayList<>();
     private ViewPager mViewPager = null;
-    private static final String TAG = "AppFragment";
-    private static final boolean d = false;
     private TextView pointer = null;
     private Rotate3dAnimation rotation;
     private Receiver receiver;

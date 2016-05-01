@@ -38,8 +38,6 @@ import java.util.regex.Pattern;
 
 @SuppressLint("DefaultLocale")
 public class Tools {
-
-    private static boolean d = true;
     private static String TAG = "Tools";
 
     private final static String[] hexDigits = {"0", "1", "2", "3", "4", "5",

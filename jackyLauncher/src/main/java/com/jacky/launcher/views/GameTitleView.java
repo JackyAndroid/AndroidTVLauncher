@@ -30,11 +30,8 @@ public class GameTitleView extends RelativeLayout {
     private View view;
     private Context context;
     private Typeface typeface;
-    private static final String TAG = "TitleView";
     private static final boolean d = false;
-    private ImageView imgWeather;
     private TextView tvTime, tvDate;
-    private Timer _timer;
     private ImageView imgNetWorkState;
 
     private Handler timeHandle = new Handler();

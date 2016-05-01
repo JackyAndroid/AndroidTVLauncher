@@ -28,8 +28,6 @@ import java.util.List;
  */
 public class AppUninstall extends Activity implements View.OnClickListener {
 
-    private static final String TAG = "UPDATE";
-    private static final boolean d = false;
     private ListView listView;
     private AppUninstallAdapter adapter;
     private List<AppBean> mAppList;

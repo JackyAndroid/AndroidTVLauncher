@@ -40,11 +40,6 @@ public class SettingFragment extends BaseFragment implements
     private Intent JumpIntent;
     private Context context;
 
-    /**
-     * 用来存放
-     */
-    private List<ContentValues> datas;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

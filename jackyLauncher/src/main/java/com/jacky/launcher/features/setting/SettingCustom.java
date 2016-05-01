@@ -21,9 +21,6 @@ import com.jacky.launcher.features.wifi.WifiActivity;
  */
 public class SettingCustom extends Activity implements View.OnClickListener {
 
-    private static final String TAG = "UPDATE";
-    private static final boolean d = false;
-
     private TextView wifi;
     private TextView ethernet;
     private TextView bluetooth;

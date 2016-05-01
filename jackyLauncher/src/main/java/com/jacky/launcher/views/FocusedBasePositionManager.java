@@ -18,7 +18,6 @@ public abstract class FocusedBasePositionManager {
     public static final int SCALED_FIXED_COEF = 1;
     public static final int SCALED_FIXED_X = 2;
     public static final int SCALED_FIXED_Y = 3;
-    private boolean DEBUG = true;
     private int mCurrentFrame = DEFAULT_FRAME;
     private int mFrameRate = DEFAULT_FRAME_RATE;
     private int mFocusFrameRate = 2;
