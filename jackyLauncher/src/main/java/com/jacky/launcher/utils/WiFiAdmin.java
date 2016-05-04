@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class WiFiAdmin {
     // wifimanager对象
-    private WifiManager mWifiManager;
+    private final WifiManager mWifiManager;
     // wifiInfo对象
     private WifiInfo mWifiInfo;
     // 扫描出的网络连接列表

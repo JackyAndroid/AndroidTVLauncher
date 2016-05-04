@@ -30,7 +30,7 @@ public class AppAutoRun extends Activity implements View.OnClickListener {
     private List<AppBean> mAppList;
     private Context context;
     private boolean first = true;
-    private boolean clickFlag = false;
+    private boolean clickFlag;
     private int clickPosition;
 
     @Override

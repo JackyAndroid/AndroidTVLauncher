@@ -26,15 +26,15 @@ abstract class AdapterView<T extends Adapter> extends android.widget.AdapterView
     public static final int ITEM_VIEW_TYPE_HEADER_OR_FOOTER = -2;
 
     @ViewDebug.ExportedProperty(category = "scrolling")
-    private int mFirstPosition = 0;
+    private static final int M_FIRST_POSITION = 0;
     private int mSpecificTop;
     private int mSyncPosition;
     private long mSyncRowId = -9223372036854775808L;
     private long mSyncHeight;
-    private boolean mNeedSync = false;
+    private boolean mNeedSync;
     private int mSyncMode;
     private int mLayoutHeight;
-    private boolean mInLayout = false;
+    private static final boolean M_IN_LAYOUT = false;
     private AdapterView.OnItemSelectedListener mOnItemSelectedListener;
     private AdapterView.OnItemClickListener mOnItemClickListener;
     private AdapterView.OnItemLongClickListener mOnItemLongClickListener;
@@ -59,7 +59,7 @@ abstract class AdapterView<T extends Adapter> extends android.widget.AdapterView
     private boolean mDesiredFocusableState;
     private boolean mDesiredFocusableInTouchModeState;
     private AdapterView<T>.SelectionNotifier mSelectionNotifier;
-    private boolean mBlockLayoutRequests = false;
+    private boolean mBlockLayoutRequests;
 
     public AdapterView(Context paramContext) {
         super(paramContext);
@@ -169,16 +169,16 @@ abstract class AdapterView<T extends Adapter> extends android.widget.AdapterView
         int i = getChildCount();
         for (int j = 0; j < i; j++)
             if (getChildAt(j).equals(localObject))
-                return this.mFirstPosition + j;
+                return this.M_FIRST_POSITION + j;
         return -1;
     }
 
     public int getFirstVisiblePosition() {
-        return this.mFirstPosition;
+        return this.M_FIRST_POSITION;
     }
 
     public int getLastVisiblePosition() {
-        return this.mFirstPosition + getChildCount() - 1;
+        return this.M_FIRST_POSITION + getChildCount() - 1;
     }
 
     public abstract void setSelection(int paramInt);
@@ -275,7 +275,7 @@ abstract class AdapterView<T extends Adapter> extends android.widget.AdapterView
 
     void selectionChanged() {
         if (this.mOnItemSelectedListener != null)
-            if ((this.mInLayout) || (this.mBlockLayoutRequests)) {
+            if ((this.M_IN_LAYOUT) || (this.mBlockLayoutRequests)) {
                 if (this.mSelectionNotifier == null)
                     this.mSelectionNotifier = new SelectionNotifier();
                 post(this.mSelectionNotifier);
@@ -460,7 +460,7 @@ abstract class AdapterView<T extends Adapter> extends android.widget.AdapterView
             this.mSyncHeight = this.mLayoutHeight;
             View localView;
             if (this.mSelectedPosition >= 0) {
-                localView = getChildAt(this.mSelectedPosition - this.mFirstPosition);
+                localView = getChildAt(this.mSelectedPosition - this.M_FIRST_POSITION);
                 this.mSyncRowId = this.mNextSelectedRowId;
                 this.mSyncPosition = this.mNextSelectedPosition;
                 if (localView != null)
@@ -469,11 +469,11 @@ abstract class AdapterView<T extends Adapter> extends android.widget.AdapterView
             } else {
                 localView = getChildAt(0);
                 Adapter localAdapter = getAdapter();
-                if ((this.mFirstPosition >= 0) && (this.mFirstPosition < localAdapter.getCount()))
-                    this.mSyncRowId = localAdapter.getItemId(this.mFirstPosition);
+                if ((this.M_FIRST_POSITION >= 0) && (this.M_FIRST_POSITION < localAdapter.getCount()))
+                    this.mSyncRowId = localAdapter.getItemId(this.M_FIRST_POSITION);
                 else
                     this.mSyncRowId = -1L;
-                this.mSyncPosition = this.mFirstPosition;
+                this.mSyncPosition = this.M_FIRST_POSITION;
                 if (localView != null)
                     this.mSpecificTop = localView.getTop();
                 this.mSyncMode = 1;
@@ -534,7 +534,7 @@ abstract class AdapterView<T extends Adapter> extends android.widget.AdapterView
     }
 
     class AdapterDataSetObserver extends DataSetObserver {
-        private Parcelable mInstanceState = null;
+        private Parcelable mInstanceState;
 
         AdapterDataSetObserver() {
         }

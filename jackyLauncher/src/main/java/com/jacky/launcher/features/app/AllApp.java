@@ -23,18 +23,18 @@ public class AllApp extends LinearLayout implements View.OnClickListener {
     private Context mContext;
     private ImageView[] appIcons = new ImageView[15];
     private LinearLayout[] appItems = new LinearLayout[15];
-    private int[] iconIds = {R.id.app_icon0, R.id.app_icon1, R.id.app_icon2,
+    private static final int[] iconIds = {R.id.app_icon0, R.id.app_icon1, R.id.app_icon2,
             R.id.app_icon3, R.id.app_icon4, R.id.app_icon5,
             R.id.app_icon6, R.id.app_icon7, R.id.app_icon8,
             R.id.app_icon9, R.id.app_icon10, R.id.app_icon11,
             R.id.app_icon12, R.id.app_icon13, R.id.app_icon14};
     private TextView[] appNames = new TextView[15];
-    private int[] nameIds = {R.id.app_name0, R.id.app_name1, R.id.app_name2,
+    private static final int[] nameIds = {R.id.app_name0, R.id.app_name1, R.id.app_name2,
             R.id.app_name3, R.id.app_name4, R.id.app_name5,
             R.id.app_name6, R.id.app_name7, R.id.app_name8,
             R.id.app_name9, R.id.app_name10, R.id.app_name11,
             R.id.app_name12, R.id.app_name13, R.id.app_name14};
-    private int[] itemIds = {
+    private static final int[] itemIds = {
             R.id.app_item0, R.id.app_item1, R.id.app_item2,
             R.id.app_item3, R.id.app_item4, R.id.app_item5,
             R.id.app_item6, R.id.app_item7, R.id.app_item8,
@@ -42,7 +42,7 @@ public class AllApp extends LinearLayout implements View.OnClickListener {
             R.id.app_item12, R.id.app_item13, R.id.app_item14
     };
 
-    private List<AppBean> mAppList = null;
+    private List<AppBean> mAppList;
     private int mPagerIndex = -1;
     private int mPagerCount = -1;
 

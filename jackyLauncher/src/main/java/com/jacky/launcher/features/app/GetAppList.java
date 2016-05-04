@@ -16,7 +16,7 @@ import java.util.List;
 
 public class GetAppList {
 
-    private Context mContext;
+    private final Context mContext;
 
     public GetAppList(Context context) {
         mContext = context;

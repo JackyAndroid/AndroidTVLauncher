@@ -25,16 +25,16 @@ import java.util.List;
 public class AppFragment extends BaseFragment {
 
     private Context mContext;
-    private List<AppBean> mAppList = null;
+    private List<AppBean> mAppList;
     private int mPagerCount = -1;//一共的页数
-    private List<AllApp> mPagerListAllApp = new ArrayList<>();
-    private ViewPager mViewPager = null;
-    private TextView pointer = null;
+    private final List<AllApp> mPagerListAllApp = new ArrayList<>();
+    private ViewPager mViewPager;
+    private TextView pointer;
     private Rotate3dAnimation rotation;
     private Receiver receiver;
     private DataPagerAdapter<AllApp> adapter;
 
-    private ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
+    private final ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int i, float v, int i2) {
 
