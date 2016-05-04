@@ -7,7 +7,12 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import java.io.File;
 import java.io.FileInputStream;
 
-public class ClearUtil {
+public final class ClearUtil {
+
+    private ClearUtil() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
+
     public static boolean TakeIsInstallApk(String abPath, Context context) {
         PackageManager pm = context.getPackageManager();
         try {

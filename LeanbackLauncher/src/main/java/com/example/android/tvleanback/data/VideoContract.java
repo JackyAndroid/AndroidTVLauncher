@@ -104,9 +104,18 @@ public final class VideoContract {
         // The action intent for the result.
         public static final String COLUMN_ACTION = SearchManager.SUGGEST_COLUMN_INTENT_ACTION;
 
+        private VideoEntry() throws InstantiationException {
+            throw new InstantiationException("This class is not created for instantiation");
+        }
+
         // Returns the Uri referencing a video with the specified id.
         public static Uri buildVideoUri(long id) {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
     }
+
+    private VideoContract() throws InstantiationException{
+        throw new InstantiationException("This class is not created for instantiation");
+    }
+
 }
