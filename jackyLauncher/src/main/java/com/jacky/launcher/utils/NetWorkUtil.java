@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
  * @version 1.0
  * @since 2016.4.3
  */
-public class NetWorkUtil {
+public final class NetWorkUtil {
     public static final int STATE_DISCONNECT = 0;
     public static final int STATE_WIFI = 1;
     public static final int STATE_MOBILE = 2;
@@ -23,6 +23,10 @@ public class NetWorkUtil {
     public static final int WIFI_AP_STATE_ENABLING = 12;
     public static final int WIFI_AP_STATE_ENABLED = 13;
     public static final int WIFI_AP_STATE_FAILED = 14;
+
+    private NetWorkUtil() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     private static int getWifiApState(Context mContext) {
         WifiManager wifiManager = (WifiManager) mContext
