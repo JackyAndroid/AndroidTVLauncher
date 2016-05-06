@@ -27,14 +27,14 @@ public class TitleView extends RelativeLayout {
 
     private RelativeLayout layout;
     private View view;
-    private Context context;
+    private final Context context;
     private Typeface typeface;
     private TextView tvTime, tvDate;
     private ImageView imgNetWorkState;
 
-    private Handler timeHandle = new Handler();
+    private final Handler timeHandle = new Handler();
 
-    private Runnable timeRun = new Runnable() {
+    private final Runnable timeRun = new Runnable() {
 
         public void run() {
             setTvTimeText(TimeUtil.getTime());
@@ -44,7 +44,7 @@ public class TitleView extends RelativeLayout {
 
     };
 
-    private BroadcastReceiver wifiChange = new BroadcastReceiver() {
+    private final BroadcastReceiver wifiChange = new BroadcastReceiver() {
 
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -75,7 +75,7 @@ public class TitleView extends RelativeLayout {
         }
     };
 
-    private BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
 
             boolean noConnectivity = intent.getBooleanExtra(

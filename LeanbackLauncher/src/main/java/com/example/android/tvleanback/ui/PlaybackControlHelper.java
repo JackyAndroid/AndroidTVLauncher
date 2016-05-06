@@ -25,15 +25,15 @@ class PlaybackControlHelper extends PlaybackControlGlue {
     Drawable mMediaArt;
     private boolean mIsPlaying;
     private int mSpeed;
-    private PlaybackOverlayFragment mFragment;
-    private MediaController.TransportControls mTransportControls;
-    private PlaybackControlsRow.RepeatAction mRepeatAction;
-    private PlaybackControlsRow.ThumbsUpAction mThumbsUpAction;
-    private PlaybackControlsRow.ThumbsDownAction mThumbsDownAction;
+    private final PlaybackOverlayFragment mFragment;
+    private final MediaController.TransportControls mTransportControls;
+    private final PlaybackControlsRow.RepeatAction mRepeatAction;
+    private final PlaybackControlsRow.ThumbsUpAction mThumbsUpAction;
+    private final PlaybackControlsRow.ThumbsDownAction mThumbsDownAction;
     private PlaybackControlsRow.FastForwardAction mFastForwardAction;
     private PlaybackControlsRow.RewindAction mRewindAction;
     private Video mVideo;
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private Runnable mUpdateProgressRunnable;
 
     public PlaybackControlHelper(Context context, PlaybackOverlayFragment fragment, Video video) {

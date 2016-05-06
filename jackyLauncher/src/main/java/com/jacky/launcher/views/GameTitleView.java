@@ -28,15 +28,15 @@ public class GameTitleView extends RelativeLayout {
 
     private RelativeLayout layout;
     private View view;
-    private Context context;
+    private final Context context;
     private Typeface typeface;
     private static final boolean d = false;
     private TextView tvTime, tvDate;
     private ImageView imgNetWorkState;
 
-    private Handler timeHandle = new Handler();
+    private final Handler timeHandle = new Handler();
 
-    private Runnable timeRun = new Runnable() {
+    private final Runnable timeRun = new Runnable() {
 
         public void run() {
             setTvTimeText(TimeUtil.getTime());
@@ -49,7 +49,7 @@ public class GameTitleView extends RelativeLayout {
     /**
      * wifi 信号强度
      */
-    private BroadcastReceiver wifiChange = new BroadcastReceiver() {
+    private final BroadcastReceiver wifiChange = new BroadcastReceiver() {
 
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -85,7 +85,7 @@ public class GameTitleView extends RelativeLayout {
     /**
      * 网络状态
      */
-    private BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             boolean noConnectivity = intent.getBooleanExtra(
                     ConnectivityManager.EXTRA_NO_CONNECTIVITY, false);

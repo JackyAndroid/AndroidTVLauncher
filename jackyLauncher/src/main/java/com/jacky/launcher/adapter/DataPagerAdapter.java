@@ -9,8 +9,8 @@ import java.util.List;
 
 public class DataPagerAdapter<T> extends PagerAdapter {
 
-    private Context mContext;
-    private List<T> mList = null;
+    private final Context mContext;
+    private final List<T> mList;
 
     public DataPagerAdapter(Context context, List<T> list) {
         mContext = context;

@@ -13,8 +13,8 @@ import java.util.ArrayList;
  * @since 2016.4.1
  */
 public class MainActivityAdapter extends FragmentStatePagerAdapter {
-    private ArrayList<Fragment> mFragments;
-    private FragmentManager fm;
+    private final ArrayList<Fragment> mFragments;
+    private final FragmentManager fm;
 
     public MainActivityAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {
         super(fm);

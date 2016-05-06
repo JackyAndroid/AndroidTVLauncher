@@ -16,8 +16,8 @@ import java.util.List;
  * by:kangzizhaung
  */
 public class TaskInfoProvider {
-	private PackageManager pmManager;
-	private ActivityManager aManager;
+	private final PackageManager pmManager;
+	private final ActivityManager aManager;
 
 	public TaskInfoProvider(Context context) {
 		pmManager = context.getPackageManager();

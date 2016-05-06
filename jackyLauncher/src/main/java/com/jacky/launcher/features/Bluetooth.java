@@ -68,7 +68,7 @@ public class Bluetooth extends Activity implements View.OnClickListener {
 
     private List<Map<String, Object>> list;
 
-    private BroadcastReceiver searchReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver searchReceiver = new BroadcastReceiver() {
 
         @Override
         public void onReceive(Context context, Intent intent) {

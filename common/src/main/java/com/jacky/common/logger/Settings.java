@@ -7,7 +7,7 @@ public final class Settings {
 
     private int methodCount = 2;
     private boolean showThreadInfo = true;
-    private int methodOffset = 0;
+    private int methodOffset;
 
     /**
      * Determines how logs will printed

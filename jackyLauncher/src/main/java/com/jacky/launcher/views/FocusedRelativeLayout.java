@@ -24,24 +24,24 @@ public class FocusedRelativeLayout extends RelativeLayout implements FocusedBase
     public static final String TAG = "FocusedRelativeLayout";
     public static final int HORIZONTAL_SINGEL = 1;
     public static final int HORIZONTAL_FULL = 2;
-    private long KEY_INTERVEL = 20L;
-    private long mKeyTime = 0L;
+    private static final long KEY_INTERVEL = 20L;
+    private long mKeyTime;
     public int mIndex = -1;
-    private boolean mOutsieScroll = false;
-    private boolean mInit = false;
+    private boolean mOutsieScroll;
+    private boolean mInit;
     private HotScroller mScroller;
-    private int mScreenWidth;
+    private final int mScreenWidth;
     private int mViewRight = 20;
-    private int mViewLeft = 0;
+    private int mViewLeft;
     private int mStartX;
-    private long mScrollTime = 0L;
+    private long mScrollTime;
     private int mHorizontalMode = -1;
-    private FocusedBasePositionManager.FocusItemSelectedListener mOnItemSelectedListener = null;
-    private FocusedLayoutPositionManager mPositionManager;
-    private OnScrollListener mScrollerListener = null;
-    private int mLastScrollState = 0;
-    private Map<View, NodeInfo> mNodeMap = new HashMap();
-    private boolean isKeyDown = false;
+    private FocusedBasePositionManager.FocusItemSelectedListener mOnItemSelectedListener;
+    private final FocusedLayoutPositionManager mPositionManager;
+    private OnScrollListener mScrollerListener;
+    private int mLastScrollState;
+    private final Map<View, NodeInfo> mNodeMap = new HashMap();
+    private boolean isKeyDown;
 
     public FocusedRelativeLayout(Context paramContext) {
         super(paramContext);

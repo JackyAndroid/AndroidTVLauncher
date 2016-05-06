@@ -34,7 +34,7 @@ public class GarbageClear extends Activity {
     private Button StartFound, StartClear;
     private List<File> list;
     private ProgressBar progressdisplay;
-    private String[] ClearType = {".apk", ".log"};
+    private static final String[] CLEAR_TYPE = {".apk", ".log"};
     private boolean IsInstall;
     private RelativeLayout found_layout;
     private FrameLayout clear_layout;
@@ -42,14 +42,14 @@ public class GarbageClear extends Activity {
     private Animation animation;
     private TextView file_path;
     private ImageView dialog_img;
-    private long File_Grbagesize = 0;
+    private long File_Grbagesize;
     private TextView grbage_size;
-    private boolean Found = false;// 如果为false则未完成扫描
-    private int TaskNum = 0;
-    private int progressbar_num = 0;
+    private boolean Found;// 如果为false则未完成扫描
+    private int TaskNum;
+    private int progressbar_num;
     private List<FoundTask> tasklist;
     @SuppressLint("HandlerLeak")
-    private Handler handler = new Handler() {
+    private final Handler handler = new Handler() {
 
         @Override
         public void handleMessage(Message msg) {
@@ -132,7 +132,7 @@ public class GarbageClear extends Activity {
                     StartFound.setText("扫描中");
                     StartClear.setClickable(false);
                     new FoundTask(Environment.getExternalStorageDirectory()
-                            + "/", ClearType).execute();
+                            + "/", CLEAR_TYPE).execute();
                 } else {
                     if (File_Grbagesize != 0) {
                         StartClear.setClickable(false);
@@ -172,8 +172,8 @@ public class GarbageClear extends Activity {
      *扫描文件异步任务
      */
     class FoundTask extends AsyncTask<Void, String, List<FoundTask>> {
-        private String path;
-        private String[] Extension;
+        private final String path;
+        private final String[] Extension;
 
         public FoundTask(String path, String[] extension) {
             this.path = path;
@@ -187,7 +187,7 @@ public class GarbageClear extends Activity {
             for (File file : files) {
                 if (file.isFile()) {
                     publishProgress(file.getPath());
-                    for (int i = 0; i < ClearType.length; i++) {
+                    for (int i = 0; i < CLEAR_TYPE.length; i++) {
                         if (file.getPath()
                                 .substring(
                                         file.getPath().length()

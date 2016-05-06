@@ -15,8 +15,8 @@ import java.util.List;
 
 public class AppUninstallAdapter extends BaseAdapter {
 
-    private List<AppBean> appBeanList = null;
-    private Context context;
+    private final List<AppBean> appBeanList;
+    private final Context context;
 
     public AppUninstallAdapter(Context context, List<AppBean> appBeanList) {
         this.context = context;
