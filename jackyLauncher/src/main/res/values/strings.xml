@@ -29,5 +29,9 @@
     <string name="start_eliminate_process">start clean</string>
     <string name="timing_clear">Regularly cleaned</string>
     <string name="stop_timing_clear">Stop Regularly cleaned</string>
+
+    <string name="indicator_item_service_text">service</string>
+    <string name="indicator_item_setting_text">setting</string>
+    <string name="indicator_item_app_text">app</string>
 </resources>
 

@@ -25,7 +25,6 @@ import java.util.Timer;
 
 public class TitleView extends RelativeLayout {
 
-    private static final String TAG = "TitleView";
     private RelativeLayout layout;
     private View view;
     private Context context;
@@ -72,7 +71,7 @@ public class TitleView extends RelativeLayout {
 
                 } else if (signalLevel == 3) {
                     imgNetWorkState.setImageDrawable(context.getResources()
-                            .getDrawable(R.drawable.networkstate_on));
+                            .getDrawable(R.drawable.network_state_on));
                 }
             }
         }
@@ -97,7 +96,7 @@ public class TitleView extends RelativeLayout {
                     && currentNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI) {
 
                 imgNetWorkState.setImageDrawable(context.getResources()
-                        .getDrawable(R.drawable.networkstate_on));
+                        .getDrawable(R.drawable.network_state_on));
 
             } else if (currentNetworkInfo.isConnected()
                     && currentNetworkInfo.getType() == ConnectivityManager.TYPE_ETHERNET) {
@@ -115,34 +114,29 @@ public class TitleView extends RelativeLayout {
     public TitleView(Context context) {
         super(context);
         this.context = context;
-        if (!isInEditMode())
-            initTitleView();
+        initTitleView();
     }
 
     public TitleView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-        if (!isInEditMode())
-            initTitleView();
+        initTitleView();
     }
 
     public void initTitleView() {
-        view = LayoutInflater.from(context).inflate(R.layout.titleview,
-                this, true);
+        view = LayoutInflater.from(context).inflate(R.layout.titleview, this, true);
         layout = (RelativeLayout) view.findViewById(R.id.home_title);
-        tvTime = (TextView) view.findViewById(R.id.title_time_hour);
-        tvDate = (TextView) view.findViewById(R.id.home_date);
-        imgNetWorkState = (ImageView) view.findViewById(R.id.home_networkstate);
+        tvTime = (TextView) view.findViewById(R.id.title_bar_hour);
+        tvDate = (TextView) view.findViewById(R.id.title_bar_date);
+        imgNetWorkState = (ImageView) view.findViewById(R.id.title_bar_network_state);
         typeface = Typeface.createFromAsset(context.getAssets(),
                 "font/helvetica_neueltpro_thex.otf");
         tvTime.setTypeface(typeface);
         tvDate.setTypeface(typeface);
         timeHandle.post(timeRun);
-        imgNetWorkState = (ImageView) this.findViewById(R.id.home_networkstate);
-        context.getApplicationContext().registerReceiver(this.mConnReceiver,
-                new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        context.getApplicationContext().registerReceiver(wifiChange,
-                new IntentFilter(WifiManager.RSSI_CHANGED_ACTION));
+        imgNetWorkState = (ImageView) this.findViewById(R.id.title_bar_network_state);
+        context.registerReceiver(mConnReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        context.registerReceiver(wifiChange, new IntentFilter(WifiManager.RSSI_CHANGED_ACTION));
     }
 
     public void setTvTimeText(String text) {

@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.jacky.uikit.fragment.BaseFragment;
+
 import java.util.ArrayList;
 
 /**
@@ -13,10 +15,10 @@ import java.util.ArrayList;
  * @since 2016.4.1
  */
 public class MainActivityAdapter extends FragmentStatePagerAdapter {
-    private ArrayList<Fragment> mFragments;
+    private ArrayList<BaseFragment> mFragments;
     private FragmentManager fm;
 
-    public MainActivityAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {
+    public MainActivityAdapter(FragmentManager fm, ArrayList<BaseFragment> fragments) {
         super(fm);
         mFragments = fragments;
         this.fm = fm;

@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/home_date"
+        android:id="@+id/title_bar_date"
         android:layout_width="0dp"
         android:visibility="gone"
         android:layout_height="60dip"
@@ -15,7 +15,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/title_time_hour"
+        android:id="@+id/title_bar_hour"
         android:layout_width="wrap_content"
         android:layout_height="60dip"
         android:gravity="left"
@@ -27,14 +27,14 @@
         android:layout_alignParentRight="true" />
 
     <ImageView
-        android:id="@+id/home_networkstate"
+        android:id="@+id/title_bar_network_state"
         android:layout_width="40dp"
         android:layout_height="60dip"
         android:gravity="center_vertical|center_horizontal"
         android:src="@drawable/networkstate_off"
         android:textColor="#ffffff"
         android:textSize="30sp"
-        android:layout_toLeftOf="@id/title_time_hour"
+        android:layout_toLeftOf="@id/title_bar_hour"
         android:layout_alignParentTop="true"
         android:layout_marginRight="10dp" />
 

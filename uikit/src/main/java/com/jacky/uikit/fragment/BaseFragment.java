@@ -1,38 +1,75 @@
 package com.jacky.uikit.fragment;
 
-import android.graphics.Color;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 
 import com.jacky.uikit.R;
 
 
 public class BaseFragment extends Fragment {
 
-    /**
-     * 提供选中放大的效果
-     */
+    private View mCurrentView;
+
+    public View getCurrentView() {
+        return mCurrentView;
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return false;
+    }
+
+    public void requestInitFocus(){
+
+    }
+
+    public View.OnFocusChangeListener getFocusChangeListener() {
+        return mFocusChangeListener;
+    }
+
     public View.OnFocusChangeListener mFocusChangeListener = new View.OnFocusChangeListener() {
 
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
-
-            int focus = 0;
             if (hasFocus) {
-                focus = R.anim.enlarge;
+                mCurrentView = v;
+                enlargeAnim(v);
             } else {
-                focus = R.anim.decrease;
+                reduceAnim(v);
             }
-            //如果有焦点就放大，没有焦点就缩小
-            Animation mAnimation = AnimationUtils.loadAnimation(
-                    getActivity().getApplication(), focus);
-            mAnimation.setBackgroundColor(Color.TRANSPARENT);
-            mAnimation.setFillAfter(hasFocus);
-            v.startAnimation(mAnimation);
-            mAnimation.start();
-            v.bringToFront();
         }
     };
+
+    public void enlargeAnim(View v) {
+        Animation a = android.view.animation.AnimationUtils.loadAnimation(v.getContext(), R.anim.uikit_enlarge);
+        a.setAnimationListener(new Animation.AnimationListener() {
+
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+            }
+        });
+        a.setFillAfter(true);
+        v.clearAnimation();
+        v.setAnimation(a);
+        v.bringToFront();
+        a.start();
+    }
+
+    public void reduceAnim(View v) {
+        Animation a = android.view.animation.AnimationUtils.loadAnimation(v.getContext(), R.anim.uikit_reduce);
+        a.setFillAfter(true);
+        v.clearAnimation();
+        v.startAnimation(a);
+        a.start();
+    }
 }

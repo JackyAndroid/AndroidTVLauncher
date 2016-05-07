@@ -4,6 +4,11 @@
     <color name="background_dark">#ff3272</color>
     <color name="background_light">#f5588a</color>
     <color name="background_more_light">#f487a9</color>
+
+    <color name="font_blue">#ff3a95ff</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="font_dark">#ff4a4a4a</color>
+    <color name="dark_transparent">#444a4a4a</color>
     
     <color name="black">#000000</color>
     <color name="gray">#808080</color>

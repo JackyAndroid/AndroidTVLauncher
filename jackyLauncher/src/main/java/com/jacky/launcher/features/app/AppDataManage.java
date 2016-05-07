@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class GetAppList {
+public class AppDataManage {
 
     private Context mContext;
 
     private static final String TAG = "GetAppList";
 
-    public GetAppList(Context context) {
+    public AppDataManage(Context context) {
         mContext = context;
     }
 
@@ -31,8 +31,8 @@ public class GetAppList {
         List<ResolveInfo> localList = localPackageManager.queryIntentActivities(localIntent, 0);
         ArrayList<AppBean> localArrayList = null;
         Iterator<ResolveInfo> localIterator = null;
-        if (localList != null) {
-            localArrayList = new ArrayList<>();
+        localArrayList = new ArrayList<>();
+        if (localList.size() != 0) {
             localIterator = localList.iterator();
         }
         while (true) {
@@ -55,8 +55,9 @@ public class GetAppList {
             } catch (NameNotFoundException e) {
                 e.printStackTrace();
             }
-
-            String noSeeApk = localAppBean.getPackageName();
+            if (!localAppBean.getPackageName().equals("com.jacky.launcher")) {
+                localArrayList.add(localAppBean);
+            }
         }
         return localArrayList;
     }

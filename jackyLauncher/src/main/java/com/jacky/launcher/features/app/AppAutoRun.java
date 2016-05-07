@@ -45,7 +45,7 @@ public class AppAutoRun extends Activity implements View.OnClickListener {
 
     private void init() {
         listView = (ListView) findViewById(R.id.app_auto_run_lv);
-        GetAppList getAppInstance = new GetAppList(context);
+        AppDataManage getAppInstance = new AppDataManage(context);
         mAppList = getAppInstance.getAutoRunAppList();
         adapter = new AppAutoRunAdapter(context, mAppList);
         listView.setAdapter(adapter);

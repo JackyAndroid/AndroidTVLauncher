@@ -46,7 +46,7 @@ public class AppUninstall extends Activity implements View.OnClickListener {
 
     private void init() {
         listView = (ListView) findViewById(R.id.app_uninstall_lv);
-        GetAppList getAppInstance = new GetAppList(context);
+        AppDataManage getAppInstance = new AppDataManage(context);
         mAppList = getAppInstance.getUninstallAppList();
         adapter = new AppUninstallAdapter(context, mAppList);
         listView.setAdapter(adapter);
