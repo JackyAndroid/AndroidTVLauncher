@@ -2,7 +2,12 @@ package com.jacky.launcher.features.eliminateprocess;
 
 import java.text.DecimalFormat;
 
-public class TextFormater {
+public final class TextFormater {
+
+    private TextFormater() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
+
     public static String longtoString(long size) {
         DecimalFormat format = new DecimalFormat("####.00");
         if (size < 1024) {

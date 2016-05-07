@@ -14,10 +14,10 @@ import com.jacky.launcher.R;
 import java.util.List;
 
 public class WAndB_WifilistAdapter extends BaseAdapter {
-    private LayoutInflater inflater;
-    private List<ScanResult> scanResults;
+    private final LayoutInflater inflater;
+    private final List<ScanResult> scanResults;
     private Viewholder viewholder;
-    private Activity context;
+    private final Activity context;
 
     public WAndB_WifilistAdapter(Activity context, List<ScanResult> scanResults) {
         inflater = LayoutInflater.from(context);

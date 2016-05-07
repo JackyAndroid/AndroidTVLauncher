@@ -25,14 +25,12 @@ import java.util.List;
 
 public class AppAutoRun extends Activity implements View.OnClickListener {
 
-    private static final String TAG = "UPDATE";
-    private static final boolean d = false;
     private ListView listView;
     private AppAutoRunAdapter adapter;
     private List<AppBean> mAppList;
     private Context context;
     private boolean first = true;
-    private boolean clickFlag = false;
+    private boolean clickFlag;
     private int clickPosition;
 
     @Override

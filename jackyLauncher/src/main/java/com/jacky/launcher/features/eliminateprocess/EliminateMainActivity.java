@@ -54,7 +54,7 @@ public class EliminateMainActivity extends Activity {
     private int allpercent;
     private Boolean ISRound = true;
     @SuppressLint("HandlerLeak")
-    private Handler handler = new Handler() {
+    private final Handler handler = new Handler() {
 
         @Override
         public void handleMessage(Message msg) {

@@ -20,8 +20,8 @@ import java.util.Map;
 
 public class MyBluetoothAdapter extends BaseAdapter {
 
-    private List<Map<String, Object>> list;
-    private Context context;
+    private final List<Map<String, Object>> list;
+    private final Context context;
     private Holder holder;
 
     public MyBluetoothAdapter(Context context, List<Map<String, Object>> list) {

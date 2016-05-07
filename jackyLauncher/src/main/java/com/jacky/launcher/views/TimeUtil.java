@@ -6,7 +6,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class TimeUtil {
+public final class TimeUtil {
+
+    private TimeUtil() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static String getTime() {
         String date = getFormattedDate();

@@ -16,9 +16,7 @@ import java.util.List;
 
 public class AppDataManage {
 
-    private Context mContext;
-
-    private static final String TAG = "GetAppList";
+    private final Context mContext;
 
     public AppDataManage(Context context) {
         mContext = context;

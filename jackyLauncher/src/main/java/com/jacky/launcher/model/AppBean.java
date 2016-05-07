@@ -11,7 +11,7 @@ public class AppBean {
     private String packageName;
     private int pageIndex;
     private int position;
-    private boolean sysApp = false;
+    private boolean sysApp;
 
     public String getDataDir() {
         return this.dataDir;

@@ -15,7 +15,7 @@ import com.jacky.common.app.BaseApp;
 
 public class LauncherApp extends BaseApp {
 
-    public static boolean netFlag = false;
+    public static boolean netFlag;
     private static Context context;
 
     @Override

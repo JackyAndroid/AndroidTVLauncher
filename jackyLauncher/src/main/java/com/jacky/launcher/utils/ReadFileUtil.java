@@ -9,7 +9,12 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class ReadFileUtil {
+public final class ReadFileUtil {
+
+    private ReadFileUtil() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
+
     public static byte[] ReadFileFromURL(String url, NetworkSpeedInfo info) {
         int fileLenth = 0;
         long startTime = 0;

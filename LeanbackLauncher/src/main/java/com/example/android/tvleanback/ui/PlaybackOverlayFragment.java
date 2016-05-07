@@ -109,7 +109,7 @@ public class PlaybackOverlayFragment
     private MediaController mMediaController;
     private PlaybackControlHelper mGlue;
     private VideoPlayer mPlayer;
-    private boolean mIsMetadataSet = false;
+    private boolean mIsMetadataSet;
 
     @Override
     public void onAttach(Context context) {

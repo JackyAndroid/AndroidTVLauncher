@@ -23,14 +23,9 @@ import com.jacky.launcher.R;
 
 public class Ethernet extends Activity {
 
-    private static final String TAG = "UPDATE";
-    private static final boolean d = false;
-
-    private ImageButton btnUpdate;
-
     private TextView tip;
 
-    private BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             boolean noConnectivity = intent.getBooleanExtra(
                     ConnectivityManager.EXTRA_NO_CONNECTIVITY, false);
