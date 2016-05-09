@@ -10,6 +10,8 @@ import com.jacky.uikit.fragment.BaseFragment;
 import java.util.ArrayList;
 
 /**
+ * Main UI Adapter
+ *
  * @author jacky
  * @version v1.0
  * @since 2016.4.1

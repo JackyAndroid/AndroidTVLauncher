@@ -15,7 +15,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 蓝牙管理adapter
+ * Bluetooth Adapter
+ *
+ * @author jacky
+ * @version v1.0
+ * @since 2016.4.1
  */
 
 public class MyBluetoothAdapter extends BaseAdapter {
