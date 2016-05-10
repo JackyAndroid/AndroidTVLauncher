@@ -16,6 +16,13 @@ import com.jacky.launcher.model.AppBean;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * AppFragment adapter
+ *
+ * @author jacky
+ * @version 1.0
+ * @since 2016.5.10
+ */
 public class AppAdapter extends BaseAdapter {
 
     private List<AppBean> mAppBeanList = null;

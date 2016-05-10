@@ -16,7 +16,7 @@
         android:text="蓝牙设置"
         android:textColor="@color/white"
         android:textSize="35sp"
-        android:layout_alignStart="@+id/bluetooth_rl_setting"
+        android:layout_alignLeft="@+id/bluetooth_rl_setting"
         android:layout_marginTop="80dp" />
 
     <RelativeLayout
@@ -128,7 +128,7 @@
         android:text="可配对的设备"
         android:textColor="@color/white"
         android:layout_below="@id/bluetooth_rl_setting"
-        android:layout_alignStart="@id/bluetooth_rl_setting"
+        android:layout_alignLeft="@id/bluetooth_rl_setting"
         android:textSize="30sp" />
 
     <RelativeLayout
@@ -182,7 +182,7 @@
         android:text="搜索到的设备"
         android:textColor="@color/white"
         android:layout_below="@id/bluetooth_rl_pair"
-        android:layout_alignStart="@id/bluetooth_rl_setting"
+        android:layout_alignLeft="@id/bluetooth_rl_setting"
         android:textSize="30sp" />
 
     <RelativeLayout
