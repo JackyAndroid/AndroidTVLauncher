@@ -31,22 +31,22 @@ import java.util.List;
 public class GarbageClear extends Activity {
     protected static final int FOUND_FINISH = 0;
     protected static final int CLEAR_FINISH = 1;
-    private Button StartFound, StartClear;
+    private Button startFound, startClear;
     private List<File> list;
-    private ProgressBar progressdisplay;
+    private ProgressBar progressDisplay;
     private static final String[] CLEAR_TYPE = {".apk", ".log"};
-    private boolean IsInstall;
-    private RelativeLayout found_layout;
-    private FrameLayout clear_layout;
-    private ImageView RoundImg;
+    private boolean isInstall;
+    private RelativeLayout foundLayout;
+    private FrameLayout clearLayout;
+    private ImageView roundImg;
     private Animation animation;
-    private TextView file_path;
-    private ImageView dialog_img;
-    private long File_Grbagesize;
-    private TextView grbage_size;
-    private boolean Found;// 如果为false则未完成扫描
-    private int TaskNum;
-    private int progressbar_num;
+    private TextView filePath;
+    private ImageView dialogImg;
+    private long fileGrbagesize;
+    private TextView grbageSize;
+    private boolean found;// 如果为false则未完成扫描
+    private int taskNum;
+    private int progressbarNum;
     private List<FoundTask> tasklist;
     @SuppressLint("HandlerLeak")
     private final Handler handler = new Handler() {
@@ -56,28 +56,28 @@ public class GarbageClear extends Activity {
             switch (msg.what) {
                 case FOUND_FINISH:
                     //查找完毕
-                    Found = true;
-                    StartFound.setText("开始清理");
-                    file_path.setText("查找完毕");
-                    StartFound.setClickable(true);
-                    progressdisplay.setProgress(100);
-                    progressbar_num = 0;
-                    dialog_img.setImageResource(R.drawable.dialog_center_img);
+                    found = true;
+                    startFound.setText("开始清理");
+                    filePath.setText("查找完毕");
+                    startFound.setClickable(true);
+                    progressDisplay.setProgress(100);
+                    progressbarNum = 0;
+                    dialogImg.setImageResource(R.drawable.dialog_center_img);
                     break;
                 case CLEAR_FINISH:
                     //清理完毕
-                    Found = false;
-                    StartClear.setClickable(true);
-                    StartFound.setText("开始扫描");
-                    StartClear.setText("清理完毕");
-                    grbage_size.setText("0");
-                    StartFound.setClickable(true);
+                    found = false;
+                    startClear.setClickable(true);
+                    startFound.setText("开始扫描");
+                    startClear.setText("清理完毕");
+                    grbageSize.setText("0");
+                    startFound.setClickable(true);
                     animation = null;
-                    File_Grbagesize = 0;
-                    progressdisplay.setProgress(progressbar_num);
-                    RoundImg.setAnimation(animation);
-                    RoundImg.setVisibility(View.GONE);
-                    dialog_img.setImageResource(R.drawable.finish_clear);
+                    fileGrbagesize = 0;
+                    progressDisplay.setProgress(progressbarNum);
+                    roundImg.setAnimation(animation);
+                    roundImg.setVisibility(View.GONE);
+                    dialogImg.setImageResource(R.drawable.finish_clear);
                     break;
                 default:
                     break;
@@ -99,46 +99,46 @@ public class GarbageClear extends Activity {
         list = new ArrayList<>();
         tasklist = new ArrayList<>();
         animation = AnimationUtils.loadAnimation(GarbageClear.this, R.anim.dialog_anmiation);
-        progressdisplay = (ProgressBar) findViewById(R.id.progressBar1);
-        StartFound = (Button) findViewById(R.id.start_found);
-        file_path = (TextView) findViewById(R.id.file_path);
-        StartClear = (Button) findViewById(R.id.start_clear);
-        RoundImg = (ImageView) findViewById(R.id.round_img);
-        grbage_size = (TextView) findViewById(R.id.garbage_size);
-        dialog_img = (ImageView) findViewById(R.id.dialog_img);
-        found_layout = (RelativeLayout) findViewById(R.id.found_layout);
-        clear_layout = (FrameLayout) findViewById(R.id.clear_layout);
+        progressDisplay = (ProgressBar) findViewById(R.id.progressBar1);
+        startFound = (Button) findViewById(R.id.start_found);
+        filePath = (TextView) findViewById(R.id.file_path);
+        startClear = (Button) findViewById(R.id.start_clear);
+        roundImg = (ImageView) findViewById(R.id.round_img);
+        grbageSize = (TextView) findViewById(R.id.garbage_size);
+        dialogImg = (ImageView) findViewById(R.id.dialog_img);
+        foundLayout = (RelativeLayout) findViewById(R.id.found_layout);
+        clearLayout = (FrameLayout) findViewById(R.id.clear_layout);
 //		UseMemory=StorageUtil.getUseMemorySize();
     }
 
     @SuppressLint("SdCardPath")
     public void Linstener() {
-        StartClear.setOnClickListener(new OnClickListener() {
+        startClear.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
-                clear_layout.setVisibility(View.GONE);
-                found_layout.setVisibility(View.VISIBLE);
+                clearLayout.setVisibility(View.GONE);
+                foundLayout.setVisibility(View.VISIBLE);
             }
         });
-        StartFound.setOnClickListener(new OnClickListener() {
+        startFound.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
-                StartFound.setClickable(false);
-                if (!Found) {
-                    StartFound.setText("扫描中");
-                    StartClear.setClickable(false);
+                startFound.setClickable(false);
+                if (!found) {
+                    startFound.setText("扫描中");
+                    startClear.setClickable(false);
                     new FoundTask(Environment.getExternalStorageDirectory()
                             + "/", CLEAR_TYPE).execute();
                 } else {
-                    if (File_Grbagesize != 0) {
-                        StartClear.setClickable(false);
-                        clear_layout.setVisibility(View.VISIBLE);
-                        found_layout.setVisibility(View.GONE);
-                        RoundImg.setAnimation(animation);
+                    if (fileGrbagesize != 0) {
+                        startClear.setClickable(false);
+                        clearLayout.setVisibility(View.VISIBLE);
+                        foundLayout.setVisibility(View.GONE);
+                        roundImg.setAnimation(animation);
                         new Thread(new Runnable() {
 
                             @Override
@@ -151,7 +151,7 @@ public class GarbageClear extends Activity {
                             }
                         }).start();
                     } else {
-                        StartFound.setClickable(true);
+                        startFound.setClickable(true);
                         Toast.makeText(GarbageClear.this, "当前不需要清理", Toast.LENGTH_SHORT)
                                 .show();
                     }
@@ -173,11 +173,11 @@ public class GarbageClear extends Activity {
      */
     class FoundTask extends AsyncTask<Void, String, List<FoundTask>> {
         private final String path;
-        private final String[] Extension;
+        private final String[] extension;
 
         public FoundTask(String path, String[] extension) {
             this.path = path;
-            this.Extension = extension;
+            this.extension = extension;
         }
 
         @Override
@@ -191,22 +191,22 @@ public class GarbageClear extends Activity {
                         if (file.getPath()
                                 .substring(
                                         file.getPath().length()
-                                                - Extension[i].length())
-                                .equals(Extension[i])) {
+                                                - extension[i].length())
+                                .equals(extension[i])) {
                             filePath = file.getAbsolutePath();
-                            IsInstall = ClearUtil.TakeIsInstallApk(filePath,
+                            isInstall = ClearUtil.TakeIsInstallApk(filePath,
                                     GarbageClear.this);
                             //判断是否已安装װ
-                            if (!IsInstall) {
+                            if (!isInstall) {
                                 long size = ClearUtil.getFileSize(file);
-                                File_Grbagesize = File_Grbagesize + size;
+                                fileGrbagesize = fileGrbagesize + size;
                                 list.add(file);
                             }
                         }
                     }
                 } else if (file.isDirectory() && file.getPath().indexOf("/.") == -1) {
-                    tasklist.add(new FoundTask(file.getPath(), Extension));
-                    TaskNum++;
+                    tasklist.add(new FoundTask(file.getPath(), extension));
+                    taskNum++;
                 }
             }
             return tasklist;
@@ -216,7 +216,7 @@ public class GarbageClear extends Activity {
         protected void onProgressUpdate(String... values) {
             //更改显示的文件路径
             String value = values[0];
-            file_path.setText(value);
+            filePath.setText(value);
         }
 
         @Override
@@ -224,20 +224,20 @@ public class GarbageClear extends Activity {
             // TODO Auto-generated method stub
             super.onPostExecute(result);
             //执行完毕  开始执行下一个任务
-            if (result != null && TaskNum != 0) {
+            if (result != null && taskNum != 0) {
                 tasklist.get(0).execute();
-                grbage_size.setText((int) ((float) File_Grbagesize / 1024 / 1024 / 2) + "");
-                TaskNum--;
+                grbageSize.setText((int) ((float) fileGrbagesize / 1024 / 1024 / 2) + "");
+                taskNum--;
                 tasklist.remove(0);
-                if (progressbar_num < 100) {
-                    progressbar_num++;
-                    progressdisplay.setProgress(progressbar_num);
-                } else if (progressbar_num == 100) {
-                    progressbar_num = 0;
+                if (progressbarNum < 100) {
+                    progressbarNum++;
+                    progressDisplay.setProgress(progressbarNum);
+                } else if (progressbarNum == 100) {
+                    progressbarNum = 0;
                 }
             }
             //任务执行完成
-            else if (TaskNum == 0) {
+            else if (taskNum == 0) {
                 Message message = new Message();
                 message.what = FOUND_FINISH;
                 handler.sendMessage(message);
