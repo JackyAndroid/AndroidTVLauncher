@@ -38,18 +38,18 @@ public class EliminateMainActivity extends Activity {
     public static final int PERCENT_CHANGE = 3;
     private List<RunningAppProcessInfo> appProcessInfo;
     private ActivityManager activityManager;
-    private List<TaskInfo> UserTaskInfo;
-    private ImageView Round_img;
-    private Button Start_kill;
-    private TextView increase_speed;
-    private TextView Allpercent;
+    private List<TaskInfo> userTaskInfo;
+    private ImageView roundImg;
+    private Button startKill;
+    private TextView increaseSpeed;
+    private TextView allPercent;
     private String percentnum;
-    private TextView release_memory;
-    private String Clearmemory;
-    private LinearLayout clear_endlayout;
-    private RelativeLayout Clearing_layout;
-    private static float MemorySurPlus;
-    private static float TotalMemory;
+    private TextView releaseMemory;
+    private String clearMemory;
+    private LinearLayout clearEndlayout;
+    private RelativeLayout clearingLayout;
+    private static float memorySurPlus;
+    private static float totalMemory;
     private MemoryInfo info;
     private int allpercent;
     private Boolean ISRound = true;
@@ -64,20 +64,20 @@ public class EliminateMainActivity extends Activity {
                 case CLEAR_FINISH:
                     ISRound = false;
                     Animation animation = null;
-                    Round_img.setAnimation(animation);
-                    Clearing_layout.setVisibility(View.GONE);
-                    clear_endlayout.setVisibility(View.VISIBLE);
-                    increase_speed.setText(percentnum + "%");
-                    release_memory.setText(Clearmemory + "MB");
-                    Start_kill.setText("清理完成");
+                    roundImg.setAnimation(animation);
+                    clearingLayout.setVisibility(View.GONE);
+                    clearEndlayout.setVisibility(View.VISIBLE);
+                    increaseSpeed.setText(percentnum + "%");
+                    releaseMemory.setText(clearMemory + "MB");
+                    startKill.setText("清理完成");
                     break;
                 case NEEDENT_CLEAR:
                     percentnum = 0 + "";
-                    Clearmemory = 0 + "";
+                    clearMemory = 0 + "";
                     Toast.makeText(EliminateMainActivity.this, "当前不需要清理", Toast.LENGTH_LONG).show();
                     break;
                 case PERCENT_CHANGE:
-                    Allpercent.setText(allpercent + "%");
+                    allPercent.setText(allpercent + "%");
                     break;
                 default:
                     break;
@@ -99,18 +99,18 @@ public class EliminateMainActivity extends Activity {
 
     public void Init() {
         GetSurplusMemory();
-        Round_img = (ImageView) findViewById(R.id.eliminate_roundimg);
-        Start_kill = (Button) findViewById(R.id.start_killtask);
-        release_memory = (TextView) findViewById(R.id.relase_memory);
-        increase_speed = (TextView) findViewById(R.id.increase_speed);
-        Allpercent = (TextView) findViewById(R.id.all_percent);
-        clear_endlayout = (LinearLayout) findViewById(R.id.clear_endlayout);
-        Clearing_layout = (RelativeLayout) findViewById(R.id.clearing_layout);
+        roundImg = (ImageView) findViewById(R.id.eliminate_roundimg);
+        startKill = (Button) findViewById(R.id.start_killtask);
+        releaseMemory = (TextView) findViewById(R.id.relase_memory);
+        increaseSpeed = (TextView) findViewById(R.id.increase_speed);
+        allPercent = (TextView) findViewById(R.id.all_percent);
+        clearEndlayout = (LinearLayout) findViewById(R.id.clear_endlayout);
+        clearingLayout = (RelativeLayout) findViewById(R.id.clearing_layout);
         Animation animation = AnimationUtils.loadAnimation(EliminateMainActivity.this, R.anim.eliminatedialog_anmiation);
-        TotalMemory = GetTotalMemory();
-        Round_img.setAnimation(animation);
-        Start_kill.setClickable(false);
-        Start_kill.setOnClickListener(new OnClickListener() {
+        totalMemory = GetTotalMemory();
+        roundImg.setAnimation(animation);
+        startKill.setClickable(false);
+        startKill.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -128,7 +128,7 @@ public class EliminateMainActivity extends Activity {
             public void run() {
                 // TODO Auto-generated method stub
                 while (ISRound) {
-                    allpercent = (int) ((float) (MemorySurPlus / TotalMemory) * 100);
+                    allpercent = (int) ((float) (memorySurPlus / totalMemory) * 100);
                     handler.sendEmptyMessage(PERCENT_CHANGE);
                 }
             }
@@ -141,7 +141,7 @@ public class EliminateMainActivity extends Activity {
                 getRunningApp();
                 TaskInfoProvider taskInfoProvider = new TaskInfoProvider(
                         EliminateMainActivity.this);
-                UserTaskInfo = taskInfoProvider.GetAllTask(appProcessInfo);
+                userTaskInfo = taskInfoProvider.GetAllTask(appProcessInfo);
                 KillTask();
             }
         }).start();
@@ -159,7 +159,7 @@ public class EliminateMainActivity extends Activity {
         info = new ActivityManager.MemoryInfo();
         activityManager.getMemoryInfo(info);
         long memorySize = info.availMem;
-        MemorySurPlus = (float) memorySize / 1024 / 1024;
+        memorySurPlus = (float) memorySize / 1024 / 1024;
         return memorySize;
     }
 
@@ -182,7 +182,7 @@ public class EliminateMainActivity extends Activity {
     }
 
     private void KillTask() {
-        for (TaskInfo info : UserTaskInfo) {
+        for (TaskInfo info : userTaskInfo) {
             if (!info.getIsSystemProcess()) {
                 activityManager.killBackgroundProcesses(info.getPackageName());
             }
@@ -190,11 +190,11 @@ public class EliminateMainActivity extends Activity {
         MemoryInfo info = new ActivityManager.MemoryInfo();
         activityManager.getMemoryInfo(info);
         float memorySize = (float) info.availMem / 1024 / 1024;
-        float size = memorySize - MemorySurPlus;
+        float size = memorySize - memorySurPlus;
         if (size > 0) {
             DecimalFormat decimalFormat = new DecimalFormat("0.00");
-            Clearmemory = decimalFormat.format(size);
-            percentnum = decimalFormat.format((size / TotalMemory) * 100);
+            clearMemory = decimalFormat.format(size);
+            percentnum = decimalFormat.format((size / totalMemory) * 100);
         } else {
             Message message = new Message();
             message.what = NEEDENT_CLEAR;

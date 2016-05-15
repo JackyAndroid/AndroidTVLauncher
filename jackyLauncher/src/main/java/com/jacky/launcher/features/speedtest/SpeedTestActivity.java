@@ -24,26 +24,26 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
     private static final int PROGRESSCHANGE = 0;
     private static final int SPEEDUPDATE = 1;
     private static final int SPEED_FINISH = 2;
-    private Button DidNotStart;//未开始
-    private Button InStart;//已开始
-    private Button StartAgain;//再次开始
-    private LinearLayout DidNotStartLayout;
-    private LinearLayout InStartLayout;
-    private LinearLayout StartAgainLayout;
-    private long CurrenSpeed;//当前速度
-    private long AverageSpeed;//平均速度
-    private long SpeedTaital;
-    private byte[] FileData;
+    private Button didNotStart;//未开始
+    private Button inStart;//已开始
+    private Button startAgain;//再次开始
+    private LinearLayout didNotStartLayout;
+    private LinearLayout inStartLayout;
+    private LinearLayout startAgainLayout;
+    private long currenSpeed;//当前速度
+    private long averageSpeed;//平均速度
+    private long speedTaital;
+    private byte[] fileData;
     private NetworkSpeedInfo networkSpeedInfo;
     private final List<Long> list = new ArrayList<>();
-    private ProgressBar SpeedProgressBar;
-    private TextView Speed;
+    private ProgressBar speedProgressBar;
+    private TextView speed;
     private TextView percent;
-    private TextView Movie_TYPE;
+    private TextView movieType;
     private int progress;
     private Thread thread;
-    private Boolean THREADCANRUN = true;
-    private Boolean PROGRESSTHREADCANRUN = true;
+    private Boolean threadCanRun = true;
+    private Boolean progressThreadCanRun = true;
     private final Handler handler = new Handler() {
 
         @Override
@@ -53,42 +53,42 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
                     progress = NetworkSpeedInfo.progress;
                     percent.setText(progress + "%");
                     if (progress < 100) {
-                        SpeedProgressBar.setProgress(progress);
+                        speedProgressBar.setProgress(progress);
                     } else {
-                        InStart.performClick();
-                        PROGRESSTHREADCANRUN = false;
+                        inStart.performClick();
+                        progressThreadCanRun = false;
                         progress = 0;
-                        SpeedProgressBar.setProgress(progress);
+                        speedProgressBar.setProgress(progress);
                     }
                     break;
                 case SPEEDUPDATE:
-                    CurrenSpeed = NetworkSpeedInfo.Speed;
-                    list.add(CurrenSpeed);
+                    currenSpeed = NetworkSpeedInfo.Speed;
+                    list.add(currenSpeed);
                     for (long speed : list) {
-                        SpeedTaital += speed;
+                        speedTaital += speed;
                     }
-                    AverageSpeed = SpeedTaital / list.size();
-                    Speed.setText(AverageSpeed + "kb/s");
-                    if (AverageSpeed <= 200) {
-                        Movie_TYPE.setText("普清电影");
-                    } else if (AverageSpeed <= 400) {
-                        Movie_TYPE.setText("高清电影");
-                    } else if (AverageSpeed > 400) {
-                        Movie_TYPE.setText("超清电影");
+                    averageSpeed = speedTaital / list.size();
+                    speed.setText(averageSpeed + "kb/s");
+                    if (averageSpeed <= 200) {
+                        movieType.setText("普清电影");
+                    } else if (averageSpeed <= 400) {
+                        movieType.setText("高清电影");
+                    } else if (averageSpeed > 400) {
+                        movieType.setText("超清电影");
                     }
-                    SpeedTaital = 0;
+                    speedTaital = 0;
                     break;
                 case SPEED_FINISH:
-                    Speed.setText(AverageSpeed + "kb/s");
-                    if (AverageSpeed <= 200) {
-                        Movie_TYPE.setText("普清电影");
-                    } else if (AverageSpeed <= 400) {
-                        Movie_TYPE.setText("高清电影");
-                    } else if (AverageSpeed > 400) {
-                        Movie_TYPE.setText("超清电影");
+                    speed.setText(averageSpeed + "kb/s");
+                    if (averageSpeed <= 200) {
+                        movieType.setText("普清电影");
+                    } else if (averageSpeed <= 400) {
+                        movieType.setText("高清电影");
+                    } else if (averageSpeed > 400) {
+                        movieType.setText("超清电影");
                     }
-                    PROGRESSTHREADCANRUN = false;
-                    THREADCANRUN = false;
+                    progressThreadCanRun = false;
+                    threadCanRun = false;
                     NetworkSpeedInfo.FILECANREAD = false;
                     break;
                 default:
@@ -108,18 +108,18 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
 
     public void Init() {
         networkSpeedInfo = new NetworkSpeedInfo();
-        DidNotStart = (Button) findViewById(R.id.speedtest_btn_start);
-        InStart = (Button) findViewById(R.id.speedtset_btn_stoptest);
-        StartAgain = (Button) findViewById(R.id.speedtest_btn_startagain);
-        DidNotStart.setOnClickListener(this);
-        InStart.setOnClickListener(this);
-        StartAgain.setOnClickListener(this);
-        DidNotStartLayout = (LinearLayout) findViewById(R.id.speedtset_didinotlayout);
-        InStartLayout = (LinearLayout) findViewById(R.id.speedtest_instartlayout);
-        StartAgainLayout = (LinearLayout) findViewById(R.id.speedtest_startagainlayout);
-        SpeedProgressBar = (ProgressBar) findViewById(R.id.speedtest_progressBar);
-        Speed = (TextView) findViewById(R.id.speedtest_speed);
-        Movie_TYPE = (TextView) findViewById(R.id.speed_movietype);
+        didNotStart = (Button) findViewById(R.id.speedtest_btn_start);
+        inStart = (Button) findViewById(R.id.speedtset_btn_stoptest);
+        startAgain = (Button) findViewById(R.id.speedtest_btn_startagain);
+        didNotStart.setOnClickListener(this);
+        inStart.setOnClickListener(this);
+        startAgain.setOnClickListener(this);
+        didNotStartLayout = (LinearLayout) findViewById(R.id.speedtset_didinotlayout);
+        inStartLayout = (LinearLayout) findViewById(R.id.speedtest_instartlayout);
+        startAgainLayout = (LinearLayout) findViewById(R.id.speedtest_startagainlayout);
+        speedProgressBar = (ProgressBar) findViewById(R.id.speedtest_progressBar);
+        speed = (TextView) findViewById(R.id.speedtest_speed);
+        movieType = (TextView) findViewById(R.id.speed_movietype);
         percent = (TextView) findViewById(R.id.speed_test_percent);
     }
 
@@ -127,19 +127,19 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
     public void onClick(View arg0) {
         switch (arg0.getId()) {
             case R.id.speedtest_btn_start:
-                DidNotStartLayout.setVisibility(View.GONE);
-                InStartLayout.setVisibility(View.VISIBLE);
-                StartAgainLayout.setVisibility(View.GONE);
-                InStart.requestFocus();
-                InStart.requestFocusFromTouch();
-                PROGRESSTHREADCANRUN = true;
-                THREADCANRUN = true;
+                didNotStartLayout.setVisibility(View.GONE);
+                inStartLayout.setVisibility(View.VISIBLE);
+                startAgainLayout.setVisibility(View.GONE);
+                inStart.requestFocus();
+                inStart.requestFocusFromTouch();
+                progressThreadCanRun = true;
+                threadCanRun = true;
                 NetworkSpeedInfo.FILECANREAD = true;
                 new Thread() {
 
                     @Override
                     public void run() {
-                        FileData = ReadFileUtil.ReadFileFromURL(URL,
+                        fileData = ReadFileUtil.ReadFileFromURL(URL,
                                 networkSpeedInfo);
                     }
                 }.start();
@@ -147,7 +147,7 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
 
                     @Override
                     public void run() {
-                        while (THREADCANRUN) {
+                        while (threadCanRun) {
                             try {
                                 sleep(50);
                             } catch (InterruptedException e) {
@@ -169,7 +169,7 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
                     @Override
                     public void run() {
                         // TODO Auto-generated method stub
-                        while (PROGRESSTHREADCANRUN) {
+                        while (progressThreadCanRun) {
                             try {
                                 sleep(500);
                             } catch (InterruptedException e) {
@@ -182,19 +182,19 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
                 }.start();
                 break;
             case R.id.speedtset_btn_stoptest:
-                StartAgainLayout.setVisibility(View.VISIBLE);
-                InStartLayout.setVisibility(View.GONE);
-                DidNotStartLayout.setVisibility(View.GONE);
-                StartAgain.requestFocus();
-                StartAgain.requestFocusFromTouch();
+                startAgainLayout.setVisibility(View.VISIBLE);
+                inStartLayout.setVisibility(View.GONE);
+                didNotStartLayout.setVisibility(View.GONE);
+                startAgain.requestFocus();
+                startAgain.requestFocusFromTouch();
                 NetworkSpeedInfo.progress = 0;
                 NetworkSpeedInfo.FinishBytes = 0;
                 handler.sendEmptyMessage(SPEED_FINISH);
                 break;
             case R.id.speedtest_btn_startagain:
-                DidNotStartLayout.setVisibility(View.VISIBLE);
-                StartAgainLayout.setVisibility(View.GONE);
-                InStartLayout.setVisibility(View.GONE);
+                didNotStartLayout.setVisibility(View.VISIBLE);
+                startAgainLayout.setVisibility(View.GONE);
+                inStartLayout.setVisibility(View.GONE);
                 break;
             default:
                 break;

@@ -48,25 +48,25 @@ public class WAndB_WifilistAdapter extends BaseAdapter {
         if (view == null) {
             viewholder = new Viewholder();
             view = inflater.inflate(R.layout.wandb_wifilist_item, null);
-            viewholder.WifiName = (TextView) view.findViewById(R.id.wannb_wifilist_item_wifiname);
+            viewholder.wifiName = (TextView) view.findViewById(R.id.wannb_wifilist_item_wifiname);
             view.setTag(viewholder);
         } else {
             viewholder = (Viewholder) view.getTag();
         }
-        viewholder.WifiName.setText(scanResults.get(arg0).SSID);
-        viewholder.ArrowTop = (ImageView) context.findViewById(R.id.wifi_arrowtop);
-        viewholder.ArrowBottom = (ImageView) context.findViewById(R.id.wifi_arrowbottom);
+        viewholder.wifiName.setText(scanResults.get(arg0).SSID);
+        viewholder.arrowTop = (ImageView) context.findViewById(R.id.wifi_arrowtop);
+        viewholder.arrowBottom = (ImageView) context.findViewById(R.id.wifi_arrowbottom);
         if (arg0 == scanResults.size() - 1) {
-            viewholder.ArrowBottom.setVisibility(View.INVISIBLE);
+            viewholder.arrowBottom.setVisibility(View.INVISIBLE);
         } else {
-            viewholder.ArrowBottom.setVisibility(View.VISIBLE);
+            viewholder.arrowBottom.setVisibility(View.VISIBLE);
         }
         return view;
     }
 
     class Viewholder {
-        public TextView WifiName;
-        public ImageView ArrowTop;
-        public ImageView ArrowBottom;
+        public TextView wifiName;
+        public ImageView arrowTop;
+        public ImageView arrowBottom;
     }
 }
