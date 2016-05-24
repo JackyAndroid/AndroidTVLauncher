@@ -593,7 +593,8 @@ public class PlaybackOverlayFragment
         public void onPlayFromMediaId(String mediaId, Bundle extras) {
             Bundle args = new Bundle();
             args.putString(VideoContract.VideoEntry._ID, mediaId);
-            getLoaderManager().initLoader(mSpecificVideoLoaderId++, args, mCallbacks);
+            getLoaderManager().initLoader(mSpecificVideoLoaderId, args, mCallbacks);
+            mSpecificVideoLoaderId++;
         }
 
         @Override
@@ -607,7 +608,8 @@ public class PlaybackOverlayFragment
             Bundle bundle = new Bundle();
             bundle.putBoolean(AUTO_PLAY, true);
 
-            int nextIndex = ++mQueueIndex;
+            mQueueIndex++;
+            int nextIndex = mQueueIndex;
             if (nextIndex < mQueue.size()) {
                 MediaSession.QueueItem item = mQueue.get(nextIndex);
                 String mediaId = item.getDescription().getMediaId();
@@ -627,7 +629,8 @@ public class PlaybackOverlayFragment
             Bundle bundle = new Bundle();
             bundle.putBoolean(AUTO_PLAY, true);
 
-            int prevIndex = --mQueueIndex;
+            mQueueIndex--;
+            int prevIndex = mQueueIndex;
             if (prevIndex >= 0) {
                 MediaSession.QueueItem item = mQueue.get(prevIndex);
                 String mediaId = item.getDescription().getMediaId();

@@ -166,7 +166,8 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
     private void loadQuery(String query) {
         if (!TextUtils.isEmpty(query) && !query.equals("nil")) {
             mQuery = query;
-            getLoaderManager().initLoader(mSearchLoaderId++, null, this);
+            getLoaderManager().initLoader(mSearchLoaderId, null, this);
+            mSearchLoaderId++;
         }
     }
 
