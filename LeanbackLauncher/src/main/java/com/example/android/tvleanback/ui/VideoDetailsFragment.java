@@ -145,7 +145,8 @@ public class VideoDetailsFragment extends DetailsFragment
 
             Bundle args = new Bundle();
             args.putString(VideoContract.VideoEntry._ID, videoId);
-            getLoaderManager().initLoader(mGlobalSearchVideoId++, args, this);
+            getLoaderManager().initLoader(mGlobalSearchVideoId, args, this);
+            mGlobalSearchVideoId++;
             return true;
         }
         return false;
