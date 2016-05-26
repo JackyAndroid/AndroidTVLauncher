@@ -66,7 +66,7 @@ public class FileUtils {
             FileInputStream in = context.openFileInput(fileName);
             return readInStream(in);
         } catch (Exception e) {
-            // e.printStackTrace();
+
             return "";
         }
 
@@ -85,7 +85,8 @@ public class FileUtils {
             inStream.close();
             return outStream.toString();
         } catch (IOException e) {
-            // UIHelper.Log("e", "", "FileReadError", true);
+
+            
         }
         return null;
     }
@@ -397,7 +398,6 @@ public class FileUtils {
                         deletedFile.delete();
                     }
                     newPath.delete();
-                    // UIHelper.Log("i", "", fileName, true);
                     status = true;
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -428,7 +428,6 @@ public class FileUtils {
             checker.checkDelete(newPath.toString());
             if (newPath.isFile()) {
                 try {
-                    // UIHelper.Log("i", "", fileName);
                     newPath.delete();
                     status = true;
                 } catch (SecurityException se) {
