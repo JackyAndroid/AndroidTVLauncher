@@ -58,9 +58,6 @@ public class Utils {
         Point size = new Point();
         display.getSize(size);
 
-        // You can get the height & width like such:
-        // int width = size.x;
-        // int height = size.y;
         return size;
     }
 

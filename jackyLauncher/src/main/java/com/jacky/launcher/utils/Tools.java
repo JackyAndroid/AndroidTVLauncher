@@ -253,18 +253,6 @@ public final class Tools {
 
     public static void installApk(Context context, File apk, String md5) {
 
-        // 校验文件MD5 值
-//		try {
-//			Log.d(TAG,
-//					"md5" + MD5Util.getFileMD5String(apk).equalsIgnoreCase(md5));
-//			if (!apk.exists()
-//					|| !MD5Util.getFileMD5String(apk).equalsIgnoreCase(md5)) {
-//				Log.d(TAG, "md5 check error");
-//				return;
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
         FileUtils.modifyFile(apk);// 修改文件权限之可执行
         Log.i(TAG, "===========install apk =========" + apk.getAbsolutePath());
         Intent i = new Intent(Intent.ACTION_VIEW);

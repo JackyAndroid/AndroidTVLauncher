@@ -108,7 +108,6 @@ public class GarbageClear extends Activity {
         dialogImg = (ImageView) findViewById(R.id.dialog_img);
         foundLayout = (RelativeLayout) findViewById(R.id.found_layout);
         clearLayout = (FrameLayout) findViewById(R.id.clear_layout);
-//		UseMemory=StorageUtil.getUseMemorySize();
     }
 
     @SuppressLint("SdCardPath")

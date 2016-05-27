@@ -91,10 +91,6 @@ public class AppAutoRun extends Activity implements View.OnClickListener {
             dos.flush();
             command = "export LD_LIBRARY_PATH=/vendor/lib:/system/lib  \n";
             dos.writeBytes(command);
-            //(有些cls含有$，需要处理一下，不然会禁止失败，比如微信)
-            //但是获取应用是否允许或者禁止开机启动的时候就不用处理cls，否则得不到状态值
-//            cls = cls.replace("$", "\\$");
-//            command = "pm disable " + pkg + "/" + cls + " \n";
             if (able) {
                 command = "pm enable " + pkg;
             } else {

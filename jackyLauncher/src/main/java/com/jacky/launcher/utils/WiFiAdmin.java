@@ -96,15 +96,6 @@ public class WiFiAdmin {
         Log.v("mWifiManager", mWifiManager + "");
         Log.v("mWifiList", mWifiList + "");
         Log.v("mWifiConfigurations", mWifiConfigurations + "");
-//		String [] str=new String[mWifiList.size()];
-//		String tempstring=null;
-//		for(int i=0;i<mWifiList.size();i++){
-//			tempstring=mWifiList.get(i).SSID;
-//			if(null!=mWifiInfo&&tempstring.equals(mWifiInfo.getSSID())){
-//				tempstring=tempstring+"已连接";
-//			}
-//			str[i]=tempstring;
-//		}
     }
 
     public void getWifiConnectInfo() {

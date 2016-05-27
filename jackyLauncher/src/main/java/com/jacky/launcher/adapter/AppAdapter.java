@@ -77,7 +77,6 @@ public class AppAdapter extends BaseAdapter {
         AppBean appBean = mAppBeanList.get(position);
         mHolder.icon.setImageDrawable(appBean.getIcon());
         mHolder.name.setText(appBean.getName());
-//        mHolder.bg.setOnFocusChangeListener(mAppFragment.getFocusChangeListener());
         return convertView;
     }
 

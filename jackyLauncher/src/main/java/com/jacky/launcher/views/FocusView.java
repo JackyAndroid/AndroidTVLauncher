@@ -167,7 +167,6 @@ public class FocusView extends View implements AnimatorListener {
     }
 
     public boolean canMove() {
-        //return !mMoving;
         return mQueue.size() < 1;
     }
 
