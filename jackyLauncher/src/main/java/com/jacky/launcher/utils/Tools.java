@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -74,7 +75,7 @@ public final class Tools {
             resultString = new String(origin);
             MessageDigest md = MessageDigest.getInstance("MD5");
             resultString = byteArrayToHexString(md.digest(resultString
-                    .getBytes()));
+                    .getBytes(StandardCharsets.UTF_8)));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -275,7 +276,7 @@ public final class Tools {
             Process p = Runtime.getRuntime().exec("ping -c 1 -w 100 " + ip);// ping3次
             // 读取ping的内容，可不加。
             InputStream input = p.getInputStream();
-            BufferedReader in = new BufferedReader(new InputStreamReader(input));
+            BufferedReader in = new BufferedReader(new InputStreamReader(input,StandardCharsets.UTF_8));
             StringBuffer stringBuffer = new StringBuffer();
             String content = "";
             while ((content = in.readLine()) != null) {

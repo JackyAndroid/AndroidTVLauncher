@@ -2,6 +2,7 @@ package com.jacky.common.logger;
 
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
@@ -215,7 +216,7 @@ final class LoggerPrinter implements Printer {
         logHeaderContent(logType, tag, methodCount);
 
         //get bytes of message with system's default charset (which is UTF-8 for Android)
-        byte[] bytes = message.getBytes();
+        byte[] bytes = message.getBytes(StandardCharsets.UTF_8);
         int length = bytes.length;
         if (length <= CHUNK_SIZE) {
             if (methodCount > 0) {
@@ -231,7 +232,7 @@ final class LoggerPrinter implements Printer {
         for (int i = 0; i < length; i += CHUNK_SIZE) {
             int count = Math.min(length - i, CHUNK_SIZE);
             //create a new String with system's default charset (which is UTF-8 for Android)
-            logContent(logType, tag, new String(bytes, i, count));
+            logContent(logType, tag, new String(bytes, i, count, StandardCharsets.UTF_8));
         }
         logBottomBorder(logType, tag);
     }
