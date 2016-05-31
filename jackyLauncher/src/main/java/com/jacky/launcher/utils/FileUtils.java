@@ -20,6 +20,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -46,7 +47,7 @@ public class FileUtils {
         try {
             FileOutputStream fos = context.openFileOutput(fileName,
                     Context.MODE_PRIVATE);
-            fos.write(content.getBytes());
+            fos.write(content.getBytes(StandardCharsets.UTF_8));
 
             fos.close();
         } catch (Exception e) {
@@ -83,7 +84,7 @@ public class FileUtils {
 
             outStream.close();
             inStream.close();
-            return outStream.toString();
+            return outStream.toString("UTF-8");
         } catch (IOException e) {
 
             

@@ -25,7 +25,9 @@ import com.jacky.launcher.R;
 import com.jacky.launcher.model.TaskInfo;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -169,11 +171,13 @@ public class EliminateMainActivity extends Activity {
         String[] arrayOfString;
         long initialMemory = 0;
         try {
-            FileReader fileReader = new FileReader(str1);
-            BufferedReader bufferedReader = new BufferedReader(fileReader, 8192);
+            FileInputStream fileInputStream = new FileInputStream(str1);
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, StandardCharsets.UTF_8);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader, 8192);
             str2 = bufferedReader.readLine();
             arrayOfString = str2.split("\\s+");
             initialMemory = Integer.valueOf(arrayOfString[1]);
+            fileInputStream.close();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

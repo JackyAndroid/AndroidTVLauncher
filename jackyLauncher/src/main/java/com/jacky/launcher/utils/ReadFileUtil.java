@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 
 public final class ReadFileUtil {
 
@@ -33,11 +34,11 @@ public final class ReadFileUtil {
             NetworkSpeedInfo.totalBytes = fileLenth;
             b = new byte[fileLenth];
             startTime = System.currentTimeMillis();
-            BufferedReader bufferReader = new BufferedReader(new InputStreamReader(mUrlConnection.getInputStream()));
+            BufferedReader bufferReader = new BufferedReader(new InputStreamReader(mUrlConnection.getInputStream(), StandardCharsets.UTF_8));
             String line;
             byte[] buffer;
             while (NetworkSpeedInfo.FILECANREAD && ((line = bufferReader.readLine()) != null) && fileLenth > NetworkSpeedInfo.FinishBytes) {
-                buffer = line.getBytes();
+                buffer = line.getBytes(StandardCharsets.UTF_8);
                 intervalTime = System.currentTimeMillis() - startTime;
                 NetworkSpeedInfo.FinishBytes = NetworkSpeedInfo.FinishBytes + buffer.length;
                 if (intervalTime == 0) {
