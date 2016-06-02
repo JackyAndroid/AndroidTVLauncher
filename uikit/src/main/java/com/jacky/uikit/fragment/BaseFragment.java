@@ -12,6 +12,19 @@ public class BaseFragment extends Fragment {
 
     private View mCurrentView;
 
+    public View.OnFocusChangeListener mFocusChangeListener = new View.OnFocusChangeListener() {
+
+        @Override
+        public void onFocusChange(View v, boolean hasFocus) {
+            if (hasFocus) {
+                mCurrentView = v;
+                enlargeAnim(v);
+            } else {
+                reduceAnim(v);
+            }
+        }
+    };
+
     public View getCurrentView() {
         return mCurrentView;
     }
@@ -27,19 +40,6 @@ public class BaseFragment extends Fragment {
     public View.OnFocusChangeListener getFocusChangeListener() {
         return mFocusChangeListener;
     }
-
-    public View.OnFocusChangeListener mFocusChangeListener = new View.OnFocusChangeListener() {
-
-        @Override
-        public void onFocusChange(View v, boolean hasFocus) {
-            if (hasFocus) {
-                mCurrentView = v;
-                enlargeAnim(v);
-            } else {
-                reduceAnim(v);
-            }
-        }
-    };
 
     public void enlargeAnim(View v) {
         Animation a = android.view.animation.AnimationUtils.loadAnimation(v.getContext(), R.anim.uikit_enlarge);

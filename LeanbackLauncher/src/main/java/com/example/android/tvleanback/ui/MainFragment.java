@@ -359,7 +359,7 @@ public class MainFragment extends BrowseFragment implements LoaderManager.Loader
                     getFragmentManager().beginTransaction().replace(R.id.main_frame, errorFragment)
                             .addToBackStack(null).commit();
                 } else {
-                    Toast.makeText(getActivity(), ((String) item), Toast.LENGTH_SHORT)
+                    Toast.makeText(getActivity(), (String) item, Toast.LENGTH_SHORT)
                             .show();
                 }
             }

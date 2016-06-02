@@ -33,6 +33,18 @@ public final class Video implements Parcelable {
     public final String videoUrl;
     public final String studio;
 
+    public static final Creator<Video> CREATOR = new Creator<Video>() {
+        @Override
+        public Video createFromParcel(Parcel in) {
+            return new Video(in);
+        }
+
+        @Override
+        public Video[] newArray(int size) {
+            return new Video[size];
+        }
+    };
+
     private Video(
             final long id,
             final String category,
@@ -62,18 +74,6 @@ public final class Video implements Parcelable {
         videoUrl = in.readString();
         studio = in.readString();
     }
-
-    public static final Creator<Video> CREATOR = new Creator<Video>() {
-        @Override
-        public Video createFromParcel(Parcel in) {
-            return new Video(in);
-        }
-
-        @Override
-        public Video[] newArray(int size) {
-            return new Video[size];
-        }
-    };
 
     @Override
     public boolean equals(Object m) {

@@ -21,15 +21,15 @@ public class FocusView extends View implements AnimatorListener {
     protected String focusTag = "focus";
 
     protected View mAnchorView;
-    protected int mOffsetX = 0;
-    protected int mOffsetY = 0;
-    protected int mOffsetWidth = 0;
-    protected int mOffsetHeight = 0;
+    protected int mOffsetX;
+    protected int mOffsetY;
+    protected int mOffsetWidth;
+    protected int mOffsetHeight;
     protected int mDuration = 200;
 
     private ObjectAnimator mObjectAnimator;
-    private boolean mMoving = false;
-    private boolean mMargin = false;
+    private boolean mMoving;
+    private boolean mMargin;
     private MarginLayoutParams mLayoutParams;
     private Queue<View> mQueue = new LinkedList<>();
 
@@ -122,8 +122,8 @@ public class FocusView extends View implements AnimatorListener {
         int width = view.getWidth();
         int height = view.getHeight();
 
-        PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("x", (location[0] - mOffsetX));
-        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("y", (location[1] - mOffsetY));
+        PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("x", location[0] - mOffsetX);
+        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("y", location[1] - mOffsetY);
         PropertyValuesHolder pvhW = PropertyValuesHolder.ofFloat("width", getWidth(), width + mOffsetWidth);
         PropertyValuesHolder pvhH = PropertyValuesHolder.ofFloat("height", getHeight(), height + mOffsetHeight);
         mObjectAnimator = ObjectAnimator.ofPropertyValuesHolder(this, pvhW, pvhH, pvhX, pvhY);
@@ -156,8 +156,8 @@ public class FocusView extends View implements AnimatorListener {
         int width = view.getWidth();
         int height = view.getHeight();
 
-        PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("xcoor", getX(), (location[0] - mOffsetX));
-        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("ycoor", getY(), (location[1] - mOffsetY));
+        PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("xcoor", getX(), location[0] - mOffsetX);
+        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("ycoor", getY(), location[1] - mOffsetY);
         PropertyValuesHolder pvhW = PropertyValuesHolder.ofFloat("width", getWidth(), width + mOffsetWidth);
         PropertyValuesHolder pvhH = PropertyValuesHolder.ofFloat("height", getHeight(), height + mOffsetHeight);
         mObjectAnimator = ObjectAnimator.ofPropertyValuesHolder(this, pvhW, pvhH, pvhX, pvhY);

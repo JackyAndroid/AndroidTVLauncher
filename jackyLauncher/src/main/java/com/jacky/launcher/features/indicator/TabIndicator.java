@@ -22,6 +22,18 @@ public class TabIndicator extends LinearLayout implements TabButton.OnTabButtonC
 
     private ArrayList<TabButton> mTabButtonList = new ArrayList<>();
 
+    public TabIndicator(Context context) {
+        super(context);
+        mContext = context;
+        initUI();
+    }
+
+    public TabIndicator(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        mContext = context;
+        initUI();
+    }
+
     public interface onTabChangeListener {
         void onTabChange(int index);
     }
@@ -36,18 +48,6 @@ public class TabIndicator extends LinearLayout implements TabButton.OnTabButtonC
 
     public void setOnTabClickListener(onTabClickListener onTabClickListener) {
         mOnTabClickListener = onTabClickListener;
-    }
-
-    public TabIndicator(Context context) {
-        super(context);
-        mContext = context;
-        initUI();
-    }
-
-    public TabIndicator(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        mContext = context;
-        initUI();
     }
 
     private void initUI() {

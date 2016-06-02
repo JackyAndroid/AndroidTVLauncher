@@ -337,7 +337,7 @@ public class FileUtils {
         } else {
             return -1;
         }
-        return (freeSpace);
+        return freeSpace;
     }
 
     /**

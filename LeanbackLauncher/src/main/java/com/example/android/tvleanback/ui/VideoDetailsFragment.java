@@ -305,7 +305,7 @@ public class VideoDetailsFragment extends DetailsFragment
         @Override
         public void onBindViewHolder(Presenter.ViewHolder viewHolder, Object item) {
             DetailsOverviewRow row = (DetailsOverviewRow) item;
-            ImageView imageView = ((ImageView) viewHolder.view);
+            ImageView imageView = (ImageView) viewHolder.view;
             imageView.setImageDrawable(row.getImageDrawable());
             if (isBoundToImage((ViewHolder) viewHolder, row)) {
                 ViewHolder vh =
