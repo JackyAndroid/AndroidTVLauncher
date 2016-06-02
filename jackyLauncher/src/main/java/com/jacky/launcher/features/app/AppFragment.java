@@ -22,7 +22,7 @@ import java.util.List;
 public class AppFragment extends BaseFragment {
 
     private MainActivity mParent;
-    private List<AppBean> mAppList = null;
+    private List<AppBean> mAppList;
     private Receiver receiver;
     private GridView mGridView;
     private AppAdapter mAdapter;

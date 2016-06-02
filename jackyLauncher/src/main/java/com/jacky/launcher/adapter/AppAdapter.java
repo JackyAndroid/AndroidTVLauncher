@@ -25,7 +25,7 @@ import java.util.Random;
  */
 public class AppAdapter extends BaseAdapter {
 
-    private List<AppBean> mAppBeanList = null;
+    private List<AppBean> mAppBeanList;
     private Context mContext;
     public Holder mHolder;
     private AppFragment mAppFragment;

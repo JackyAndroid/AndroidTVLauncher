@@ -22,6 +22,19 @@ public class TabButton extends RelativeLayout implements View.OnFocusChangeListe
     private OnTabButtonChangeListener mOnTabButtonChangeListener;
     private OnTabButtonClickListener mOnTabButtonClickListener;
 
+    public TabButton(Context context) {
+        super(context);
+    }
+
+    public TabButton(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.tabButton);
+        mTitle = typedArray.getString(R.styleable.tabButton_buttonTitle);
+        typedArray.recycle();
+        mContext = context;
+        initUI();
+    }
+
     public interface OnTabButtonChangeListener {
         void onTabButtonChange(View v);
     }
@@ -36,19 +49,6 @@ public class TabButton extends RelativeLayout implements View.OnFocusChangeListe
 
     public void setOnTabButtonClickListener(OnTabButtonClickListener OnTabButtonClickListener) {
         mOnTabButtonClickListener = OnTabButtonClickListener;
-    }
-
-    public TabButton(Context context) {
-        super(context);
-    }
-
-    public TabButton(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.tabButton);
-        mTitle = typedArray.getString(R.styleable.tabButton_buttonTitle);
-        typedArray.recycle();
-        mContext = context;
-        initUI();
     }
 
     private void initUI() {
