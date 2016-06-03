@@ -15,7 +15,7 @@ CSDN: http://blog.csdn.net/rain_butterfly
 This is a better android-tv-launcher,it can running on the TV or TV box.Build with gradle 2.0.0.
 
 ###Notice
-LeanbackLauncher is Leanback support library demo, I later add the characteristics of old the Launcher to LeanbackLauncher, currently only support Android version 5.0 and above.If you need compatible device is lower than the Android version 5.0, please use jackyLauncher.
+LeanbackLauncher is Leanback support library demo, I later add the characteristics of old the Launcher to LeanbackLauncher, currently only support Android version 6.0 and above.If you need compatible device is lower than the Android version 6.0, please use jackyLauncher.
 
 ###Features
 > * App Uninstall
