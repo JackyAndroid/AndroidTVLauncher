@@ -23,8 +23,10 @@ Leanback Demo 现在支持最低版本是4.2！！（基本可以兼容国内大
 > * 网络设置等等
 
 ###效果图
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/androidtv-leanback-sample.png)
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/atv-leanback-all.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-13.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-34.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-43.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-46-02.png)
 
 ###下一步的改进
 > * 焦点问题（焦点问题在一些机顶盒上面可能会出现偏移）
