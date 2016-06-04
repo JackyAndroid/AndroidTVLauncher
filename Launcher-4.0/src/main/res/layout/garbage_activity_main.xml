@@ -17,7 +17,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="15dp"
-            android:background="#00bbff"
+            android:textSize="20dp"
+            android:background="@drawable/btn_clear_infound"
             android:text="@string/start_clear" />
 
         <TextView
@@ -73,9 +74,10 @@
             android:id="@+id/progressBar1"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/center_line"
+            android:layout_height="5dp"
             android:layout_centerHorizontal="true"
+            android:layout_below="@+id/center_line"
+            android:background="#FFFFFF"
             android:layout_marginTop="20dp" 
             android:max="100"/>
     </RelativeLayout>
@@ -88,22 +90,26 @@
 
         <ImageView
             android:id="@+id/dialog_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/garbage_center_img" />
+            android:src="@drawable/dialog_center_img"
+            android:layout_marginTop="20dp" />
 
         <ImageView
-            android:layout_width="105dp"
-            android:layout_height="105dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/round_img"
-            android:src="@drawable/eliminatedialog_img" />
+            android:layout_marginTop="10dp"
+            android:src="@drawable/dialog_img" />
         <Button 
             android:layout_width="150dp"
             android:layout_height="45dp"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_finishclear"
+            android:textSize="20dp"
             android:text="清理中"
             android:id="@+id/start_clear"/>
     </FrameLayout>

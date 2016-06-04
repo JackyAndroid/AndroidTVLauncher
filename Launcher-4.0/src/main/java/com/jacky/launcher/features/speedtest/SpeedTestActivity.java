@@ -102,7 +102,7 @@ public class SpeedTestActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.speedactivity_main);
+        setContentView(R.layout.activity_speed_main);
         Init();
     }
 

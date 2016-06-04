@@ -212,7 +212,7 @@ public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		}else{
 	final int num=arg2;
 	LayoutInflater layoutInflater= LayoutInflater.from(WifiActivity.this);
-	View view=(RelativeLayout)layoutInflater.inflate(R.layout.connect_wifidialog, null);
+	View view=(RelativeLayout)layoutInflater.inflate(R.layout.connect_wifi_dialog, null);
 	TextView wifiName=(TextView)view.findViewById(R.id.wifidialog_name);
 	wifiName.setText(scanResults.get(arg2).SSID);
 	connectDialog.show();

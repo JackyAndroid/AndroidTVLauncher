@@ -90,7 +90,7 @@ public class GarbageClear extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.garbageactivity_main);
+        setContentView(R.layout.garbage_activity_main);
         Init();
         Linstener();
     }
