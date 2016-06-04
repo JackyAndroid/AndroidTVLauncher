@@ -8,7 +8,7 @@ CSDN: http://blog.csdn.net/rain_butterfly
 # AndroidTVLauncher
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)](http://blog.csdn.net/rain_butterfly/article/details/44942747)
 
-<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/jackyLauncher/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
+<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/launcher-4.2/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
 
 这个项目是对android-tv-launcher开源项目用gradle编译的升级改造（以前那个也是本人的项目）
 
