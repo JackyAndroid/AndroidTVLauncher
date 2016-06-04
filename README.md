@@ -26,11 +26,12 @@ If you must be compatible with Android version 4.0 to 4.1 TV device,you can use 
 so on...
 
 ###Effect Picture
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/androidtv-leanback-sample.png)
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/atv-leanback-all.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-13.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-34.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-43.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-46-02.png)
 
 ###The next step to improve
-> * Focus Compatibility(This version running on some box focus problems may occur)
 > * Architecture(MVC to MVP or MVVM)
 > * Main UI
 
