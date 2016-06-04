@@ -9,6 +9,7 @@ import android.support.v17.leanback.widget.ImageCardView;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.OnItemViewClickedListener;
+import android.support.v17.leanback.widget.OnItemViewSelectedListener;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
@@ -16,6 +17,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -34,7 +36,6 @@ import com.sgottard.sofademo.R;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -59,25 +60,28 @@ public class DemoActivity extends FragmentActivity {
 
     /**
      * The combination of the following four parameters regulates the behavior of this demo.
-     * - {@link useStandardAdapter} specifies that a standard adapter will be used for
-     *   BrowseFragment (each header on the left has a matching row on the right).
-     * - {@link useStockBrowseFragment} specifies that the {@link android.support.v17.leanback.app.BrowseFragment}
-     *   component will be used instead of the custom one that is offered by the Sofa library.
-     * - {@link useSupportVersion} specifies that the support version of BrowseFragment will be
-     *   used.
-     * - {@link displayFocusFragment} specifies whether to display an additional fragment, in order
-     *   to showcase how custom fragments and manual focus handling can be achieved.
+     * useStandardAdapter specifies that a standard adapter will be used for
+     * BrowseFragment (each header on the left has a matching row on the right).
+     * useStockBrowseFragment specifies that the {@link android.support.v17.leanback.app.BrowseFragment}
+     * component will be used instead of the custom one that is offered by the Sofa library.
+     * useSupportVersion specifies that the support version of BrowseFragment will be
+     * used.
+     * displayFocusFragment specifies whether to display an additional fragment, in order
+     * to showcase how custom fragments and manual focus handling can be achieved.
      */
 
     private final boolean useStandardAdapter = false;
     private final boolean useStockBrowseFragment = false;
     private final boolean useSupportVersion = false;
     private final boolean displayFocusFragment = true;
+    private ImageView main_bg;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo_layout);
+
+        main_bg = (ImageView) findViewById(R.id.main_bg);
 
         browseFragment = new BrowseFragment();
         browseSupportFragment = new BrowseSupportFragment();
@@ -99,6 +103,7 @@ public class DemoActivity extends FragmentActivity {
         };
 
         parseData();
+
         if (useStandardAdapter) {
             loadRowsStandard();
         } else {
@@ -140,8 +145,8 @@ public class DemoActivity extends FragmentActivity {
                     video = gson.fromJson(videoObject, Video.class);
                     video.category = category;
                     video.source = videoObject.get("sources").getAsJsonArray().get(0).getAsString();
+                    video.card = videoObject.get("card").getAsString();
                     categoryVideos[i] = video;
-                    video.card = BASE_CONTENT_URL + URLEncoder.encode(video.category, "UTF-8").replace("+", "%20") + "/" + URLEncoder.encode(video.title, "UTF-8").replace("+", "%20") + "/" + video.card;
                 }
                 videoList.add(categoryVideos);
             }
@@ -256,12 +261,28 @@ public class DemoActivity extends FragmentActivity {
             browseSupportFragment.setAdapter(adapter);
             browseSupportFragment.setOnSearchClickedListener(searchClickListener);
             browseSupportFragment.setOnItemViewClickedListener(browseClickListener);
-            browseSupportFragment.setTitle("Google Videos");
+            browseSupportFragment.setTitle("Cool Launcher");
         } else {
             browseFragment.setAdapter(adapter);
             browseFragment.setOnSearchClickedListener(searchClickListener);
             browseFragment.setOnItemViewClickedListener(browseClickListener);
-            browseFragment.setTitle("Google Videos");
+            browseFragment.setOnItemViewSelectedListener(new ItemViewSelectedListener());
+            browseFragment.setTitle("Cool Launcher");
+        }
+    }
+
+    private final class ItemViewSelectedListener implements OnItemViewSelectedListener {
+        @Override
+        public void onItemSelected(Presenter.ViewHolder itemViewHolder, Object item,
+                                   RowPresenter.ViewHolder rowViewHolder, Row row) {
+            if (item instanceof Video) {
+                Video video = (Video) item;
+                Glide.with(DemoActivity.this)
+                        .load(video.card)
+                        .centerCrop()
+                        .crossFade()
+                        .into(main_bg);
+            }
         }
     }
 
@@ -286,7 +307,7 @@ public class DemoActivity extends FragmentActivity {
             VideoHolder holder = (VideoHolder) viewHolder;
 
             holder.root.setTitleText(video.title);
-            holder.root.setContentText(video.studio);
+//            holder.root.setContentText(video.studio);
             holder.root.setMainImageDimensions(200, 200);
             Glide.with(holder.root.getMainImageView().getContext())
                     .load(video.card)
