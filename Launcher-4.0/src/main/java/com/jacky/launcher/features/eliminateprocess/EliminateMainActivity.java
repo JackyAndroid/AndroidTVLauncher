@@ -74,8 +74,8 @@ public class EliminateMainActivity extends Activity {
                     startKill.setText("清理完成");
                     break;
                 case NEEDENT_CLEAR:
-                    percentnum = 0 + "";
-                    clearMemory = 0 + "";
+                    percentnum = String.valueOf(0);
+                    clearMemory = String.valueOf(0);
                     Toast.makeText(EliminateMainActivity.this, "当前不需要清理", Toast.LENGTH_LONG).show();
                     break;
                 case PERCENT_CHANGE:

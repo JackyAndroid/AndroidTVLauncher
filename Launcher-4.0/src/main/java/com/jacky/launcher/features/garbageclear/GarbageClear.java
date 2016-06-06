@@ -225,7 +225,7 @@ public class GarbageClear extends Activity {
             //执行完毕  开始执行下一个任务
             if (result != null && taskNum != 0) {
                 tasklist.get(0).execute();
-                grbageSize.setText((int) ((float) fileGrbagesize / 1024 / 1024 / 2) + "");
+                grbageSize.setText(String.valueOf((int) ((float) fileGrbagesize / 1024 / 1024 / 2)));
                 taskNum--;
                 tasklist.remove(0);
                 if (progressbarNum < 100) {
