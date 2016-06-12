@@ -129,7 +129,7 @@ public class DemoActivity extends FragmentActivity {
     private void parseData() {
         videoList = new ArrayList<>();
         try {
-            JsonElement root = new JsonParser().parse(new BufferedReader(new InputStreamReader(getResources().getAssets().open("android_tv_videos.json"))));
+            JsonElement root = new JsonParser().parse(new BufferedReader(new InputStreamReader(getResources().getAssets().open("data.json"))));
             JsonArray array = root.getAsJsonObject().get("googlevideos").getAsJsonArray();
 
             Gson gson = new Gson();
