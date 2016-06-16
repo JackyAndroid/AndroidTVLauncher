@@ -112,7 +112,7 @@ public class WiFiAdmin {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < mWifiList.size(); i++) {
             stringBuilder
-                    .append("Index_" + new Integer(i + 1).toString() + ":");
+                    .append("Index_" + (i + 1) + ":");
             // 将Scanresult转换成一个字符串包
             // 其中包括:BSSID SSID capabilities frequency level
             stringBuilder.append(mWifiList.get(i).toString());

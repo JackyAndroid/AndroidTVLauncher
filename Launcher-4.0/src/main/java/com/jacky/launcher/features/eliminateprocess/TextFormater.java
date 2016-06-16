@@ -30,7 +30,7 @@ public final class TextFormater {
 
     public static String floattoString(float size) {
         if (size < 0) {
-            return 0 + "";
+            return String.valueOf(0);
         } else {
             return size + "MB";
         }
