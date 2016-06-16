@@ -29,9 +29,7 @@ Leanback Demo 现在支持最低版本是4.2！！（基本可以兼容国内大
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-46-02.png)
 
 ###下一步的改进
-> * 焦点问题（焦点问题在一些机顶盒上面可能会出现偏移）
-> * 架构（目前架构比较老，下一步会转为MVP或者MVVM）
-> * 主界面会向官方TV桌面进行靠拢
+> * 提高兼容性、扩展性
 
 ###License
 
