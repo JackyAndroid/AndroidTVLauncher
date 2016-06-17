@@ -32,8 +32,7 @@ so on...
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-46-02.png)
 
 ###The next step to improve
-> * Architecture(MVC to MVP or MVVM)
-> * Main UI
+> * improve compatibility & extensibility
 
 ###License
 
