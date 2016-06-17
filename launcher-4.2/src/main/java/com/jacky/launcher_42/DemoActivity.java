@@ -121,7 +121,7 @@ public class DemoActivity extends FragmentActivity {
     }
 
     /**
-     * Parses the video data.
+     * Parses the test data.
      */
     private void parseData() {
         videoList = new ArrayList<>();
