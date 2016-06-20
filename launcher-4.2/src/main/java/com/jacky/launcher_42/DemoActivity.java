@@ -127,7 +127,7 @@ public class DemoActivity extends FragmentActivity {
         videoList = new ArrayList<>();
         try {
             JsonElement root = new JsonParser().parse(new BufferedReader(new InputStreamReader(getResources().getAssets().open("data.json"))));
-            JsonArray array = root.getAsJsonObject().get("googlevideos").getAsJsonArray();
+            JsonArray array = root.getAsJsonObject().get("DataArray").getAsJsonArray();
 
             Gson gson = new Gson();
 
