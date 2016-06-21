@@ -51,8 +51,6 @@ public class AppAutoRunAdapter extends BaseAdapter {
                     .findViewById(R.id.item_app_auto_run_name);
             holder.icon = (ImageView) convertView
                     .findViewById(R.id.item_app_auto_run_iv);
-            holder.flag = (ImageView) convertView
-                    .findViewById(R.id.item_app_auto_run_flag);
             convertView.setTag(holder);
         } else {
             holder = (AppAutoRunHolder) convertView.getTag();
@@ -66,6 +64,5 @@ public class AppAutoRunAdapter extends BaseAdapter {
     public class AppAutoRunHolder {
         private TextView name;
         private ImageView icon;
-        private ImageView flag;
     }
 }
