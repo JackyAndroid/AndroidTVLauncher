@@ -14,7 +14,6 @@ import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 
-import com.jacky.launcher.LauncherApp;
 import com.jacky.launcher.R;
 import com.jacky.launcher.adapter.MainActivityAdapter;
 import com.jacky.launcher.features.LocalServiceFragment;
@@ -24,7 +23,6 @@ import com.jacky.launcher.features.setting.SettingFragment;
 import com.jacky.launcher.features.viewpager.DefaultTransformer;
 import com.jacky.launcher.features.viewpager.FixViewpagerScrollerSpeed;
 import com.jacky.uikit.activity.BaseTitleActivity;
-import com.jacky.uikit.alarm.ToastAlarm;
 import com.jacky.uikit.fragment.BaseFragment;
 
 import java.util.ArrayList;
@@ -63,13 +61,6 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
 
             NetworkInfo currentNetworkInfo = intent
                     .getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
-
-            if (currentNetworkInfo.isConnected()) {
-
-            } else {
-                ToastAlarm.show("Network is not connected");
-                LauncherApp.netFlag = false;
-            }
         }
     };
     private TabIndicator mTabIndicator;
