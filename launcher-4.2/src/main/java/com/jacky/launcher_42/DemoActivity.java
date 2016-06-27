@@ -39,9 +39,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * Created by Sebastiano Gottardo on 03/07/15.
- */
 public class DemoActivity extends FragmentActivity {
 
     private BrowseFragment browseFragment;
