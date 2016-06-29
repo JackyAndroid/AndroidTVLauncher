@@ -9,7 +9,7 @@ import com.jacky.common.logger.Logger;
 
 
 /**
- * App抽象类
+ * App Abstract Class
  *
  * @author jacky
  * @version v1.0
