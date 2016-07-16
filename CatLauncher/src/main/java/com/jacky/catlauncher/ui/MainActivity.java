@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
     private static final int NUM_ROWS = 4;
 
     protected BrowseFragment mBrowseFragment;
+    private ArrayObjectAdapter rowsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,17 +42,11 @@ public class MainActivity extends Activity {
     }
 
     private void buildRowsAdapter() {
-        ArrayObjectAdapter rowsAdapter = new ArrayObjectAdapter(new ListRowPresenter());
+        rowsAdapter = new ArrayObjectAdapter(new ListRowPresenter());
 
-        for (int i = 0; i < NUM_ROWS; ++i) {
-            ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(
-                    new CardPresenter());
-            listRowAdapter.add("Media Item 1");
-            listRowAdapter.add("Media Item 2");
-            listRowAdapter.add("Media Item 3");
-            HeaderItem header = new HeaderItem(i, "Category " + i);
-            rowsAdapter.add(new ListRow(header, listRowAdapter));
-        }
+        addPhotoRow();
+        addVideoRow();
+        addFunctionRow();
 
         mBrowseFragment.setAdapter(rowsAdapter);
         mBrowseFragment.setOnItemViewClickedListener(new OnItemViewClickedListener() {
@@ -60,5 +55,38 @@ public class MainActivity extends Activity {
 
             }
         });
+    }
+
+    private void addPhotoRow() {
+        int photoCardCount = 10;
+        String headerName = getResources().getString(R.string.app_header_photo_name);
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
+        for (int i = 0; i < photoCardCount; i++) {
+            listRowAdapter.add("Media Item 1");
+        }
+        HeaderItem header = new HeaderItem(0, headerName);
+        rowsAdapter.add(new ListRow(header, listRowAdapter));
+    }
+
+    private void addVideoRow() {
+        int cardCount = 10;
+        String headerName = getResources().getString(R.string.app_header_video_name);
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
+        for (int i = 0; i < cardCount; i++) {
+            listRowAdapter.add("Media Item 1");
+        }
+        HeaderItem header = new HeaderItem(0, headerName);
+        rowsAdapter.add(new ListRow(header, listRowAdapter));
+    }
+
+    private void addFunctionRow() {
+        int cardCount = 10;
+        String headerName = getResources().getString(R.string.app_header_function_name);
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
+        for (int i = 0; i < cardCount; i++) {
+            listRowAdapter.add("Media Item 1");
+        }
+        HeaderItem header = new HeaderItem(0, headerName);
+        rowsAdapter.add(new ListRow(header, listRowAdapter));
     }
 }
