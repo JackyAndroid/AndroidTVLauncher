@@ -6,6 +6,7 @@ import android.support.v17.leanback.widget.ImageCardView;
 import android.support.v17.leanback.widget.Presenter;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.jacky.catlauncher.R;
 
 /**
@@ -43,6 +44,11 @@ public class CardPresenter extends Presenter {
     public void onBindViewHolder(ViewHolder viewHolder, Object item) {
         ImageCardView cardView = (ImageCardView) viewHolder.view;
         cardView.setMainImageDimensions(CARD_WIDTH,CARD_HEIGHT);
+        String url = (String) item;
+        Glide.with(cardView.getMainImageView().getContext())
+                .load(url)
+                .crossFade()
+                .into(cardView.getMainImageView());
     }
 
     @Override

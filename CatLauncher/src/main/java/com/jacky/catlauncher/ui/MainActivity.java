@@ -58,11 +58,22 @@ public class MainActivity extends Activity {
     }
 
     private void addPhotoRow() {
-        int photoCardCount = 10;
+        String urls[] = {
+                "http://tupian.enterdesk.com/2012/0528/gha/9/120523112107-15.jpg",
+                "http://imgstore.cdn.sogou.com/app/a/100540002/541762.jpg",
+                "http://image.tianjimedia.com/uploadImages/2012/291/Q5V0024X6GQM.jpg",
+                "http://www.bz55.com/uploads/allimg/140729/138-140H9144A7.jpg",
+                "http://imgstore.cdn.sogou.com/app/a/100540002/717240.jpg",
+                "http://www.bz55.com/uploads/allimg/141005/138-141005115Q4.jpg",
+                "http://e.hiphotos.baidu.com/zhidao/pic/item/5ab5c9ea15ce36d3418e754838f33a87e850b1c4.jpg",
+                "http://d.3987.com/liuyan_140827/005.jpg",
+                "http://www.bz55.com/uploads/allimg/150402/139-150402152530.jpg",
+        };
+        int photoCardCount = 9;
         String headerName = getResources().getString(R.string.app_header_photo_name);
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
         for (int i = 0; i < photoCardCount; i++) {
-            listRowAdapter.add("Media Item 1");
+            listRowAdapter.add(urls[i]);
         }
         HeaderItem header = new HeaderItem(0, headerName);
         rowsAdapter.add(new ListRow(header, listRowAdapter));
@@ -73,7 +84,7 @@ public class MainActivity extends Activity {
         String headerName = getResources().getString(R.string.app_header_video_name);
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
         for (int i = 0; i < cardCount; i++) {
-            listRowAdapter.add("Media Item 1");
+            listRowAdapter.add("");
         }
         HeaderItem header = new HeaderItem(0, headerName);
         rowsAdapter.add(new ListRow(header, listRowAdapter));
@@ -84,7 +95,7 @@ public class MainActivity extends Activity {
         String headerName = getResources().getString(R.string.app_header_function_name);
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
         for (int i = 0; i < cardCount; i++) {
-            listRowAdapter.add("Media Item 1");
+            listRowAdapter.add("");
         }
         HeaderItem header = new HeaderItem(0, headerName);
         rowsAdapter.add(new ListRow(header, listRowAdapter));
