@@ -1,7 +1,8 @@
 package com.jacky.catlauncher.ui;
 
 import android.app.Activity;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v17.leanback.app.BackgroundManager;
 import android.support.v17.leanback.app.BrowseFragment;
@@ -10,10 +11,15 @@ import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.OnItemViewClickedListener;
+import android.support.v17.leanback.widget.OnItemViewSelectedListener;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
+import android.util.DisplayMetrics;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.jacky.catlauncher.R;
 import com.jacky.catlauncher.presenter.CardPresenter;
 
@@ -23,22 +29,30 @@ public class MainActivity extends Activity {
 
     protected BrowseFragment mBrowseFragment;
     private ArrayObjectAdapter rowsAdapter;
+    private BackgroundManager mBackgroundManager;
+    private DisplayMetrics mMetrics;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mContext = this;
         mBrowseFragment = (BrowseFragment) getFragmentManager().findFragmentById(R.id.browse_fragment);
 
         mBrowseFragment.setHeadersState(BrowseFragment.HEADERS_DISABLED);
         mBrowseFragment.setTitle(getString(R.string.app_name));
 
+        prepareBackgroundManager();
         buildRowsAdapter();
     }
 
-    protected void updateBackground(Drawable drawable) {
-        BackgroundManager.getInstance(this).setDrawable(drawable);
+    private void prepareBackgroundManager() {
+        mBackgroundManager = BackgroundManager.getInstance(this);
+        mBackgroundManager.attach(this.getWindow());
+        mMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(mMetrics);
     }
 
     private void buildRowsAdapter() {
@@ -53,6 +67,25 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item, RowPresenter.ViewHolder rowViewHolder, Row row) {
 
+            }
+        });
+        mBrowseFragment.setOnItemViewSelectedListener(new OnItemViewSelectedListener() {
+            @Override
+            public void onItemSelected(Presenter.ViewHolder itemViewHolder, Object item, RowPresenter.ViewHolder rowViewHolder, Row row) {
+                String url = (String) item;
+                int width = mMetrics.widthPixels;
+                int height = mMetrics.heightPixels;
+                Glide.with(mContext)
+                        .load(url)
+                        .asBitmap()
+                        .centerCrop()
+                        .into(new SimpleTarget<Bitmap>(width, height) {
+                            @Override
+                            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap>
+                                    glideAnimation) {
+                                mBackgroundManager.setBitmap(resource);
+                            }
+                        });
             }
         });
     }
