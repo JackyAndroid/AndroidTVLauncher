@@ -7,7 +7,7 @@ CSDN: http://blog.csdn.net/rain_butterfly
 ---
 # AndroidTVLauncher
 
-<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/launcher-4.2/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
+<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/CatLauncher/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
 
 这是一个TV 桌面，包含了一个Leanback 桌面（最低版本是17）和一个普通桌面（最低版本是15），Leanback桌面是基于Leanback库开发符合Android TV官方交互规范。
 
