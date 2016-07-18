@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="focus_test_dimen_width" type="dimen">150dp</item>
-    <item name="focus_test_dimen_height" type="dimen">100dp</item>
-</resources>
