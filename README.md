@@ -11,11 +11,11 @@ CSDN: http://blog.csdn.net/rain_butterfly
 
 <img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/launcher-4.2/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
 
-This is a better android-tv-launcher,it can running on the TV or TV box.Build with gradle.
+This is a tv launcher, include a leanback launcher(minSdkVersion 17) and a normal launcher(minSdkVersion 15).
 
 ###Notice
 Now Leanback demo launcher minSdkVersion is Android 4.2!!!
-If you must be compatible with Android version 4.0 to 4.1 TV device,you can use the Launcher-4.0 in the project.
+If you must be compatible with Android version 4.0 to 4.1 TV device,you can use the CompatibleLauncher in the project.
 
 ###Features
 > * App Uninstall
