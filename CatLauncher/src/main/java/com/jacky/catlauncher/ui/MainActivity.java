@@ -25,8 +25,6 @@ import com.jacky.catlauncher.presenter.CardPresenter;
 
 public class MainActivity extends Activity {
 
-    private static final int NUM_ROWS = 4;
-
     protected BrowseFragment mBrowseFragment;
     private ArrayObjectAdapter rowsAdapter;
     private BackgroundManager mBackgroundManager;
