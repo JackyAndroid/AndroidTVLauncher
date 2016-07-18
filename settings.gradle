@@ -1,1 +1,1 @@
-include ':Launcher-4.0', ':uikit', ':common', ':CatLauncher'
+include ':CompatibleLauncher', ':uikit', ':common', ':CatLauncher'
