@@ -2,5 +2,6 @@
     <string name="app_name">CatLauncher</string>
     <string name="app_header_photo_name">Photo</string>
     <string name="app_header_video_name">Video</string>
+    <string name="app_header_app_name">App</string>
     <string name="app_header_function_name">Function</string>
 </resources>

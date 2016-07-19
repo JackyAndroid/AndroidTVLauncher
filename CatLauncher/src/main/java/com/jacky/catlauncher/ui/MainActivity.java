@@ -58,6 +58,7 @@ public class MainActivity extends Activity {
 
         addPhotoRow();
         addVideoRow();
+        addAppRow();
         addFunctionRow();
 
         mBrowseFragment.setAdapter(rowsAdapter);
@@ -113,6 +114,17 @@ public class MainActivity extends Activity {
     private void addVideoRow() {
         int cardCount = 10;
         String headerName = getResources().getString(R.string.app_header_video_name);
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
+        for (int i = 0; i < cardCount; i++) {
+            listRowAdapter.add("");
+        }
+        HeaderItem header = new HeaderItem(0, headerName);
+        rowsAdapter.add(new ListRow(header, listRowAdapter));
+    }
+
+    private void addAppRow() {
+        int cardCount = 10;
+        String headerName = getResources().getString(R.string.app_header_app_name);
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
         for (int i = 0; i < cardCount; i++) {
             listRowAdapter.add("");
