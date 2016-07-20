@@ -10,6 +10,8 @@ import com.bumptech.glide.Glide;
 import com.jacky.catlauncher.R;
 
 /**
+ * ImageCard Presenter
+ *
  * @author jacky
  * @version v1.0
  * @since 16/7/16

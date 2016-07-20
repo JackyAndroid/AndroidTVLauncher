@@ -101,11 +101,10 @@ public class MainActivity extends Activity {
                 "http://d.3987.com/liuyan_140827/005.jpg",
                 "http://www.bz55.com/uploads/allimg/150402/139-150402152530.jpg",
         };
-        int photoCardCount = 9;
         String headerName = getResources().getString(R.string.app_header_photo_name);
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
-        for (int i = 0; i < photoCardCount; i++) {
-            listRowAdapter.add(urls[i]);
+        for (String url : urls) {
+            listRowAdapter.add(url);
         }
         HeaderItem header = new HeaderItem(0, headerName);
         rowsAdapter.add(new ListRow(header, listRowAdapter));
@@ -123,11 +122,10 @@ public class MainActivity extends Activity {
                 "http://img.zcool.cn/community/0335a8c554c70c700000158fcecac3c.jpg",
                 "http://image5.tuku.cn/wallpaper/Movie%20Wallpapers/4016_2560x1600.jpg",
         };
-        int cardCount = 9;
         String headerName = getResources().getString(R.string.app_header_video_name);
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
-        for (int i = 0; i < cardCount; i++) {
-            listRowAdapter.add(urls[i]);
+        for (String url : urls) {
+            listRowAdapter.add(url);
         }
         HeaderItem header = new HeaderItem(0, headerName);
         rowsAdapter.add(new ListRow(header, listRowAdapter));
