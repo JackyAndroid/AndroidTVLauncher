@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.jacky.catlauncher.R;
 
 /**
- * @author wangshichang
+ * @author jacky
  * @version v1.0
  * @since 16/8/28
  */

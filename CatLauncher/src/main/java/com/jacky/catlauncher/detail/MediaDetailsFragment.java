@@ -21,7 +21,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 
 /**
- * @author wangshichang
+ * @author jacky
  * @version v1.0
  * @since 16/8/28
  */

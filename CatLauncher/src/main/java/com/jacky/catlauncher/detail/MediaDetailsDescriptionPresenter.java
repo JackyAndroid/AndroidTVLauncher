@@ -1,7 +1,7 @@
 package com.jacky.catlauncher.detail;
 
 /**
- * @author wangshichang
+ * @author jacky
  * @version v1.0
  * @since 16/8/28
  */
