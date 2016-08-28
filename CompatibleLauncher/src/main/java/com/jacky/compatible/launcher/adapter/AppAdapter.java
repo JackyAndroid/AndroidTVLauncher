@@ -2,6 +2,7 @@
 package com.jacky.compatible.launcher.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jacky.launcher.R;
 import com.jacky.compatible.launcher.features.app.AppFragment;
 import com.jacky.compatible.launcher.model.AppBean;
+import com.jacky.launcher.R;
 
 import java.util.List;
 import java.util.Random;
@@ -39,7 +40,7 @@ public class AppAdapter extends BaseAdapter {
             R.drawable.app_yellow
     };
 
-    public AppAdapter(AppFragment appFragment,Context context, List<AppBean> appBeanList) {
+    public AppAdapter(AppFragment appFragment, Context context, List<AppBean> appBeanList) {
         mAppFragment = appFragment;
         mContext = context;
         mAppBeanList = appBeanList;
@@ -77,6 +78,18 @@ public class AppAdapter extends BaseAdapter {
         AppBean appBean = mAppBeanList.get(position);
         mHolder.icon.setImageDrawable(appBean.getIcon());
         mHolder.name.setText(appBean.getName());
+
+        final int pos = position;
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent launchIntent = mContext.getPackageManager().getLaunchIntentForPackage(
+                        mAppBeanList.get(pos).getPackageName());
+                if (launchIntent != null) {
+                    mContext.startActivity(launchIntent);
+                }
+            }
+        });
         return convertView;
     }
 
