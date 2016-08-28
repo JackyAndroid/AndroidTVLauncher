@@ -3,7 +3,7 @@ package com.jacky.catlauncher.model;
 
 import android.graphics.drawable.Drawable;
 
-public class AppBean {
+public class AppModel {
 
     private String dataDir;
     private Drawable icon;

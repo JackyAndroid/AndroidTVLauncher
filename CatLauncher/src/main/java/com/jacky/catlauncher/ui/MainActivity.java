@@ -23,12 +23,15 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.features.app.AppDataManage;
-import com.jacky.catlauncher.model.AppBean;
+import com.jacky.catlauncher.app.AppDataManage;
+import com.jacky.catlauncher.model.AppModel;
+import com.jacky.catlauncher.model.FunctionModel;
 import com.jacky.catlauncher.presenter.AppCardPresenter;
+import com.jacky.catlauncher.presenter.FunctionCardPresenter;
 import com.jacky.catlauncher.presenter.ImgCardPresenter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends Activity {
 
@@ -74,12 +77,18 @@ public class MainActivity extends Activity {
             public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item, RowPresenter.ViewHolder rowViewHolder, Row row) {
                 if (item instanceof String) {
 
-                } else if (item instanceof AppBean) {
-                    AppBean appBean = (AppBean) item;
+                } else if (item instanceof AppModel) {
+                    AppModel appBean = (AppModel) item;
                     Intent launchIntent = mContext.getPackageManager().getLaunchIntentForPackage(
                             appBean.getPackageName());
                     if (launchIntent != null) {
                         mContext.startActivity(launchIntent);
+                    }
+                } else if (item instanceof FunctionModel) {
+                    FunctionModel functionModel = (FunctionModel) item;
+                    Intent intent = functionModel.getIntent();
+                    if (intent != null) {
+                        startActivity(intent);
                     }
                 }
             }
@@ -156,7 +165,7 @@ public class MainActivity extends Activity {
         String headerName = getResources().getString(R.string.app_header_app_name);
         ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new AppCardPresenter());
 
-        ArrayList<AppBean> appDataList = new AppDataManage(mContext).getLaunchAppList();
+        ArrayList<AppModel> appDataList = new AppDataManage(mContext).getLaunchAppList();
         int cardCount = appDataList.size();
 
         for (int i = 0; i < cardCount; i++) {
@@ -167,11 +176,12 @@ public class MainActivity extends Activity {
     }
 
     private void addFunctionRow() {
-        int cardCount = 10;
         String headerName = getResources().getString(R.string.app_header_function_name);
-        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new ImgCardPresenter());
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new FunctionCardPresenter());
+        List<FunctionModel> functionModels = FunctionModel.getFunctionList(mContext);
+        int cardCount = functionModels.size();
         for (int i = 0; i < cardCount; i++) {
-            listRowAdapter.add("");
+            listRowAdapter.add(functionModels.get(i));
         }
         HeaderItem header = new HeaderItem(0, headerName);
         rowsAdapter.add(new ListRow(header, listRowAdapter));

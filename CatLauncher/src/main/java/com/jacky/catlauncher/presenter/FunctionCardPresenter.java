@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.model.AppModel;
+import com.jacky.catlauncher.model.FunctionModel;
 
 /**
  * ImageCard Presenter
@@ -17,7 +17,7 @@ import com.jacky.catlauncher.model.AppModel;
  * @version v1.0
  * @since 16/7/16
  */
-public class AppCardPresenter extends Presenter {
+public class FunctionCardPresenter extends Presenter {
 
     private Context mContext;
     private int CARD_WIDTH = 313;
@@ -47,10 +47,10 @@ public class AppCardPresenter extends Presenter {
     public void onBindViewHolder(ViewHolder viewHolder, Object item) {
         ImageCardView cardView = (ImageCardView) viewHolder.view;
         cardView.setMainImageDimensions(CARD_WIDTH,CARD_HEIGHT);
-        AppModel appBean = (AppModel) item;
+        FunctionModel functionModel = (FunctionModel) item;
         cardView.setMainImageScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        cardView.getMainImageView().setImageDrawable(appBean.getIcon());
-        cardView.setTitleText(appBean.getName());
+        cardView.getMainImageView().setImageResource(functionModel.getIcon());
+        cardView.setTitleText(functionModel.getName());
     }
 
     @Override

@@ -1,5 +1,5 @@
 
-package com.jacky.catlauncher.features.app;
+package com.jacky.catlauncher.app;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 
-import com.jacky.catlauncher.model.AppBean;
+import com.jacky.catlauncher.model.AppModel;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,12 +22,12 @@ public class AppDataManage {
         mContext = context;
     }
 
-    public ArrayList<AppBean> getLaunchAppList() {
+    public ArrayList<AppModel> getLaunchAppList() {
         PackageManager localPackageManager = mContext.getPackageManager();
         Intent localIntent = new Intent("android.intent.action.MAIN");
         localIntent.addCategory("android.intent.category.LAUNCHER");
         List<ResolveInfo> localList = localPackageManager.queryIntentActivities(localIntent, 0);
-        ArrayList<AppBean> localArrayList = null;
+        ArrayList<AppModel> localArrayList = null;
         Iterator<ResolveInfo> localIterator = null;
         localArrayList = new ArrayList<>();
         if (localList.size() != 0) {
@@ -37,7 +37,7 @@ public class AppDataManage {
             if (!localIterator.hasNext())
                 break;
             ResolveInfo localResolveInfo = (ResolveInfo) localIterator.next();
-            AppBean localAppBean = new AppBean();
+            AppModel localAppBean = new AppModel();
             localAppBean.setIcon(localResolveInfo.activityInfo.loadIcon(localPackageManager));
             localAppBean.setName(localResolveInfo.activityInfo.loadLabel(localPackageManager).toString());
             localAppBean.setPackageName(localResolveInfo.activityInfo.packageName);
@@ -60,12 +60,12 @@ public class AppDataManage {
         return localArrayList;
     }
 
-    public ArrayList<AppBean> getUninstallAppList() {
+    public ArrayList<AppModel> getUninstallAppList() {
         PackageManager localPackageManager = mContext.getPackageManager();
         Intent localIntent = new Intent("android.intent.action.MAIN");
         localIntent.addCategory("android.intent.category.LAUNCHER");
         List<ResolveInfo> localList = localPackageManager.queryIntentActivities(localIntent, 0);
-        ArrayList<AppBean> localArrayList = null;
+        ArrayList<AppModel> localArrayList = null;
         Iterator<ResolveInfo> localIterator = null;
         if (localList != null) {
             localArrayList = new ArrayList<>();
@@ -75,7 +75,7 @@ public class AppDataManage {
             if (!localIterator.hasNext())
                 break;
             ResolveInfo localResolveInfo = (ResolveInfo) localIterator.next();
-            AppBean localAppBean = new AppBean();
+            AppModel localAppBean = new AppModel();
             localAppBean.setIcon(localResolveInfo.activityInfo.loadIcon(localPackageManager));
             localAppBean.setName(localResolveInfo.activityInfo.loadLabel(localPackageManager).toString());
             localAppBean.setPackageName(localResolveInfo.activityInfo.packageName);
@@ -96,12 +96,12 @@ public class AppDataManage {
         return localArrayList;
     }
 
-    public ArrayList<AppBean> getAutoRunAppList() {
+    public ArrayList<AppModel> getAutoRunAppList() {
         PackageManager localPackageManager = mContext.getPackageManager();
         Intent localIntent = new Intent("android.intent.action.MAIN");
         localIntent.addCategory("android.intent.category.LAUNCHER");
         List<ResolveInfo> localList = localPackageManager.queryIntentActivities(localIntent, 0);
-        ArrayList<AppBean> localArrayList = null;
+        ArrayList<AppModel> localArrayList = null;
         Iterator<ResolveInfo> localIterator = null;
         if (localList != null) {
             localArrayList = new ArrayList<>();
@@ -112,7 +112,7 @@ public class AppDataManage {
             if (!localIterator.hasNext())
                 break;
             ResolveInfo localResolveInfo = localIterator.next();
-            AppBean localAppBean = new AppBean();
+            AppModel localAppBean = new AppModel();
             localAppBean.setIcon(localResolveInfo.activityInfo.loadIcon(localPackageManager));
             localAppBean.setName(localResolveInfo.activityInfo.loadLabel(localPackageManager).toString());
             localAppBean.setPackageName(localResolveInfo.activityInfo.packageName);
