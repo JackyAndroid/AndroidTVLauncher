@@ -1,5 +1,5 @@
 
-package com.jacky.catlauncher.model;
+package com.jacky.catlauncher.app;
 
 import android.graphics.drawable.Drawable;
 

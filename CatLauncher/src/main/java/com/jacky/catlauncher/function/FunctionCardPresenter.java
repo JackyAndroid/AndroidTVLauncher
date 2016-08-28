@@ -1,4 +1,4 @@
-package com.jacky.catlauncher.presenter;
+package com.jacky.catlauncher.function;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.model.FunctionModel;
 
 /**
  * ImageCard Presenter

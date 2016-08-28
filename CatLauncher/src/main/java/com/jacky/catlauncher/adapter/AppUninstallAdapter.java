@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.model.AppModel;
+import com.jacky.catlauncher.app.AppModel;
 
 import java.util.List;
 

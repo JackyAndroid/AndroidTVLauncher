@@ -1,14 +1,14 @@
-package com.jacky.catlauncher.presenter;
+package com.jacky.catlauncher.main;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v17.leanback.widget.ImageCardView;
 import android.support.v17.leanback.widget.Presenter;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.model.AppModel;
+import com.jacky.catlauncher.detail.MediaModel;
 
 /**
  * ImageCard Presenter
@@ -17,7 +17,7 @@ import com.jacky.catlauncher.model.AppModel;
  * @version v1.0
  * @since 16/7/16
  */
-public class AppCardPresenter extends Presenter {
+public class ImgCardPresenter extends Presenter {
 
     private Context mContext;
     private int CARD_WIDTH = 313;
@@ -46,11 +46,16 @@ public class AppCardPresenter extends Presenter {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, Object item) {
         ImageCardView cardView = (ImageCardView) viewHolder.view;
-        cardView.setMainImageDimensions(CARD_WIDTH,CARD_HEIGHT);
-        AppModel appBean = (AppModel) item;
-        cardView.setMainImageScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        cardView.getMainImageView().setImageDrawable(appBean.getIcon());
-        cardView.setTitleText(appBean.getName());
+        cardView.setMainImageDimensions(CARD_WIDTH, CARD_HEIGHT);
+        if (item instanceof MediaModel) {
+            MediaModel mediaModel = (MediaModel) item;
+            cardView.setTitleText(mediaModel.getTitle());
+            cardView.setContentText(mediaModel.getContent());
+            Glide.with(cardView.getMainImageView().getContext())
+                    .load(mediaModel.getImageUrl())
+                    .crossFade()
+                    .into(cardView.getMainImageView());
+        }
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.jacky.catlauncher;
+package com.jacky.catlauncher.util;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;

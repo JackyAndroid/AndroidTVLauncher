@@ -14,9 +14,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.Tools;
+import com.jacky.catlauncher.util.Tools;
 import com.jacky.catlauncher.adapter.AppUninstallAdapter;
-import com.jacky.catlauncher.model.AppModel;
 
 import java.util.List;
 

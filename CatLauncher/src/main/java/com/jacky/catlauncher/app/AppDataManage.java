@@ -8,8 +8,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 
-import com.jacky.catlauncher.model.AppModel;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
