@@ -1,15 +1,17 @@
+
 package com.jacky.catlauncher.model;
 
 import android.graphics.drawable.Drawable;
 
 public class TaskInfo {
-    private String name;
-    private Drawable icon;
+
     private int id;
     private int memory;
     private Boolean isCheck;
-    private String packageName;
     private Boolean isSystemProcess;// 是否为系统进程
+    private String name;
+    private String packageName;
+    private Drawable icon;
 
     public String getName() {
         return name;

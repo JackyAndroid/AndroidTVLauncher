@@ -1,3 +1,4 @@
+
 package com.jacky.catlauncher.model;
 
 public class NetworkSpeedInfo {

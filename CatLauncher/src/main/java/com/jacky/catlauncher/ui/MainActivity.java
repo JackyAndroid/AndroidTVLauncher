@@ -1,7 +1,9 @@
+
 package com.jacky.catlauncher.ui;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v17.leanback.app.BackgroundManager;
@@ -21,7 +23,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.presenter.CardPresenter;
+import com.jacky.catlauncher.features.app.AppDataManage;
+import com.jacky.catlauncher.model.AppBean;
+import com.jacky.catlauncher.presenter.AppCardPresenter;
+import com.jacky.catlauncher.presenter.ImgCardPresenter;
+
+import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
@@ -65,26 +72,40 @@ public class MainActivity extends Activity {
         mBrowseFragment.setOnItemViewClickedListener(new OnItemViewClickedListener() {
             @Override
             public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item, RowPresenter.ViewHolder rowViewHolder, Row row) {
+                if (item instanceof String) {
 
+                } else if (item instanceof AppBean) {
+                    AppBean appBean = (AppBean) item;
+                    Intent launchIntent = mContext.getPackageManager().getLaunchIntentForPackage(
+                            appBean.getPackageName());
+                    if (launchIntent != null) {
+                        mContext.startActivity(launchIntent);
+                    }
+                }
             }
         });
         mBrowseFragment.setOnItemViewSelectedListener(new OnItemViewSelectedListener() {
             @Override
             public void onItemSelected(Presenter.ViewHolder itemViewHolder, Object item, RowPresenter.ViewHolder rowViewHolder, Row row) {
-                String url = (String) item;
-                int width = mMetrics.widthPixels;
-                int height = mMetrics.heightPixels;
-                Glide.with(mContext)
-                        .load(url)
-                        .asBitmap()
-                        .centerCrop()
-                        .into(new SimpleTarget<Bitmap>(width, height) {
-                            @Override
-                            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap>
-                                    glideAnimation) {
-                                mBackgroundManager.setBitmap(resource);
-                            }
-                        });
+                if (item instanceof String) {
+
+                    String url = (String) item;
+                    int width = mMetrics.widthPixels;
+                    int height = mMetrics.heightPixels;
+
+                    Glide.with(mContext)
+                            .load(url)
+                            .asBitmap()
+                            .centerCrop()
+                            .into(new SimpleTarget<Bitmap>(width, height) {
+                                @Override
+                                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                                    mBackgroundManager.setBitmap(resource);
+                                }
+                            });
+                } else {
+                    mBackgroundManager.setBitmap(null);
+                }
             }
         });
     }
@@ -102,7 +123,7 @@ public class MainActivity extends Activity {
                 "http://www.bz55.com/uploads/allimg/150402/139-150402152530.jpg",
         };
         String headerName = getResources().getString(R.string.app_header_photo_name);
-        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new ImgCardPresenter());
         for (String url : urls) {
             listRowAdapter.add(url);
         }
@@ -123,7 +144,7 @@ public class MainActivity extends Activity {
                 "http://image5.tuku.cn/wallpaper/Movie%20Wallpapers/4016_2560x1600.jpg",
         };
         String headerName = getResources().getString(R.string.app_header_video_name);
-        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new ImgCardPresenter());
         for (String url : urls) {
             listRowAdapter.add(url);
         }
@@ -132,11 +153,14 @@ public class MainActivity extends Activity {
     }
 
     private void addAppRow() {
-        int cardCount = 10;
         String headerName = getResources().getString(R.string.app_header_app_name);
-        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new AppCardPresenter());
+
+        ArrayList<AppBean> appDataList = new AppDataManage(mContext).getLaunchAppList();
+        int cardCount = appDataList.size();
+
         for (int i = 0; i < cardCount; i++) {
-            listRowAdapter.add("");
+            listRowAdapter.add(appDataList.get(i));
         }
         HeaderItem header = new HeaderItem(0, headerName);
         rowsAdapter.add(new ListRow(header, listRowAdapter));
@@ -145,7 +169,7 @@ public class MainActivity extends Activity {
     private void addFunctionRow() {
         int cardCount = 10;
         String headerName = getResources().getString(R.string.app_header_function_name);
-        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new ImgCardPresenter());
         for (int i = 0; i < cardCount; i++) {
             listRowAdapter.add("");
         }

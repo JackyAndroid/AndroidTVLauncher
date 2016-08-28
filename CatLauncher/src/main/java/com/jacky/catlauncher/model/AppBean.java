@@ -1,8 +1,10 @@
+
 package com.jacky.catlauncher.model;
 
 import android.graphics.drawable.Drawable;
 
 public class AppBean {
+
     private String dataDir;
     private Drawable icon;
     private String id;
@@ -89,4 +91,3 @@ public class AppBean {
         this.launcherName = launcherName;
     }
 }
-
