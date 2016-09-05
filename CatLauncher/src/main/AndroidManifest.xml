@@ -25,12 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".app.AppUninstall"/>
         <activity
             android:name=".detail.MediaDetailsActivity"
             android:exported="true"
             android:theme="@style/Theme.Leanback"/>
+        <activity android:name=".video.VideoActivity">
+        </activity>
     </application>
 
 </manifest>

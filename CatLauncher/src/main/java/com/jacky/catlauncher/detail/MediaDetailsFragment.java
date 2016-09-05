@@ -1,10 +1,12 @@
 package com.jacky.catlauncher.detail;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v17.leanback.app.BackgroundManager;
 import android.support.v17.leanback.app.DetailsFragment;
+import android.support.v17.leanback.widget.Action;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.ClassPresenterSelector;
 import android.support.v17.leanback.widget.DetailsOverviewLogoPresenter;
@@ -12,13 +14,17 @@ import android.support.v17.leanback.widget.DetailsOverviewRow;
 import android.support.v17.leanback.widget.FullWidthDetailsOverviewRowPresenter;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
+import android.support.v17.leanback.widget.OnActionClickedListener;
+import android.support.v17.leanback.widget.SparseArrayObjectAdapter;
 import android.util.DisplayMetrics;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
+import com.jacky.catlauncher.video.VideoActivity;
 
 /**
  * @author jacky
@@ -30,6 +36,7 @@ public class MediaDetailsFragment extends DetailsFragment {
     private ArrayObjectAdapter mRowsAdapter;
     private MediaModel mMediaModel;
     private Context mContext;
+    private static final int ACTION_WATCH_TRAILER = 1;
 
     private BackgroundManager mBackgroundManager;
     private DisplayMetrics mMetrics;
@@ -58,6 +65,19 @@ public class MediaDetailsFragment extends DetailsFragment {
                 new MediaDetailsDescriptionPresenter(),
                 new DetailsOverviewLogoPresenter());
 
+        rowPresenter.setOnActionClickedListener(new OnActionClickedListener() {
+            @Override
+            public void onActionClicked(Action action) {
+                if (action.getId() == ACTION_WATCH_TRAILER) {
+                    Intent intent = new Intent(getActivity(), VideoActivity.class);
+                    intent.putExtra(VideoActivity.VIDEO, mMediaModel);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getActivity(), action.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         selector.addClassPresenter(DetailsOverviewRow.class, rowPresenter);
         selector.addClassPresenter(ListRow.class, new ListRowPresenter());
         mRowsAdapter = new ArrayObjectAdapter(selector);
@@ -83,7 +103,10 @@ public class MediaDetailsFragment extends DetailsFragment {
                 .into(-1, -1);
 
         updateBackground(mMediaModel.getImageUrl());
-//        detailsOverview.addAction(new Action(2, "Rent $2.99"));
+
+        SparseArrayObjectAdapter adapter = new SparseArrayObjectAdapter();
+        adapter.set(ACTION_WATCH_TRAILER, new Action(ACTION_WATCH_TRAILER, "play"));
+        detailsOverview.setActionsAdapter(adapter);
         mRowsAdapter.add(detailsOverview);
 
         setAdapter(mRowsAdapter);
