@@ -30,8 +30,7 @@
             android:name=".detail.MediaDetailsActivity"
             android:exported="true"
             android:theme="@style/Theme.Leanback"/>
-        <activity android:name=".video.VideoActivity">
-        </activity>
+        <activity android:name=".video.VideoActivity"/>
     </application>
 
 </manifest>

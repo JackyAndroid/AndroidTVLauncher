@@ -7,6 +7,5 @@
         android:id="@+id/browse_fragment"
         android:name="android.support.v17.leanback.app.BrowseFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent"/>
 </LinearLayout>

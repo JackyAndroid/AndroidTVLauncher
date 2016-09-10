@@ -144,7 +144,7 @@ public class MediaModel implements Parcelable {
         };
 
         for (int i = 0; i < titles.length; i++) {
-            MediaModel mediaModel = new MediaModel(0,titles[i],contents[i],urls[i],"");
+            MediaModel mediaModel = new MediaModel(0, titles[i], contents[i], urls[i], "");
             mediaModels.add(mediaModel);
         }
 
@@ -155,26 +155,34 @@ public class MediaModel implements Parcelable {
         List<MediaModel> mediaModels = new ArrayList<>();
 
         String titles[] = {
-                "奇幻森林",
-                "愤怒的小鸟",
+                "CCTV1",
+                "湖南卫视",
         };
 
         String contents[] = {
-                "《奇幻森林》是由美国华特·迪士尼影片公司出品的真人动画片，由乔恩·费儒执导，尼尔·塞西领衔主演，本·金斯利、伊德瑞斯·艾尔巴、露皮塔·尼永奥、斯嘉丽·约翰逊、吉安卡洛·埃斯珀西多、克里斯托弗·沃肯联合配音。\n" +
-                        "《奇幻森林》根据1967年迪士尼动画片《森林王子》改编，讲述了狼群养大的人类小男孩毛克利，被逼迫放弃赖以为生的森林之家，踏上了一场波澜壮阔的大冒险的故事[1]  。\n" +
-                        "影片于2016年4月15日以3D、IMAX 3D、中国巨幕格式在中国大陆、美国同步上映",
+                "中央电视台综合频道（频道呼号：CCTV-1综合）是以新闻为主的综合类电视频道，是中央电视台第一套节目，于1958年9月2日开播。\n" +
+                        "1958年5月1日，CCTV-1开始试验播出，呼号“北京电视台”。1978年5月1日，“北京电视台”正式更名为中央电视台。1995年4月3日，CCTV-1正式更名为“新闻·综合频道”。 " +
+                        " 2003年5月1日，CCTV-1由新闻·综合频道改为综合频道。 2009年9月27日，CCTV-1开播高清信号，实现高、标清同播。2011年3月，CCTV-1分版为境内版和香港版（香港版起初由亚洲电视转播，后改为NOW TV转播）",
 
-                "《愤怒的小鸟》是由索尼影业出品的动画电影，由费格尔·雷利、克雷·卡提斯执导，乔恩·维迪编剧，杰森·苏戴奇斯、乔什·盖德、丹尼·麦克布耐德等参与配音[1]  。\n" +
-                        "该片改编自同名手游，讲述了一群不会飞的小鸟挤在一座热带小岛上，生活和睦宁静，但当神秘的绿色小猪登陆岛屿时，小鸟们平静的生活被打破的故事[2]  。该片于2016年5月20日在美国与中国内地同步上映",
+                "湖南卫视，全称湖南广播电视台卫星频道，昵称芒果台，是湖南广播电视台和芒果传媒有限公司旗下的卫星电视频道。\n" +
+                        "1997年1月，湖南电视台第一套节目上星更名为湖南电视台卫星频道。\n" +
+                        "2010年1月，湖南广电整合后，呼号更名为“湖南广播电视台卫星频道”。\n" +
+                        "2016年4月，湖南卫视推出了“越新鲜越青春”的频道口号。",
         };
 
         String urls[] = {
-                "http://www.bz55.com/uploads/allimg/160418/139-16041Q14215.jpg",
-                "http://b.hiphotos.baidu.com/baike/c0%3Dbaike180%2C5%2C5%2C180%2C60/sign=706a75dfbf0e7bec37d70bb34e47d25d/0823dd54564e92589862e73e9b82d158cdbf4e8f.jpg",
+                "http://hiphotos.baidu.com/%B1%A1%B1%CC%C0%B6%C9%C0/pic/item/e0d2dc358b514685d1a2d3fa.jpg",
+                "http://imgsrc.baidu.com/forum/pic/item/410e5aafa40f4bfbd8a9a68a034f78f0f63618fa.jpg",
+        };
+
+        String videoUrls[] = {
+                "http://eshare.live.otvcloud.com/otv/nyz/live/channel01/index.m3u8",
+                "http://111.39.226.103:8112/120000001001/wlds:8080/ysten-business/live/hdhunanstv/.m3u8",
         };
 
         for (int i = 0; i < titles.length; i++) {
-            MediaModel mediaModel = new MediaModel(0,titles[i],contents[i],urls[i],"");
+            MediaModel mediaModel = new MediaModel(
+                    0, titles[i], contents[i], urls[i], videoUrls[i]);
             mediaModels.add(mediaModel);
         }
 

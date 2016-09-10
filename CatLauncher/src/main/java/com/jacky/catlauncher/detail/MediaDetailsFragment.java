@@ -105,7 +105,9 @@ public class MediaDetailsFragment extends DetailsFragment {
         updateBackground(mMediaModel.getImageUrl());
 
         SparseArrayObjectAdapter adapter = new SparseArrayObjectAdapter();
-        adapter.set(ACTION_WATCH_TRAILER, new Action(ACTION_WATCH_TRAILER, "play"));
+        if (!mMediaModel.getVideoUrl().isEmpty()) {
+            adapter.set(ACTION_WATCH_TRAILER, new Action(ACTION_WATCH_TRAILER, "播放"));
+        }
         detailsOverview.setActionsAdapter(adapter);
         mRowsAdapter.add(detailsOverview);
 
