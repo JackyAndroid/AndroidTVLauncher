@@ -26,10 +26,13 @@ If you must be compatible with Android version 4.0 to 4.1 TV device,you can use 
 so on...
 
 ###Effect Picture
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-13.png)
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-34.png)
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-43.png)
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-46-02.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch1.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch2.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch3.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch4.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch5.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch6.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch7.png)
 
 ###The next step to improve
 > * improve compatibility & extensibility
