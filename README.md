@@ -14,16 +14,15 @@ CSDN: http://blog.csdn.net/rain_butterfly
 This is a tv launcher, include a leanback launcher(minSdkVersion 17) and a normal launcher(minSdkVersion 15).
 
 ###Notice
-Now Leanback demo launcher minSdkVersion is Android 4.2!!!
-If you must be compatible with Android version 4.0 to 4.1 TV device,you can use the CompatibleLauncher in the project.
+Based on Leanback CatLauncher (library) function has been basically stable at present, the progress of the follow-up will follow up the official Leanback library, Compatible desktop theory is no longer maintained
 
 ###Features
-> * App Uninstall
-> * Garbage Clear
-> * Kill Other App
-> * App Auto-launch Manage
-> * NetWork Setting
-so on...
+> * Leanback style
+> * Pictures show
+> * Video broadcast (jiecao player - based on ijkplayer)
+> * Details of the media
+> * The third party application list
+> * Desktop special function
 
 ###Effect Picture
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch1.png)
@@ -35,7 +34,7 @@ so on...
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch7.png)
 
 ###The next step to improve
-> * improve compatibility & extensibility
+> * Follow up the official Leanback library new features
 
 ###License
 
