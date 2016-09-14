@@ -14,7 +14,7 @@ CSDN: http://blog.csdn.net/rain_butterfly
 This is a tv launcher, include a leanback launcher(minSdkVersion 17) and a normal launcher(minSdkVersion 15).
 
 ###Notice
-Based on Leanback CatLauncher (library) function has been basically stable at present, the progress of the follow-up will follow up the official Leanback library, Compatible desktop theory is no longer maintained
+CatLauncher (Leanback style) function has been basically stable at present, the progress of the follow-up will follow up the official Leanback library, Compatible desktop theory is no longer maintained
 
 ###Features
 > * Leanback style
