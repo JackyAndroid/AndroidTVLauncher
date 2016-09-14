@@ -23,10 +23,13 @@ CatLauncher(基于Leanback 库) 现在支持最低版本是4.2！！（基本可
 > * 网络设置等等
 
 ###效果图
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-13.png)
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-34.png)
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-45-43.png)
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/social_share_2016-06-04-18-46-02.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch1.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch2.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch3.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch4.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch5.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch6.png)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch7.png)
 
 ###下一步的改进
 > * 提高兼容性、扩展性
