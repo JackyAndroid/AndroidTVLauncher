@@ -9,7 +9,7 @@ CSDN: http://blog.csdn.net/rain_butterfly
 ---
 # AndroidTVLauncher
 
-<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/CatLauncher/src/main/res/drawable-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
+<img src="https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/CatLauncher/src/main/res/mipmap-xhdpi/ic_launcher.png" width = "100" height = "100" alt="logo" align=center />
 
 This is a tv launcher, include a leanback launcher(minSdkVersion 17) and a normal launcher(minSdkVersion 15).
 
