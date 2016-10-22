@@ -6,18 +6,32 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+
+/**
+ * The type Time util.
+ */
 public final class TimeUtil {
 
     private TimeUtil() throws InstantiationException {
         throw new InstantiationException("This class is not created for instantiation");
     }
 
+    /**
+     * Gets time.
+     *
+     * @return the time
+     */
     public static String getTime() {
         String date = getFormattedDate();
         return date.substring(11, date.length() - 3);
 
     }
 
+    /**
+     * Gets date.
+     *
+     * @return the date
+     */
     public static String getDate() {
         String date = getFormattedDate();
         return date.substring(0, 11);
