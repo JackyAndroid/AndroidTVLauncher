@@ -30,7 +30,7 @@ CatLauncher(Leanback风格) 目前功能已基本稳定，后续会跟进官方L
 ![][image-6]
 ![][image-7]
 ![][image-8]
-![]()
+
 ### 下一步的改进
 > * 跟进官方Leanback库新功能
 
