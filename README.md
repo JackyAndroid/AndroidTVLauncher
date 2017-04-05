@@ -1,4 +1,4 @@
-###Welcome to follow me on GitHub or CSDN
+### Welcome to follow me on GitHub or CSDN
 
 GitHub: https://github.com/JackyAndroid
 
@@ -13,10 +13,10 @@ CSDN: http://blog.csdn.net/rain_butterfly
 
 This is a tv launcher, include a leanback launcher(minSdkVersion 17) and a normal launcher(minSdkVersion 15).
 
-###Notice
+### Notice
 CatLauncher (Leanback style) function has been basically stable at present, the progress of the follow-up will follow up the official Leanback library, Compatible desktop theory is no longer maintained
 
-###Features
+### Features
 > * Leanback style
 > * Pictures show
 > * Video broadcast (jiecao player - based on ijkplayer)
@@ -24,7 +24,7 @@ CatLauncher (Leanback style) function has been basically stable at present, the 
 > * The third party application list
 > * Desktop special function
 
-###Effect Picture
+### Effect Picture
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch1.png)
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch2.png)
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch3.png)
@@ -33,10 +33,10 @@ CatLauncher (Leanback style) function has been basically stable at present, the 
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch6.png)
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/screenshots/design_sketch7.png)
 
-###The next step to improve
+### The next step to improve
 > * Follow up the official Leanback library new features
 
-###License
+### License
 
     Copyright 2016 Jacky Wang<jacky.android@foxmail.com>
     
