@@ -11,10 +11,10 @@ CSDN: http://blog.csdn.net/rain_butterfly
 
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/CatLauncher/src/main/res/mipmap-xxhdpi/ic_launcher.jpg)
 
-This is a tv launcher, include a leanback launcher(minSdkVersion 17) and a normal launcher(minSdkVersion 15).
+This is a tv launcher, include a leanback launcher(minSdkVersion 17).
 
 ### Notice
-CatLauncher (Leanback style) function has been basically stable at present, the progress of the follow-up will follow up the official Leanback library, Compatible desktop theory is no longer maintained
+CatLauncher (Leanback style) function has been basically stable at present, the progress of the follow-up will follow up the official Leanback library
 
 ### Features
 > * Leanback style
