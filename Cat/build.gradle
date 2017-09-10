@@ -6,15 +6,30 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "com.jacky.catlauncher"
+        applicationId "com.jacky.launcher"
         minSdkVersion 17
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
     }
+
+    signingConfigs {
+        debug {
+
+        }
+        release {
+            storeFile file("../AndroidTVLauncherKey.jks")
+            storePassword "123456"
+            keyAlias "launcher"
+            keyPassword "123456"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

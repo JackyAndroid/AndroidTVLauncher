@@ -1,5 +1,5 @@
 
-package com.jacky.catlauncher.main;
+package com.jacky.launcher.main;
 
 import android.app.Activity;
 import android.content.Context;
@@ -24,14 +24,14 @@ import android.util.DisplayMetrics;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.app.AppCardPresenter;
-import com.jacky.catlauncher.app.AppDataManage;
-import com.jacky.catlauncher.app.AppModel;
-import com.jacky.catlauncher.detail.MediaDetailsActivity;
-import com.jacky.catlauncher.detail.MediaModel;
-import com.jacky.catlauncher.function.FunctionCardPresenter;
-import com.jacky.catlauncher.function.FunctionModel;
+import com.jacky.launcher.R;
+import com.jacky.launcher.app.AppCardPresenter;
+import com.jacky.launcher.app.AppDataManage;
+import com.jacky.launcher.app.AppModel;
+import com.jacky.launcher.detail.MediaDetailsActivity;
+import com.jacky.launcher.detail.MediaModel;
+import com.jacky.launcher.function.FunctionCardPresenter;
+import com.jacky.launcher.function.FunctionModel;
 
 import java.util.ArrayList;
 import java.util.List;

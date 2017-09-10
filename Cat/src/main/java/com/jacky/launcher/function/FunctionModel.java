@@ -1,11 +1,11 @@
 
-package com.jacky.catlauncher.function;
+package com.jacky.launcher.function;
 
 import android.content.Context;
 import android.content.Intent;
 
-import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.app.AppUninstall;
+import com.jacky.launcher.R;
+import com.jacky.launcher.app.AppUninstall;
 
 import java.util.ArrayList;
 import java.util.List;

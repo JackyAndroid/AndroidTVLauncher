@@ -1,9 +1,9 @@
-package com.jacky.catlauncher.detail;
+package com.jacky.launcher.detail;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.jacky.catlauncher.R;
+import com.jacky.launcher.R;
 
 /**
  * @author jacky

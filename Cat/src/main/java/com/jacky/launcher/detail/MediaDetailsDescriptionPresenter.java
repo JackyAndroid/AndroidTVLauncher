@@ -1,4 +1,4 @@
-package com.jacky.catlauncher.detail;
+package com.jacky.launcher.detail;
 
 /**
  * @author jacky

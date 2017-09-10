@@ -1,5 +1,5 @@
 
-package com.jacky.catlauncher.app;
+package com.jacky.launcher.app;
 
 import android.content.Context;
 import android.content.Intent;

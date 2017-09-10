@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.jacky.catlauncher">
+          package="com.jacky.launcher">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
         <activity
-            android:name=".main.MainActivity"
+            android:name="com.jacky.launcher.main.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Leanback">
             <intent-filter>
@@ -25,12 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".app.AppUninstall"/>
+        <activity android:name="com.jacky.launcher.app.AppUninstall"/>
         <activity
-            android:name=".detail.MediaDetailsActivity"
+            android:name="com.jacky.launcher.detail.MediaDetailsActivity"
             android:exported="true"
             android:theme="@style/Theme.Leanback"/>
-        <activity android:name=".video.VideoActivity"/>
+        <activity android:name="com.jacky.launcher.video.VideoActivity"/>
     </application>
 
 </manifest>

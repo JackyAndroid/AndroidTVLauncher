@@ -1,4 +1,4 @@
-package com.jacky.catlauncher.detail;
+package com.jacky.launcher.detail;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,7 +24,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
-import com.jacky.catlauncher.video.VideoActivity;
+import com.jacky.launcher.video.VideoActivity;
 
 /**
  * @author jacky

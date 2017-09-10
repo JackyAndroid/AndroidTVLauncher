@@ -1,4 +1,4 @@
-package com.jacky.catlauncher;
+package com.jacky.launcher;
 
 import org.junit.Test;
 

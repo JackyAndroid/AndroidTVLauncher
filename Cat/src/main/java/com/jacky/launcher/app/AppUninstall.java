@@ -1,4 +1,4 @@
-package com.jacky.catlauncher.app;
+package com.jacky.launcher.app;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -13,9 +13,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.util.Tools;
-import com.jacky.catlauncher.adapter.AppUninstallAdapter;
+import com.jacky.launcher.R;
+import com.jacky.launcher.adapter.AppUninstallAdapter;
+import com.jacky.launcher.util.Tools;
 
 import java.util.List;
 

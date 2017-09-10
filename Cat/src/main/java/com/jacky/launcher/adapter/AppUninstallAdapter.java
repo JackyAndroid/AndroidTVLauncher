@@ -1,4 +1,4 @@
-package com.jacky.catlauncher.adapter;
+package com.jacky.launcher.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,8 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.app.AppModel;
+import com.jacky.launcher.R;
+import com.jacky.launcher.app.AppModel;
 
 import java.util.List;
 

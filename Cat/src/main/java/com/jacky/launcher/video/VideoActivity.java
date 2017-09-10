@@ -1,10 +1,10 @@
-package com.jacky.catlauncher.video;
+package com.jacky.launcher.video;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.detail.MediaModel;
+import com.jacky.launcher.R;
+import com.jacky.launcher.detail.MediaModel;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;

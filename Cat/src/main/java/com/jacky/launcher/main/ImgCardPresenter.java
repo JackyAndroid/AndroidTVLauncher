@@ -1,4 +1,4 @@
-package com.jacky.catlauncher.main;
+package com.jacky.launcher.main;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -7,8 +7,8 @@ import android.support.v17.leanback.widget.Presenter;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.jacky.catlauncher.R;
-import com.jacky.catlauncher.detail.MediaModel;
+import com.jacky.launcher.R;
+import com.jacky.launcher.detail.MediaModel;
 
 /**
  * ImageCard Presenter
