@@ -9,6 +9,8 @@ CSDN: http://blog.csdn.net/rain\_butterfly
 
 ![][image-1]
 
+[下载安装包](https://fir.im/3yhj)
+
 这是一个TV Leanback 风格桌面（最低版本是17），Leanback桌面是基于Leanback库开发符合Android TV官方交互规范。
 
 ### 注意

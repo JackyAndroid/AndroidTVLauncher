@@ -11,6 +11,8 @@ CSDN: http://blog.csdn.net/rain_butterfly
 
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/CatLauncher/src/main/res/mipmap-xxhdpi/ic_launcher.jpg)
 
+[Download Apk](https://fir.im/3yhj)
+
 This is a tv launcher, include a leanback launcher(minSdkVersion 17).
 
 ### Notice
