@@ -9,7 +9,7 @@ CSDN: http://blog.csdn.net/rain_butterfly
 ---
 # AndroidTVLauncher
 
-![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/CatLauncher/src/main/res/mipmap-xxhdpi/ic_launcher.jpg)
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/Cat/src/main/res/mipmap-xxhdpi/ic_launcher.jpg)
 
 [Download Apk](https://fir.im/3yhj)
 

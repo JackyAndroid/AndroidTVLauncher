@@ -7,7 +7,7 @@ CSDN: http://blog.csdn.net/rain\_butterfly
 ---
 # AndroidTVLauncher
 
-![][image-1]
+![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/Cat/src/main/res/mipmap-xxhdpi/ic_launcher.jpg)
 
 [下载安装包](https://fir.im/3yhj)
 
