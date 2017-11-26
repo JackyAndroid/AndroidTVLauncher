@@ -6,6 +6,8 @@ CSDN: http://blog.csdn.net/rain_butterfly
 
 [中文版文档](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/README-CN.md)
 
+![](http://www.jackywang.tech/images/gongzh.png)
+
 ---
 # AndroidTVLauncher
 
