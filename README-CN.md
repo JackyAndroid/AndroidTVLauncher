@@ -1,4 +1,4 @@
-### 欢迎在GitHub或者CSDN上关注我
+### 欢迎在GitHub上关注我
 
 GitHub: https://github.com/JackyAndroid
 
