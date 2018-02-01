@@ -2,8 +2,6 @@
 
 GitHub: https://github.com/JackyAndroid
 
-CSDN: http://blog.csdn.net/rain\_butterfly
-
 ---
 # AndroidTVLauncher
 
