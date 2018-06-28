@@ -1,8 +1,3 @@
-### 欢迎在GitHub上关注我
-
-GitHub: https://github.com/JackyAndroid
-
----
 # AndroidTVLauncher
 
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/Cat/src/main/res/mipmap-xxhdpi/ic_launcher.jpg)
