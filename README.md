@@ -1,13 +1,7 @@
-### Welcome to follow me on GitHub
 
-GitHub: https://github.com/JackyAndroid
-
-[中文版文档](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/README-CN.md)
-
-![](http://www.jackywang.tech/images/gongzh.png)
-
----
 # AndroidTVLauncher
+
+[中文文档](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/README-CN.md)
 
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/Cat/src/main/res/mipmap-xxhdpi/ic_launcher.jpg)
 
