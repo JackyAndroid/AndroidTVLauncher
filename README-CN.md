@@ -1,10 +1,3 @@
-### 欢迎在GitHub或者CSDN上关注我
-
-GitHub: https://github.com/JackyAndroid
-
-CSDN: http://blog.csdn.net/rain\_butterfly
-
----
 # AndroidTVLauncher
 
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/Cat/src/main/res/mipmap-xxhdpi/ic_launcher.jpg)
