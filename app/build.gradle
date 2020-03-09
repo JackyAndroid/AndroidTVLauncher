@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
 
     defaultConfig {
         applicationId "com.jacky.launcher"
@@ -49,8 +48,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.2.0'
     compile 'com.android.support:cardview-v7:24.2.0'
     compile 'com.github.bumptech.glide:glide:3.4.+'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-}
-repositories {
-    mavenCentral()
+//    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
