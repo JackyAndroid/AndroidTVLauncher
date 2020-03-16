@@ -5,7 +5,7 @@
 
 ![](https://github.com/JackyAndroid/AndroidTVLauncher/blob/master/Cat/src/main/res/mipmap-xxhdpi/ic_launcher.jpg)
 
-[Download Apk](https://fir.im/3yhj)
+[Download Apk](https://github.com/JackyAndroid/AndroidTVLauncher/releases)
 
 This is a tv launcher, include a leanback launcher(minSdkVersion 17).
 
