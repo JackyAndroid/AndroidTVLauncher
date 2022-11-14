@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 //apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.jacky.launcher"
         minSdkVersion 17
-        targetSdkVersion 27
+        targetSdkVersion 33
         versionCode 21
         versionName "2.1"
     }
@@ -32,17 +32,27 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    buildToolsVersion '33.0.0'
+    ndkVersion '25.1.8937393'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:support-v4:27.0.1'
-    implementation "com.android.support:appcompat-v7:27.0.1"
-    implementation 'com.android.support:leanback-v17:27.0.1'
-    implementation 'com.android.support:preference-leanback-v17:27.0.1'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:support-v4:28.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:leanback-v17:28.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:preference-leanback-v17:28.0.0'
 
-    implementation 'fm.jiecao:jiecaovideoplayer:4.6.4'
-    implementation 'com.github.bumptech.glide:glide:3.4.+'
+    implementation 'fm.jiecao:jiecaovideoplayer:5.8.1'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
 
 //    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
